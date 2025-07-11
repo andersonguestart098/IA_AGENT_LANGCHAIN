@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+python-dotenv
+langchain
+openai
+prisma
+numpy
+faiss-cpu
+transformers
+langchain-core
+langchain-community
+langchain-openai

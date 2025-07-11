@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-py"
+  output   = "../app/generated"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model KnowledgeBase {
+  id        Int      @id @default(autoincrement())
+  origem    String
+  conteudo  String
+  embedding String
+  criadoEm  DateTime @default(now())
+}

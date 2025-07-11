@@ -1,0 +1,33 @@
+# Diretórios do ambiente virtual
+.venv/
+venv/
+
+# VSCode configs
+.vscode/
+
+# Arquivos de ambiente
+.env
+.env.*
+
+# Prisma gerado
+/app/generated/prisma
+prisma/dev.db
+prisma/migrations/
+
+# Bytecode e cache Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+*.swp
+
+# Node (caso use front juntos ou dependências JS)
+node_modules/
+package-lock.json
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
