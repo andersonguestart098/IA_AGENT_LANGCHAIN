@@ -15,3 +15,43 @@ model KnowledgeBase {
   embedding String
   criadoEm  DateTime @default(now())
 }
+
+model Usuario {
+  id         Int       @id @default(autoincrement())
+  nome       String?
+  email      String?   @unique
+  senha_hash String    
+  criadoEm   DateTime  @default(now())
+
+  sessoes    Sessao[]
+}
+
+model Sessao {
+  id        Int       @id @default(autoincrement())
+  token     String    @unique
+  usuario   Usuario?  @relation(fields: [usuarioId], references: [id])
+  usuarioId Int?
+  criadoEm  DateTime  @default(now())
+
+  mensagens Mensagem[]
+  fluxo     FluxoConversa[]
+}
+
+model FluxoConversa {
+  id         Int       @id @default(autoincrement())
+  sessao     Sessao    @relation(fields: [sessaoId], references: [id])
+  sessaoId   Int
+  etapa      String
+  intencao   String
+  pedido     String?
+  criadoEm   DateTime  @default(now())
+}
+
+model Mensagem {
+  id        Int       @id @default(autoincrement())
+  sessao    Sessao    @relation(fields: [sessaoId], references: [id])
+  sessaoId  Int
+  texto     String
+  role      String    // "user" ou "ai"
+  criadoEm  DateTime  @default(now())
+}

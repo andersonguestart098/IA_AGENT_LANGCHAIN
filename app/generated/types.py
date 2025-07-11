@@ -1415,6 +1415,434 @@ class FindManyKnowledgeBaseArgsFromKnowledgeBaseRecursive4(TypedDict, total=Fals
     cursor: 'KnowledgeBaseWhereUniqueInput'
     distinct: List['KnowledgeBaseScalarFieldKeys']
     
+    
+
+class UsuarioIncludeFromKnowledgeBase(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromKnowledgeBaseRecursive1']
+
+
+class UsuarioIncludeFromKnowledgeBaseRecursive1(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromKnowledgeBaseRecursive2']
+
+
+class UsuarioIncludeFromKnowledgeBaseRecursive2(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromKnowledgeBaseRecursive3']
+
+
+class UsuarioIncludeFromKnowledgeBaseRecursive3(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromKnowledgeBaseRecursive4']
+
+
+class UsuarioIncludeFromKnowledgeBaseRecursive4(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+
+    
+
+class UsuarioArgsFromKnowledgeBase(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'UsuarioIncludeFromUsuarioRecursive1'
+
+
+class UsuarioArgsFromKnowledgeBaseRecursive1(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'UsuarioIncludeFromUsuarioRecursive2'
+
+
+class UsuarioArgsFromKnowledgeBaseRecursive2(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'UsuarioIncludeFromUsuarioRecursive3'
+
+
+class UsuarioArgsFromKnowledgeBaseRecursive3(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'UsuarioIncludeFromUsuarioRecursive4'
+
+
+class UsuarioArgsFromKnowledgeBaseRecursive4(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    
+    
+
+class FindManyUsuarioArgsFromKnowledgeBase(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive1'
+
+
+class FindManyUsuarioArgsFromKnowledgeBaseRecursive1(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive2'
+
+
+class FindManyUsuarioArgsFromKnowledgeBaseRecursive2(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive3'
+
+
+class FindManyUsuarioArgsFromKnowledgeBaseRecursive3(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive4'
+
+
+class FindManyUsuarioArgsFromKnowledgeBaseRecursive4(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    
+    
+
+class SessaoIncludeFromKnowledgeBase(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    usuario: Union[bool, 'UsuarioArgsFromKnowledgeBaseRecursive1']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromKnowledgeBaseRecursive1']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromKnowledgeBaseRecursive1']
+
+
+class SessaoIncludeFromKnowledgeBaseRecursive1(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    usuario: Union[bool, 'UsuarioArgsFromKnowledgeBaseRecursive2']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromKnowledgeBaseRecursive2']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromKnowledgeBaseRecursive2']
+
+
+class SessaoIncludeFromKnowledgeBaseRecursive2(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    usuario: Union[bool, 'UsuarioArgsFromKnowledgeBaseRecursive3']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromKnowledgeBaseRecursive3']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromKnowledgeBaseRecursive3']
+
+
+class SessaoIncludeFromKnowledgeBaseRecursive3(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    usuario: Union[bool, 'UsuarioArgsFromKnowledgeBaseRecursive4']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromKnowledgeBaseRecursive4']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromKnowledgeBaseRecursive4']
+
+
+class SessaoIncludeFromKnowledgeBaseRecursive4(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+
+    
+
+class SessaoArgsFromKnowledgeBase(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'SessaoIncludeFromSessaoRecursive1'
+
+
+class SessaoArgsFromKnowledgeBaseRecursive1(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'SessaoIncludeFromSessaoRecursive2'
+
+
+class SessaoArgsFromKnowledgeBaseRecursive2(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'SessaoIncludeFromSessaoRecursive3'
+
+
+class SessaoArgsFromKnowledgeBaseRecursive3(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'SessaoIncludeFromSessaoRecursive4'
+
+
+class SessaoArgsFromKnowledgeBaseRecursive4(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    
+    
+
+class FindManySessaoArgsFromKnowledgeBase(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive1'
+
+
+class FindManySessaoArgsFromKnowledgeBaseRecursive1(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive2'
+
+
+class FindManySessaoArgsFromKnowledgeBaseRecursive2(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive3'
+
+
+class FindManySessaoArgsFromKnowledgeBaseRecursive3(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive4'
+
+
+class FindManySessaoArgsFromKnowledgeBaseRecursive4(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    
+    
+
+class FluxoConversaIncludeFromKnowledgeBase(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    sessao: Union[bool, 'SessaoArgsFromKnowledgeBaseRecursive1']
+
+
+class FluxoConversaIncludeFromKnowledgeBaseRecursive1(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    sessao: Union[bool, 'SessaoArgsFromKnowledgeBaseRecursive2']
+
+
+class FluxoConversaIncludeFromKnowledgeBaseRecursive2(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    sessao: Union[bool, 'SessaoArgsFromKnowledgeBaseRecursive3']
+
+
+class FluxoConversaIncludeFromKnowledgeBaseRecursive3(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    sessao: Union[bool, 'SessaoArgsFromKnowledgeBaseRecursive4']
+
+
+class FluxoConversaIncludeFromKnowledgeBaseRecursive4(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+
+    
+
+class FluxoConversaArgsFromKnowledgeBase(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive1'
+
+
+class FluxoConversaArgsFromKnowledgeBaseRecursive1(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive2'
+
+
+class FluxoConversaArgsFromKnowledgeBaseRecursive2(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive3'
+
+
+class FluxoConversaArgsFromKnowledgeBaseRecursive3(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive4'
+
+
+class FluxoConversaArgsFromKnowledgeBaseRecursive4(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    
+    
+
+class FindManyFluxoConversaArgsFromKnowledgeBase(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive1'
+
+
+class FindManyFluxoConversaArgsFromKnowledgeBaseRecursive1(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive2'
+
+
+class FindManyFluxoConversaArgsFromKnowledgeBaseRecursive2(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive3'
+
+
+class FindManyFluxoConversaArgsFromKnowledgeBaseRecursive3(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive4'
+
+
+class FindManyFluxoConversaArgsFromKnowledgeBaseRecursive4(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    
+    
+
+class MensagemIncludeFromKnowledgeBase(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    sessao: Union[bool, 'SessaoArgsFromKnowledgeBaseRecursive1']
+
+
+class MensagemIncludeFromKnowledgeBaseRecursive1(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    sessao: Union[bool, 'SessaoArgsFromKnowledgeBaseRecursive2']
+
+
+class MensagemIncludeFromKnowledgeBaseRecursive2(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    sessao: Union[bool, 'SessaoArgsFromKnowledgeBaseRecursive3']
+
+
+class MensagemIncludeFromKnowledgeBaseRecursive3(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    sessao: Union[bool, 'SessaoArgsFromKnowledgeBaseRecursive4']
+
+
+class MensagemIncludeFromKnowledgeBaseRecursive4(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+
+    
+
+class MensagemArgsFromKnowledgeBase(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'MensagemIncludeFromMensagemRecursive1'
+
+
+class MensagemArgsFromKnowledgeBaseRecursive1(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'MensagemIncludeFromMensagemRecursive2'
+
+
+class MensagemArgsFromKnowledgeBaseRecursive2(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'MensagemIncludeFromMensagemRecursive3'
+
+
+class MensagemArgsFromKnowledgeBaseRecursive3(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'MensagemIncludeFromMensagemRecursive4'
+
+
+class MensagemArgsFromKnowledgeBaseRecursive4(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    
+    
+
+class FindManyMensagemArgsFromKnowledgeBase(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive1'
+
+
+class FindManyMensagemArgsFromKnowledgeBaseRecursive1(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive2'
+
+
+class FindManyMensagemArgsFromKnowledgeBaseRecursive2(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive3'
+
+
+class FindManyMensagemArgsFromKnowledgeBaseRecursive3(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive4'
+
+
+class FindManyMensagemArgsFromKnowledgeBaseRecursive4(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    
 
 
 FindManyKnowledgeBaseArgs = FindManyKnowledgeBaseArgsFromKnowledgeBase
@@ -1667,6 +2095,3928 @@ KnowledgeBaseScalarFieldKeys = Literal[
 KnowledgeBaseScalarFieldKeysT = TypeVar('KnowledgeBaseScalarFieldKeysT', bound=KnowledgeBaseScalarFieldKeys)
 
 KnowledgeBaseRelationalFieldKeys = _NoneType
+
+# Usuario types
+
+class UsuarioOptionalCreateInput(TypedDict, total=False):
+    """Optional arguments to the Usuario create method"""
+    id: _int
+    nome: Optional[_str]
+    email: Optional[_str]
+    criadoEm: datetime.datetime
+    sessoes: 'SessaoCreateManyNestedWithoutRelationsInput'
+
+
+class UsuarioCreateInput(UsuarioOptionalCreateInput):
+    """Required arguments to the Usuario create method"""
+
+
+# TODO: remove this in favour of without explicit relations
+# e.g. PostCreateWithoutAuthorInput
+
+class UsuarioOptionalCreateWithoutRelationsInput(TypedDict, total=False):
+    """Optional arguments to the Usuario create method, without relations"""
+    id: _int
+    nome: Optional[_str]
+    email: Optional[_str]
+    criadoEm: datetime.datetime
+
+
+class UsuarioCreateWithoutRelationsInput(UsuarioOptionalCreateWithoutRelationsInput):
+    """Required arguments to the Usuario create method, without relations"""
+
+class UsuarioConnectOrCreateWithoutRelationsInput(TypedDict):
+    create: 'UsuarioCreateWithoutRelationsInput'
+    where: 'UsuarioWhereUniqueInput'
+
+class UsuarioCreateNestedWithoutRelationsInput(TypedDict, total=False):
+    create: 'UsuarioCreateWithoutRelationsInput'
+    connect: 'UsuarioWhereUniqueInput'
+    connect_or_create: 'UsuarioConnectOrCreateWithoutRelationsInput'
+
+
+class UsuarioCreateManyNestedWithoutRelationsInput(TypedDict, total=False):
+    create: Union['UsuarioCreateWithoutRelationsInput', List['UsuarioCreateWithoutRelationsInput']]
+    connect: Union['UsuarioWhereUniqueInput', List['UsuarioWhereUniqueInput']]
+    connect_or_create: Union['UsuarioConnectOrCreateWithoutRelationsInput', List['UsuarioConnectOrCreateWithoutRelationsInput']]
+
+_UsuarioWhereUnique_id_Input = TypedDict(
+    '_UsuarioWhereUnique_id_Input',
+    {
+        'id': '_int',
+    },
+    total=True
+)
+
+_UsuarioWhereUnique_email_Input = TypedDict(
+    '_UsuarioWhereUnique_email_Input',
+    {
+        'email': '_str',
+    },
+    total=True
+)
+
+UsuarioWhereUniqueInput = Union[
+    '_UsuarioWhereUnique_id_Input',
+    '_UsuarioWhereUnique_email_Input',
+]
+
+
+class UsuarioUpdateInput(TypedDict, total=False):
+    """Optional arguments for updating a record"""
+    id: Union[AtomicIntInput, _int]
+    nome: Optional[_str]
+    email: Optional[_str]
+    criadoEm: datetime.datetime
+    sessoes: 'SessaoUpdateManyWithoutRelationsInput'
+
+
+class UsuarioUpdateManyMutationInput(TypedDict, total=False):
+    """Arguments for updating many records"""
+    id: Union[AtomicIntInput, _int]
+    nome: Optional[_str]
+    email: Optional[_str]
+    criadoEm: datetime.datetime
+
+
+class UsuarioUpdateManyWithoutRelationsInput(TypedDict, total=False):
+    create: List['UsuarioCreateWithoutRelationsInput']
+    connect: List['UsuarioWhereUniqueInput']
+    connect_or_create: List['UsuarioConnectOrCreateWithoutRelationsInput']
+    set: List['UsuarioWhereUniqueInput']
+    disconnect: List['UsuarioWhereUniqueInput']
+    delete: List['UsuarioWhereUniqueInput']
+
+    # TODO
+    # update: List['UsuarioUpdateWithWhereUniqueWithoutRelationsInput']
+    # updateMany: List['UsuarioUpdateManyWithWhereUniqueWithoutRelationsInput']
+    # deleteMany: List['UsuarioScalarWhereInput']
+    # upsert: List['UsuarioUpserteWithWhereUniqueWithoutRelationsInput']
+
+
+class UsuarioUpdateOneWithoutRelationsInput(TypedDict, total=False):
+    create: 'UsuarioCreateWithoutRelationsInput'
+    connect: 'UsuarioWhereUniqueInput'
+    connect_or_create: 'UsuarioConnectOrCreateWithoutRelationsInput'
+    disconnect: bool
+    delete: bool
+
+    # TODO
+    # update: 'UsuarioUpdateInput'
+    # upsert: 'UsuarioUpsertWithoutRelationsInput'
+
+
+class UsuarioUpsertInput(TypedDict):
+    create: 'UsuarioCreateInput'
+    update: 'UsuarioUpdateInput'  # pyright: ignore[reportIncompatibleMethodOverride]
+
+
+_Usuario_id_OrderByInput = TypedDict(
+    '_Usuario_id_OrderByInput',
+    {
+        'id': 'SortOrder',
+    },
+    total=True
+)
+
+_Usuario_nome_OrderByInput = TypedDict(
+    '_Usuario_nome_OrderByInput',
+    {
+        'nome': 'SortOrder',
+    },
+    total=True
+)
+
+_Usuario_email_OrderByInput = TypedDict(
+    '_Usuario_email_OrderByInput',
+    {
+        'email': 'SortOrder',
+    },
+    total=True
+)
+
+_Usuario_criadoEm_OrderByInput = TypedDict(
+    '_Usuario_criadoEm_OrderByInput',
+    {
+        'criadoEm': 'SortOrder',
+    },
+    total=True
+)
+
+UsuarioOrderByInput = Union[
+    '_Usuario_id_OrderByInput',
+    '_Usuario_nome_OrderByInput',
+    '_Usuario_email_OrderByInput',
+    '_Usuario_criadoEm_OrderByInput',
+]
+
+
+
+# recursive Usuario types
+# TODO: cleanup these types
+
+
+# Dict[str, Any] is a mypy limitation
+# see https://github.com/RobertCraigie/prisma-client-py/issues/45
+# switch to pyright for improved types, see https://prisma-client-py.readthedocs.io/en/stable/reference/limitations/
+
+UsuarioRelationFilter = TypedDict(
+    'UsuarioRelationFilter',
+    {
+        'is': 'Dict[str, Any]',
+        'is_not': 'Dict[str, Any]',
+    },
+    total=False,
+)
+
+
+class UsuarioListRelationFilter(TypedDict, total=False):
+    some: 'Dict[str, Any]'
+    none: 'Dict[str, Any]'
+    every: 'Dict[str, Any]'
+
+
+class UsuarioInclude(TypedDict, total=False):
+    """Usuario relational arguments"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromUsuario']
+
+
+    
+
+class KnowledgeBaseIncludeFromUsuario(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+
+
+class KnowledgeBaseIncludeFromUsuarioRecursive1(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+
+
+class KnowledgeBaseIncludeFromUsuarioRecursive2(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+
+
+class KnowledgeBaseIncludeFromUsuarioRecursive3(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+
+
+class KnowledgeBaseIncludeFromUsuarioRecursive4(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+
+    
+
+class KnowledgeBaseArgsFromUsuario(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive1'
+
+
+class KnowledgeBaseArgsFromUsuarioRecursive1(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive2'
+
+
+class KnowledgeBaseArgsFromUsuarioRecursive2(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive3'
+
+
+class KnowledgeBaseArgsFromUsuarioRecursive3(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive4'
+
+
+class KnowledgeBaseArgsFromUsuarioRecursive4(TypedDict, total=False):
+    """Arguments for Usuario"""
+    
+    
+
+class FindManyKnowledgeBaseArgsFromUsuario(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive1'
+
+
+class FindManyKnowledgeBaseArgsFromUsuarioRecursive1(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive2'
+
+
+class FindManyKnowledgeBaseArgsFromUsuarioRecursive2(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive3'
+
+
+class FindManyKnowledgeBaseArgsFromUsuarioRecursive3(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive4'
+
+
+class FindManyKnowledgeBaseArgsFromUsuarioRecursive4(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    
+    
+
+class UsuarioIncludeFromUsuario(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromUsuarioRecursive1']
+
+
+class UsuarioIncludeFromUsuarioRecursive1(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromUsuarioRecursive2']
+
+
+class UsuarioIncludeFromUsuarioRecursive2(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromUsuarioRecursive3']
+
+
+class UsuarioIncludeFromUsuarioRecursive3(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromUsuarioRecursive4']
+
+
+class UsuarioIncludeFromUsuarioRecursive4(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+
+    
+
+class UsuarioArgsFromUsuario(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'UsuarioIncludeFromUsuarioRecursive1'
+
+
+class UsuarioArgsFromUsuarioRecursive1(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'UsuarioIncludeFromUsuarioRecursive2'
+
+
+class UsuarioArgsFromUsuarioRecursive2(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'UsuarioIncludeFromUsuarioRecursive3'
+
+
+class UsuarioArgsFromUsuarioRecursive3(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'UsuarioIncludeFromUsuarioRecursive4'
+
+
+class UsuarioArgsFromUsuarioRecursive4(TypedDict, total=False):
+    """Arguments for Usuario"""
+    
+    
+
+class FindManyUsuarioArgsFromUsuario(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive1'
+
+
+class FindManyUsuarioArgsFromUsuarioRecursive1(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive2'
+
+
+class FindManyUsuarioArgsFromUsuarioRecursive2(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive3'
+
+
+class FindManyUsuarioArgsFromUsuarioRecursive3(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive4'
+
+
+class FindManyUsuarioArgsFromUsuarioRecursive4(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    
+    
+
+class SessaoIncludeFromUsuario(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    usuario: Union[bool, 'UsuarioArgsFromUsuarioRecursive1']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromUsuarioRecursive1']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromUsuarioRecursive1']
+
+
+class SessaoIncludeFromUsuarioRecursive1(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    usuario: Union[bool, 'UsuarioArgsFromUsuarioRecursive2']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromUsuarioRecursive2']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromUsuarioRecursive2']
+
+
+class SessaoIncludeFromUsuarioRecursive2(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    usuario: Union[bool, 'UsuarioArgsFromUsuarioRecursive3']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromUsuarioRecursive3']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromUsuarioRecursive3']
+
+
+class SessaoIncludeFromUsuarioRecursive3(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    usuario: Union[bool, 'UsuarioArgsFromUsuarioRecursive4']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromUsuarioRecursive4']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromUsuarioRecursive4']
+
+
+class SessaoIncludeFromUsuarioRecursive4(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+
+    
+
+class SessaoArgsFromUsuario(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'SessaoIncludeFromSessaoRecursive1'
+
+
+class SessaoArgsFromUsuarioRecursive1(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'SessaoIncludeFromSessaoRecursive2'
+
+
+class SessaoArgsFromUsuarioRecursive2(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'SessaoIncludeFromSessaoRecursive3'
+
+
+class SessaoArgsFromUsuarioRecursive3(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'SessaoIncludeFromSessaoRecursive4'
+
+
+class SessaoArgsFromUsuarioRecursive4(TypedDict, total=False):
+    """Arguments for Usuario"""
+    
+    
+
+class FindManySessaoArgsFromUsuario(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive1'
+
+
+class FindManySessaoArgsFromUsuarioRecursive1(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive2'
+
+
+class FindManySessaoArgsFromUsuarioRecursive2(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive3'
+
+
+class FindManySessaoArgsFromUsuarioRecursive3(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive4'
+
+
+class FindManySessaoArgsFromUsuarioRecursive4(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    
+    
+
+class FluxoConversaIncludeFromUsuario(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    sessao: Union[bool, 'SessaoArgsFromUsuarioRecursive1']
+
+
+class FluxoConversaIncludeFromUsuarioRecursive1(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    sessao: Union[bool, 'SessaoArgsFromUsuarioRecursive2']
+
+
+class FluxoConversaIncludeFromUsuarioRecursive2(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    sessao: Union[bool, 'SessaoArgsFromUsuarioRecursive3']
+
+
+class FluxoConversaIncludeFromUsuarioRecursive3(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    sessao: Union[bool, 'SessaoArgsFromUsuarioRecursive4']
+
+
+class FluxoConversaIncludeFromUsuarioRecursive4(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+
+    
+
+class FluxoConversaArgsFromUsuario(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive1'
+
+
+class FluxoConversaArgsFromUsuarioRecursive1(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive2'
+
+
+class FluxoConversaArgsFromUsuarioRecursive2(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive3'
+
+
+class FluxoConversaArgsFromUsuarioRecursive3(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive4'
+
+
+class FluxoConversaArgsFromUsuarioRecursive4(TypedDict, total=False):
+    """Arguments for Usuario"""
+    
+    
+
+class FindManyFluxoConversaArgsFromUsuario(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive1'
+
+
+class FindManyFluxoConversaArgsFromUsuarioRecursive1(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive2'
+
+
+class FindManyFluxoConversaArgsFromUsuarioRecursive2(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive3'
+
+
+class FindManyFluxoConversaArgsFromUsuarioRecursive3(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive4'
+
+
+class FindManyFluxoConversaArgsFromUsuarioRecursive4(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    
+    
+
+class MensagemIncludeFromUsuario(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    sessao: Union[bool, 'SessaoArgsFromUsuarioRecursive1']
+
+
+class MensagemIncludeFromUsuarioRecursive1(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    sessao: Union[bool, 'SessaoArgsFromUsuarioRecursive2']
+
+
+class MensagemIncludeFromUsuarioRecursive2(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    sessao: Union[bool, 'SessaoArgsFromUsuarioRecursive3']
+
+
+class MensagemIncludeFromUsuarioRecursive3(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    sessao: Union[bool, 'SessaoArgsFromUsuarioRecursive4']
+
+
+class MensagemIncludeFromUsuarioRecursive4(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+
+    
+
+class MensagemArgsFromUsuario(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'MensagemIncludeFromMensagemRecursive1'
+
+
+class MensagemArgsFromUsuarioRecursive1(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'MensagemIncludeFromMensagemRecursive2'
+
+
+class MensagemArgsFromUsuarioRecursive2(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'MensagemIncludeFromMensagemRecursive3'
+
+
+class MensagemArgsFromUsuarioRecursive3(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'MensagemIncludeFromMensagemRecursive4'
+
+
+class MensagemArgsFromUsuarioRecursive4(TypedDict, total=False):
+    """Arguments for Usuario"""
+    
+    
+
+class FindManyMensagemArgsFromUsuario(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive1'
+
+
+class FindManyMensagemArgsFromUsuarioRecursive1(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive2'
+
+
+class FindManyMensagemArgsFromUsuarioRecursive2(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive3'
+
+
+class FindManyMensagemArgsFromUsuarioRecursive3(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive4'
+
+
+class FindManyMensagemArgsFromUsuarioRecursive4(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    
+
+
+FindManyUsuarioArgs = FindManyUsuarioArgsFromUsuario
+FindFirstUsuarioArgs = FindManyUsuarioArgsFromUsuario
+
+
+    
+
+class UsuarioWhereInput(TypedDict, total=False):
+    """Usuario arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    nome: Union[None, _str, 'types.StringFilter']
+    email: Union[None, _str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+    sessoes: 'SessaoListRelationFilter'
+
+    # should be noted that AND and NOT should be Union['UsuarioWhereInputRecursive1', List['UsuarioWhereInputRecursive1']]
+    # but this causes mypy to hang :/
+    AND: List['UsuarioWhereInputRecursive1']
+    OR: List['UsuarioWhereInputRecursive1']
+    NOT: List['UsuarioWhereInputRecursive1']
+
+
+class UsuarioWhereInputRecursive1(TypedDict, total=False):
+    """Usuario arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    nome: Union[None, _str, 'types.StringFilter']
+    email: Union[None, _str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+    sessoes: 'SessaoListRelationFilter'
+
+    # should be noted that AND and NOT should be Union['UsuarioWhereInputRecursive2', List['UsuarioWhereInputRecursive2']]
+    # but this causes mypy to hang :/
+    AND: List['UsuarioWhereInputRecursive2']
+    OR: List['UsuarioWhereInputRecursive2']
+    NOT: List['UsuarioWhereInputRecursive2']
+
+
+class UsuarioWhereInputRecursive2(TypedDict, total=False):
+    """Usuario arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    nome: Union[None, _str, 'types.StringFilter']
+    email: Union[None, _str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+    sessoes: 'SessaoListRelationFilter'
+
+    # should be noted that AND and NOT should be Union['UsuarioWhereInputRecursive3', List['UsuarioWhereInputRecursive3']]
+    # but this causes mypy to hang :/
+    AND: List['UsuarioWhereInputRecursive3']
+    OR: List['UsuarioWhereInputRecursive3']
+    NOT: List['UsuarioWhereInputRecursive3']
+
+
+class UsuarioWhereInputRecursive3(TypedDict, total=False):
+    """Usuario arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    nome: Union[None, _str, 'types.StringFilter']
+    email: Union[None, _str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+    sessoes: 'SessaoListRelationFilter'
+
+    # should be noted that AND and NOT should be Union['UsuarioWhereInputRecursive4', List['UsuarioWhereInputRecursive4']]
+    # but this causes mypy to hang :/
+    AND: List['UsuarioWhereInputRecursive4']
+    OR: List['UsuarioWhereInputRecursive4']
+    NOT: List['UsuarioWhereInputRecursive4']
+
+
+class UsuarioWhereInputRecursive4(TypedDict, total=False):
+    """Usuario arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    nome: Union[None, _str, 'types.StringFilter']
+    email: Union[None, _str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+    sessoes: 'SessaoListRelationFilter'
+
+
+
+# aggregate Usuario types
+
+
+    
+
+class UsuarioScalarWhereWithAggregatesInput(TypedDict, total=False):
+    """Usuario arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    nome: Union[_str, 'types.StringWithAggregatesFilter']
+    email: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['UsuarioScalarWhereWithAggregatesInputRecursive1']
+    OR: List['UsuarioScalarWhereWithAggregatesInputRecursive1']
+    NOT: List['UsuarioScalarWhereWithAggregatesInputRecursive1']
+
+
+class UsuarioScalarWhereWithAggregatesInputRecursive1(TypedDict, total=False):
+    """Usuario arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    nome: Union[_str, 'types.StringWithAggregatesFilter']
+    email: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['UsuarioScalarWhereWithAggregatesInputRecursive2']
+    OR: List['UsuarioScalarWhereWithAggregatesInputRecursive2']
+    NOT: List['UsuarioScalarWhereWithAggregatesInputRecursive2']
+
+
+class UsuarioScalarWhereWithAggregatesInputRecursive2(TypedDict, total=False):
+    """Usuario arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    nome: Union[_str, 'types.StringWithAggregatesFilter']
+    email: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['UsuarioScalarWhereWithAggregatesInputRecursive3']
+    OR: List['UsuarioScalarWhereWithAggregatesInputRecursive3']
+    NOT: List['UsuarioScalarWhereWithAggregatesInputRecursive3']
+
+
+class UsuarioScalarWhereWithAggregatesInputRecursive3(TypedDict, total=False):
+    """Usuario arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    nome: Union[_str, 'types.StringWithAggregatesFilter']
+    email: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['UsuarioScalarWhereWithAggregatesInputRecursive4']
+    OR: List['UsuarioScalarWhereWithAggregatesInputRecursive4']
+    NOT: List['UsuarioScalarWhereWithAggregatesInputRecursive4']
+
+
+class UsuarioScalarWhereWithAggregatesInputRecursive4(TypedDict, total=False):
+    """Usuario arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    nome: Union[_str, 'types.StringWithAggregatesFilter']
+    email: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+
+
+class UsuarioGroupByOutput(TypedDict, total=False):
+    id: _int
+    nome: _str
+    email: _str
+    criadoEm: datetime.datetime
+    _sum: 'UsuarioSumAggregateOutput'
+    _avg: 'UsuarioAvgAggregateOutput'
+    _min: 'UsuarioMinAggregateOutput'
+    _max: 'UsuarioMaxAggregateOutput'
+    _count: 'UsuarioCountAggregateOutput'
+
+
+class UsuarioAvgAggregateOutput(TypedDict, total=False):
+    """Usuario output for aggregating averages"""
+    id: float
+
+
+class UsuarioSumAggregateOutput(TypedDict, total=False):
+    """Usuario output for aggregating sums"""
+    id: _int
+
+
+class UsuarioScalarAggregateOutput(TypedDict, total=False):
+    """Usuario output including scalar fields"""
+    id: _int
+    nome: _str
+    email: _str
+    criadoEm: datetime.datetime
+
+
+UsuarioMinAggregateOutput = UsuarioScalarAggregateOutput
+UsuarioMaxAggregateOutput = UsuarioScalarAggregateOutput
+
+
+class UsuarioMaxAggregateInput(TypedDict, total=False):
+    """Usuario input for aggregating by max"""
+    id: bool
+    nome: bool
+    email: bool
+    criadoEm: bool
+
+
+class UsuarioMinAggregateInput(TypedDict, total=False):
+    """Usuario input for aggregating by min"""
+    id: bool
+    nome: bool
+    email: bool
+    criadoEm: bool
+
+
+class UsuarioNumberAggregateInput(TypedDict, total=False):
+    """Usuario input for aggregating numbers"""
+    id: bool
+
+
+UsuarioAvgAggregateInput = UsuarioNumberAggregateInput
+UsuarioSumAggregateInput = UsuarioNumberAggregateInput
+
+
+UsuarioCountAggregateInput = TypedDict(
+    'UsuarioCountAggregateInput',
+    {
+        'id': bool,
+        'nome': bool,
+        'email': bool,
+        'criadoEm': bool,
+        '_all': bool,
+    },
+    total=False,
+)
+
+UsuarioCountAggregateOutput = TypedDict(
+    'UsuarioCountAggregateOutput',
+    {
+        'id': int,
+        'nome': int,
+        'email': int,
+        'criadoEm': int,
+        '_all': int,
+    },
+    total=False,
+)
+
+
+UsuarioKeys = Literal[
+    'id',
+    'nome',
+    'email',
+    'criadoEm',
+    'sessoes',
+]
+UsuarioScalarFieldKeys = Literal[
+    'id',
+    'nome',
+    'email',
+    'criadoEm',
+]
+UsuarioScalarFieldKeysT = TypeVar('UsuarioScalarFieldKeysT', bound=UsuarioScalarFieldKeys)
+
+UsuarioRelationalFieldKeys = Literal[
+        'sessoes',
+    ]
+
+# Sessao types
+
+class SessaoOptionalCreateInput(TypedDict, total=False):
+    """Optional arguments to the Sessao create method"""
+    id: _int
+    usuario: 'UsuarioCreateNestedWithoutRelationsInput'
+    usuarioId: Optional[_int]
+    criadoEm: datetime.datetime
+    mensagens: 'MensagemCreateManyNestedWithoutRelationsInput'
+    fluxo: 'FluxoConversaCreateManyNestedWithoutRelationsInput'
+
+
+class SessaoCreateInput(SessaoOptionalCreateInput):
+    """Required arguments to the Sessao create method"""
+    token: _str
+
+
+# TODO: remove this in favour of without explicit relations
+# e.g. PostCreateWithoutAuthorInput
+
+class SessaoOptionalCreateWithoutRelationsInput(TypedDict, total=False):
+    """Optional arguments to the Sessao create method, without relations"""
+    id: _int
+    usuarioId: Optional[_int]
+    criadoEm: datetime.datetime
+
+
+class SessaoCreateWithoutRelationsInput(SessaoOptionalCreateWithoutRelationsInput):
+    """Required arguments to the Sessao create method, without relations"""
+    token: _str
+
+class SessaoConnectOrCreateWithoutRelationsInput(TypedDict):
+    create: 'SessaoCreateWithoutRelationsInput'
+    where: 'SessaoWhereUniqueInput'
+
+class SessaoCreateNestedWithoutRelationsInput(TypedDict, total=False):
+    create: 'SessaoCreateWithoutRelationsInput'
+    connect: 'SessaoWhereUniqueInput'
+    connect_or_create: 'SessaoConnectOrCreateWithoutRelationsInput'
+
+
+class SessaoCreateManyNestedWithoutRelationsInput(TypedDict, total=False):
+    create: Union['SessaoCreateWithoutRelationsInput', List['SessaoCreateWithoutRelationsInput']]
+    connect: Union['SessaoWhereUniqueInput', List['SessaoWhereUniqueInput']]
+    connect_or_create: Union['SessaoConnectOrCreateWithoutRelationsInput', List['SessaoConnectOrCreateWithoutRelationsInput']]
+
+_SessaoWhereUnique_id_Input = TypedDict(
+    '_SessaoWhereUnique_id_Input',
+    {
+        'id': '_int',
+    },
+    total=True
+)
+
+_SessaoWhereUnique_token_Input = TypedDict(
+    '_SessaoWhereUnique_token_Input',
+    {
+        'token': '_str',
+    },
+    total=True
+)
+
+SessaoWhereUniqueInput = Union[
+    '_SessaoWhereUnique_id_Input',
+    '_SessaoWhereUnique_token_Input',
+]
+
+
+class SessaoUpdateInput(TypedDict, total=False):
+    """Optional arguments for updating a record"""
+    id: Union[AtomicIntInput, _int]
+    token: _str
+    usuario: 'UsuarioUpdateOneWithoutRelationsInput'
+    criadoEm: datetime.datetime
+    mensagens: 'MensagemUpdateManyWithoutRelationsInput'
+    fluxo: 'FluxoConversaUpdateManyWithoutRelationsInput'
+
+
+class SessaoUpdateManyMutationInput(TypedDict, total=False):
+    """Arguments for updating many records"""
+    id: Union[AtomicIntInput, _int]
+    token: _str
+    criadoEm: datetime.datetime
+
+
+class SessaoUpdateManyWithoutRelationsInput(TypedDict, total=False):
+    create: List['SessaoCreateWithoutRelationsInput']
+    connect: List['SessaoWhereUniqueInput']
+    connect_or_create: List['SessaoConnectOrCreateWithoutRelationsInput']
+    set: List['SessaoWhereUniqueInput']
+    disconnect: List['SessaoWhereUniqueInput']
+    delete: List['SessaoWhereUniqueInput']
+
+    # TODO
+    # update: List['SessaoUpdateWithWhereUniqueWithoutRelationsInput']
+    # updateMany: List['SessaoUpdateManyWithWhereUniqueWithoutRelationsInput']
+    # deleteMany: List['SessaoScalarWhereInput']
+    # upsert: List['SessaoUpserteWithWhereUniqueWithoutRelationsInput']
+
+
+class SessaoUpdateOneWithoutRelationsInput(TypedDict, total=False):
+    create: 'SessaoCreateWithoutRelationsInput'
+    connect: 'SessaoWhereUniqueInput'
+    connect_or_create: 'SessaoConnectOrCreateWithoutRelationsInput'
+    disconnect: bool
+    delete: bool
+
+    # TODO
+    # update: 'SessaoUpdateInput'
+    # upsert: 'SessaoUpsertWithoutRelationsInput'
+
+
+class SessaoUpsertInput(TypedDict):
+    create: 'SessaoCreateInput'
+    update: 'SessaoUpdateInput'  # pyright: ignore[reportIncompatibleMethodOverride]
+
+
+_Sessao_id_OrderByInput = TypedDict(
+    '_Sessao_id_OrderByInput',
+    {
+        'id': 'SortOrder',
+    },
+    total=True
+)
+
+_Sessao_token_OrderByInput = TypedDict(
+    '_Sessao_token_OrderByInput',
+    {
+        'token': 'SortOrder',
+    },
+    total=True
+)
+
+_Sessao_usuarioId_OrderByInput = TypedDict(
+    '_Sessao_usuarioId_OrderByInput',
+    {
+        'usuarioId': 'SortOrder',
+    },
+    total=True
+)
+
+_Sessao_criadoEm_OrderByInput = TypedDict(
+    '_Sessao_criadoEm_OrderByInput',
+    {
+        'criadoEm': 'SortOrder',
+    },
+    total=True
+)
+
+SessaoOrderByInput = Union[
+    '_Sessao_id_OrderByInput',
+    '_Sessao_token_OrderByInput',
+    '_Sessao_usuarioId_OrderByInput',
+    '_Sessao_criadoEm_OrderByInput',
+]
+
+
+
+# recursive Sessao types
+# TODO: cleanup these types
+
+
+# Dict[str, Any] is a mypy limitation
+# see https://github.com/RobertCraigie/prisma-client-py/issues/45
+# switch to pyright for improved types, see https://prisma-client-py.readthedocs.io/en/stable/reference/limitations/
+
+SessaoRelationFilter = TypedDict(
+    'SessaoRelationFilter',
+    {
+        'is': 'Dict[str, Any]',
+        'is_not': 'Dict[str, Any]',
+    },
+    total=False,
+)
+
+
+class SessaoListRelationFilter(TypedDict, total=False):
+    some: 'Dict[str, Any]'
+    none: 'Dict[str, Any]'
+    every: 'Dict[str, Any]'
+
+
+class SessaoInclude(TypedDict, total=False):
+    """Sessao relational arguments"""
+    usuario: Union[bool, 'UsuarioArgsFromSessao']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromSessao']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromSessao']
+
+
+    
+
+class KnowledgeBaseIncludeFromSessao(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+
+
+class KnowledgeBaseIncludeFromSessaoRecursive1(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+
+
+class KnowledgeBaseIncludeFromSessaoRecursive2(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+
+
+class KnowledgeBaseIncludeFromSessaoRecursive3(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+
+
+class KnowledgeBaseIncludeFromSessaoRecursive4(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+
+    
+
+class KnowledgeBaseArgsFromSessao(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive1'
+
+
+class KnowledgeBaseArgsFromSessaoRecursive1(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive2'
+
+
+class KnowledgeBaseArgsFromSessaoRecursive2(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive3'
+
+
+class KnowledgeBaseArgsFromSessaoRecursive3(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive4'
+
+
+class KnowledgeBaseArgsFromSessaoRecursive4(TypedDict, total=False):
+    """Arguments for Sessao"""
+    
+    
+
+class FindManyKnowledgeBaseArgsFromSessao(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive1'
+
+
+class FindManyKnowledgeBaseArgsFromSessaoRecursive1(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive2'
+
+
+class FindManyKnowledgeBaseArgsFromSessaoRecursive2(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive3'
+
+
+class FindManyKnowledgeBaseArgsFromSessaoRecursive3(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive4'
+
+
+class FindManyKnowledgeBaseArgsFromSessaoRecursive4(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    
+    
+
+class UsuarioIncludeFromSessao(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromSessaoRecursive1']
+
+
+class UsuarioIncludeFromSessaoRecursive1(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromSessaoRecursive2']
+
+
+class UsuarioIncludeFromSessaoRecursive2(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromSessaoRecursive3']
+
+
+class UsuarioIncludeFromSessaoRecursive3(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromSessaoRecursive4']
+
+
+class UsuarioIncludeFromSessaoRecursive4(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+
+    
+
+class UsuarioArgsFromSessao(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'UsuarioIncludeFromUsuarioRecursive1'
+
+
+class UsuarioArgsFromSessaoRecursive1(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'UsuarioIncludeFromUsuarioRecursive2'
+
+
+class UsuarioArgsFromSessaoRecursive2(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'UsuarioIncludeFromUsuarioRecursive3'
+
+
+class UsuarioArgsFromSessaoRecursive3(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'UsuarioIncludeFromUsuarioRecursive4'
+
+
+class UsuarioArgsFromSessaoRecursive4(TypedDict, total=False):
+    """Arguments for Sessao"""
+    
+    
+
+class FindManyUsuarioArgsFromSessao(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive1'
+
+
+class FindManyUsuarioArgsFromSessaoRecursive1(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive2'
+
+
+class FindManyUsuarioArgsFromSessaoRecursive2(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive3'
+
+
+class FindManyUsuarioArgsFromSessaoRecursive3(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive4'
+
+
+class FindManyUsuarioArgsFromSessaoRecursive4(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    
+    
+
+class SessaoIncludeFromSessao(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    usuario: Union[bool, 'UsuarioArgsFromSessaoRecursive1']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromSessaoRecursive1']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromSessaoRecursive1']
+
+
+class SessaoIncludeFromSessaoRecursive1(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    usuario: Union[bool, 'UsuarioArgsFromSessaoRecursive2']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromSessaoRecursive2']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromSessaoRecursive2']
+
+
+class SessaoIncludeFromSessaoRecursive2(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    usuario: Union[bool, 'UsuarioArgsFromSessaoRecursive3']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromSessaoRecursive3']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromSessaoRecursive3']
+
+
+class SessaoIncludeFromSessaoRecursive3(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    usuario: Union[bool, 'UsuarioArgsFromSessaoRecursive4']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromSessaoRecursive4']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromSessaoRecursive4']
+
+
+class SessaoIncludeFromSessaoRecursive4(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+
+    
+
+class SessaoArgsFromSessao(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'SessaoIncludeFromSessaoRecursive1'
+
+
+class SessaoArgsFromSessaoRecursive1(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'SessaoIncludeFromSessaoRecursive2'
+
+
+class SessaoArgsFromSessaoRecursive2(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'SessaoIncludeFromSessaoRecursive3'
+
+
+class SessaoArgsFromSessaoRecursive3(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'SessaoIncludeFromSessaoRecursive4'
+
+
+class SessaoArgsFromSessaoRecursive4(TypedDict, total=False):
+    """Arguments for Sessao"""
+    
+    
+
+class FindManySessaoArgsFromSessao(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive1'
+
+
+class FindManySessaoArgsFromSessaoRecursive1(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive2'
+
+
+class FindManySessaoArgsFromSessaoRecursive2(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive3'
+
+
+class FindManySessaoArgsFromSessaoRecursive3(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive4'
+
+
+class FindManySessaoArgsFromSessaoRecursive4(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    
+    
+
+class FluxoConversaIncludeFromSessao(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    sessao: Union[bool, 'SessaoArgsFromSessaoRecursive1']
+
+
+class FluxoConversaIncludeFromSessaoRecursive1(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    sessao: Union[bool, 'SessaoArgsFromSessaoRecursive2']
+
+
+class FluxoConversaIncludeFromSessaoRecursive2(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    sessao: Union[bool, 'SessaoArgsFromSessaoRecursive3']
+
+
+class FluxoConversaIncludeFromSessaoRecursive3(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    sessao: Union[bool, 'SessaoArgsFromSessaoRecursive4']
+
+
+class FluxoConversaIncludeFromSessaoRecursive4(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+
+    
+
+class FluxoConversaArgsFromSessao(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive1'
+
+
+class FluxoConversaArgsFromSessaoRecursive1(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive2'
+
+
+class FluxoConversaArgsFromSessaoRecursive2(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive3'
+
+
+class FluxoConversaArgsFromSessaoRecursive3(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive4'
+
+
+class FluxoConversaArgsFromSessaoRecursive4(TypedDict, total=False):
+    """Arguments for Sessao"""
+    
+    
+
+class FindManyFluxoConversaArgsFromSessao(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive1'
+
+
+class FindManyFluxoConversaArgsFromSessaoRecursive1(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive2'
+
+
+class FindManyFluxoConversaArgsFromSessaoRecursive2(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive3'
+
+
+class FindManyFluxoConversaArgsFromSessaoRecursive3(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive4'
+
+
+class FindManyFluxoConversaArgsFromSessaoRecursive4(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    
+    
+
+class MensagemIncludeFromSessao(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    sessao: Union[bool, 'SessaoArgsFromSessaoRecursive1']
+
+
+class MensagemIncludeFromSessaoRecursive1(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    sessao: Union[bool, 'SessaoArgsFromSessaoRecursive2']
+
+
+class MensagemIncludeFromSessaoRecursive2(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    sessao: Union[bool, 'SessaoArgsFromSessaoRecursive3']
+
+
+class MensagemIncludeFromSessaoRecursive3(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    sessao: Union[bool, 'SessaoArgsFromSessaoRecursive4']
+
+
+class MensagemIncludeFromSessaoRecursive4(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+
+    
+
+class MensagemArgsFromSessao(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'MensagemIncludeFromMensagemRecursive1'
+
+
+class MensagemArgsFromSessaoRecursive1(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'MensagemIncludeFromMensagemRecursive2'
+
+
+class MensagemArgsFromSessaoRecursive2(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'MensagemIncludeFromMensagemRecursive3'
+
+
+class MensagemArgsFromSessaoRecursive3(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'MensagemIncludeFromMensagemRecursive4'
+
+
+class MensagemArgsFromSessaoRecursive4(TypedDict, total=False):
+    """Arguments for Sessao"""
+    
+    
+
+class FindManyMensagemArgsFromSessao(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive1'
+
+
+class FindManyMensagemArgsFromSessaoRecursive1(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive2'
+
+
+class FindManyMensagemArgsFromSessaoRecursive2(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive3'
+
+
+class FindManyMensagemArgsFromSessaoRecursive3(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive4'
+
+
+class FindManyMensagemArgsFromSessaoRecursive4(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    
+
+
+FindManySessaoArgs = FindManySessaoArgsFromSessao
+FindFirstSessaoArgs = FindManySessaoArgsFromSessao
+
+
+    
+
+class SessaoWhereInput(TypedDict, total=False):
+    """Sessao arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    token: Union[_str, 'types.StringFilter']
+    usuario: 'UsuarioRelationFilter'
+    usuarioId: Union[None, _int, 'types.IntFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+    mensagens: 'MensagemListRelationFilter'
+    fluxo: 'FluxoConversaListRelationFilter'
+
+    # should be noted that AND and NOT should be Union['SessaoWhereInputRecursive1', List['SessaoWhereInputRecursive1']]
+    # but this causes mypy to hang :/
+    AND: List['SessaoWhereInputRecursive1']
+    OR: List['SessaoWhereInputRecursive1']
+    NOT: List['SessaoWhereInputRecursive1']
+
+
+class SessaoWhereInputRecursive1(TypedDict, total=False):
+    """Sessao arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    token: Union[_str, 'types.StringFilter']
+    usuario: 'UsuarioRelationFilter'
+    usuarioId: Union[None, _int, 'types.IntFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+    mensagens: 'MensagemListRelationFilter'
+    fluxo: 'FluxoConversaListRelationFilter'
+
+    # should be noted that AND and NOT should be Union['SessaoWhereInputRecursive2', List['SessaoWhereInputRecursive2']]
+    # but this causes mypy to hang :/
+    AND: List['SessaoWhereInputRecursive2']
+    OR: List['SessaoWhereInputRecursive2']
+    NOT: List['SessaoWhereInputRecursive2']
+
+
+class SessaoWhereInputRecursive2(TypedDict, total=False):
+    """Sessao arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    token: Union[_str, 'types.StringFilter']
+    usuario: 'UsuarioRelationFilter'
+    usuarioId: Union[None, _int, 'types.IntFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+    mensagens: 'MensagemListRelationFilter'
+    fluxo: 'FluxoConversaListRelationFilter'
+
+    # should be noted that AND and NOT should be Union['SessaoWhereInputRecursive3', List['SessaoWhereInputRecursive3']]
+    # but this causes mypy to hang :/
+    AND: List['SessaoWhereInputRecursive3']
+    OR: List['SessaoWhereInputRecursive3']
+    NOT: List['SessaoWhereInputRecursive3']
+
+
+class SessaoWhereInputRecursive3(TypedDict, total=False):
+    """Sessao arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    token: Union[_str, 'types.StringFilter']
+    usuario: 'UsuarioRelationFilter'
+    usuarioId: Union[None, _int, 'types.IntFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+    mensagens: 'MensagemListRelationFilter'
+    fluxo: 'FluxoConversaListRelationFilter'
+
+    # should be noted that AND and NOT should be Union['SessaoWhereInputRecursive4', List['SessaoWhereInputRecursive4']]
+    # but this causes mypy to hang :/
+    AND: List['SessaoWhereInputRecursive4']
+    OR: List['SessaoWhereInputRecursive4']
+    NOT: List['SessaoWhereInputRecursive4']
+
+
+class SessaoWhereInputRecursive4(TypedDict, total=False):
+    """Sessao arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    token: Union[_str, 'types.StringFilter']
+    usuario: 'UsuarioRelationFilter'
+    usuarioId: Union[None, _int, 'types.IntFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+    mensagens: 'MensagemListRelationFilter'
+    fluxo: 'FluxoConversaListRelationFilter'
+
+
+
+# aggregate Sessao types
+
+
+    
+
+class SessaoScalarWhereWithAggregatesInput(TypedDict, total=False):
+    """Sessao arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    token: Union[_str, 'types.StringWithAggregatesFilter']
+    usuarioId: Union[_int, 'types.IntWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['SessaoScalarWhereWithAggregatesInputRecursive1']
+    OR: List['SessaoScalarWhereWithAggregatesInputRecursive1']
+    NOT: List['SessaoScalarWhereWithAggregatesInputRecursive1']
+
+
+class SessaoScalarWhereWithAggregatesInputRecursive1(TypedDict, total=False):
+    """Sessao arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    token: Union[_str, 'types.StringWithAggregatesFilter']
+    usuarioId: Union[_int, 'types.IntWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['SessaoScalarWhereWithAggregatesInputRecursive2']
+    OR: List['SessaoScalarWhereWithAggregatesInputRecursive2']
+    NOT: List['SessaoScalarWhereWithAggregatesInputRecursive2']
+
+
+class SessaoScalarWhereWithAggregatesInputRecursive2(TypedDict, total=False):
+    """Sessao arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    token: Union[_str, 'types.StringWithAggregatesFilter']
+    usuarioId: Union[_int, 'types.IntWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['SessaoScalarWhereWithAggregatesInputRecursive3']
+    OR: List['SessaoScalarWhereWithAggregatesInputRecursive3']
+    NOT: List['SessaoScalarWhereWithAggregatesInputRecursive3']
+
+
+class SessaoScalarWhereWithAggregatesInputRecursive3(TypedDict, total=False):
+    """Sessao arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    token: Union[_str, 'types.StringWithAggregatesFilter']
+    usuarioId: Union[_int, 'types.IntWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['SessaoScalarWhereWithAggregatesInputRecursive4']
+    OR: List['SessaoScalarWhereWithAggregatesInputRecursive4']
+    NOT: List['SessaoScalarWhereWithAggregatesInputRecursive4']
+
+
+class SessaoScalarWhereWithAggregatesInputRecursive4(TypedDict, total=False):
+    """Sessao arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    token: Union[_str, 'types.StringWithAggregatesFilter']
+    usuarioId: Union[_int, 'types.IntWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+
+
+class SessaoGroupByOutput(TypedDict, total=False):
+    id: _int
+    token: _str
+    usuarioId: _int
+    criadoEm: datetime.datetime
+    _sum: 'SessaoSumAggregateOutput'
+    _avg: 'SessaoAvgAggregateOutput'
+    _min: 'SessaoMinAggregateOutput'
+    _max: 'SessaoMaxAggregateOutput'
+    _count: 'SessaoCountAggregateOutput'
+
+
+class SessaoAvgAggregateOutput(TypedDict, total=False):
+    """Sessao output for aggregating averages"""
+    id: float
+    usuarioId: float
+
+
+class SessaoSumAggregateOutput(TypedDict, total=False):
+    """Sessao output for aggregating sums"""
+    id: _int
+    usuarioId: _int
+
+
+class SessaoScalarAggregateOutput(TypedDict, total=False):
+    """Sessao output including scalar fields"""
+    id: _int
+    token: _str
+    usuarioId: _int
+    criadoEm: datetime.datetime
+
+
+SessaoMinAggregateOutput = SessaoScalarAggregateOutput
+SessaoMaxAggregateOutput = SessaoScalarAggregateOutput
+
+
+class SessaoMaxAggregateInput(TypedDict, total=False):
+    """Sessao input for aggregating by max"""
+    id: bool
+    token: bool
+    usuarioId: bool
+    criadoEm: bool
+
+
+class SessaoMinAggregateInput(TypedDict, total=False):
+    """Sessao input for aggregating by min"""
+    id: bool
+    token: bool
+    usuarioId: bool
+    criadoEm: bool
+
+
+class SessaoNumberAggregateInput(TypedDict, total=False):
+    """Sessao input for aggregating numbers"""
+    id: bool
+    usuarioId: bool
+
+
+SessaoAvgAggregateInput = SessaoNumberAggregateInput
+SessaoSumAggregateInput = SessaoNumberAggregateInput
+
+
+SessaoCountAggregateInput = TypedDict(
+    'SessaoCountAggregateInput',
+    {
+        'id': bool,
+        'token': bool,
+        'usuarioId': bool,
+        'criadoEm': bool,
+        '_all': bool,
+    },
+    total=False,
+)
+
+SessaoCountAggregateOutput = TypedDict(
+    'SessaoCountAggregateOutput',
+    {
+        'id': int,
+        'token': int,
+        'usuarioId': int,
+        'criadoEm': int,
+        '_all': int,
+    },
+    total=False,
+)
+
+
+SessaoKeys = Literal[
+    'id',
+    'token',
+    'usuario',
+    'usuarioId',
+    'criadoEm',
+    'mensagens',
+    'fluxo',
+]
+SessaoScalarFieldKeys = Literal[
+    'id',
+    'token',
+    'usuarioId',
+    'criadoEm',
+]
+SessaoScalarFieldKeysT = TypeVar('SessaoScalarFieldKeysT', bound=SessaoScalarFieldKeys)
+
+SessaoRelationalFieldKeys = Literal[
+        'usuario',
+        'mensagens',
+        'fluxo',
+    ]
+
+# FluxoConversa types
+
+class FluxoConversaOptionalCreateInput(TypedDict, total=False):
+    """Optional arguments to the FluxoConversa create method"""
+    id: _int
+    sessao: 'SessaoCreateNestedWithoutRelationsInput'
+    sessaoId: _int
+    pedido: Optional[_str]
+    criadoEm: datetime.datetime
+
+
+class FluxoConversaCreateInput(FluxoConversaOptionalCreateInput):
+    """Required arguments to the FluxoConversa create method"""
+    etapa: _str
+    intencao: _str
+
+
+# TODO: remove this in favour of without explicit relations
+# e.g. PostCreateWithoutAuthorInput
+
+class FluxoConversaOptionalCreateWithoutRelationsInput(TypedDict, total=False):
+    """Optional arguments to the FluxoConversa create method, without relations"""
+    id: _int
+    sessaoId: _int
+    pedido: Optional[_str]
+    criadoEm: datetime.datetime
+
+
+class FluxoConversaCreateWithoutRelationsInput(FluxoConversaOptionalCreateWithoutRelationsInput):
+    """Required arguments to the FluxoConversa create method, without relations"""
+    etapa: _str
+    intencao: _str
+
+class FluxoConversaConnectOrCreateWithoutRelationsInput(TypedDict):
+    create: 'FluxoConversaCreateWithoutRelationsInput'
+    where: 'FluxoConversaWhereUniqueInput'
+
+class FluxoConversaCreateNestedWithoutRelationsInput(TypedDict, total=False):
+    create: 'FluxoConversaCreateWithoutRelationsInput'
+    connect: 'FluxoConversaWhereUniqueInput'
+    connect_or_create: 'FluxoConversaConnectOrCreateWithoutRelationsInput'
+
+
+class FluxoConversaCreateManyNestedWithoutRelationsInput(TypedDict, total=False):
+    create: Union['FluxoConversaCreateWithoutRelationsInput', List['FluxoConversaCreateWithoutRelationsInput']]
+    connect: Union['FluxoConversaWhereUniqueInput', List['FluxoConversaWhereUniqueInput']]
+    connect_or_create: Union['FluxoConversaConnectOrCreateWithoutRelationsInput', List['FluxoConversaConnectOrCreateWithoutRelationsInput']]
+
+_FluxoConversaWhereUnique_id_Input = TypedDict(
+    '_FluxoConversaWhereUnique_id_Input',
+    {
+        'id': '_int',
+    },
+    total=True
+)
+
+FluxoConversaWhereUniqueInput = _FluxoConversaWhereUnique_id_Input
+
+
+class FluxoConversaUpdateInput(TypedDict, total=False):
+    """Optional arguments for updating a record"""
+    id: Union[AtomicIntInput, _int]
+    sessao: 'SessaoUpdateOneWithoutRelationsInput'
+    etapa: _str
+    intencao: _str
+    pedido: Optional[_str]
+    criadoEm: datetime.datetime
+
+
+class FluxoConversaUpdateManyMutationInput(TypedDict, total=False):
+    """Arguments for updating many records"""
+    id: Union[AtomicIntInput, _int]
+    etapa: _str
+    intencao: _str
+    pedido: Optional[_str]
+    criadoEm: datetime.datetime
+
+
+class FluxoConversaUpdateManyWithoutRelationsInput(TypedDict, total=False):
+    create: List['FluxoConversaCreateWithoutRelationsInput']
+    connect: List['FluxoConversaWhereUniqueInput']
+    connect_or_create: List['FluxoConversaConnectOrCreateWithoutRelationsInput']
+    set: List['FluxoConversaWhereUniqueInput']
+    disconnect: List['FluxoConversaWhereUniqueInput']
+    delete: List['FluxoConversaWhereUniqueInput']
+
+    # TODO
+    # update: List['FluxoConversaUpdateWithWhereUniqueWithoutRelationsInput']
+    # updateMany: List['FluxoConversaUpdateManyWithWhereUniqueWithoutRelationsInput']
+    # deleteMany: List['FluxoConversaScalarWhereInput']
+    # upsert: List['FluxoConversaUpserteWithWhereUniqueWithoutRelationsInput']
+
+
+class FluxoConversaUpdateOneWithoutRelationsInput(TypedDict, total=False):
+    create: 'FluxoConversaCreateWithoutRelationsInput'
+    connect: 'FluxoConversaWhereUniqueInput'
+    connect_or_create: 'FluxoConversaConnectOrCreateWithoutRelationsInput'
+    disconnect: bool
+    delete: bool
+
+    # TODO
+    # update: 'FluxoConversaUpdateInput'
+    # upsert: 'FluxoConversaUpsertWithoutRelationsInput'
+
+
+class FluxoConversaUpsertInput(TypedDict):
+    create: 'FluxoConversaCreateInput'
+    update: 'FluxoConversaUpdateInput'  # pyright: ignore[reportIncompatibleMethodOverride]
+
+
+_FluxoConversa_id_OrderByInput = TypedDict(
+    '_FluxoConversa_id_OrderByInput',
+    {
+        'id': 'SortOrder',
+    },
+    total=True
+)
+
+_FluxoConversa_sessaoId_OrderByInput = TypedDict(
+    '_FluxoConversa_sessaoId_OrderByInput',
+    {
+        'sessaoId': 'SortOrder',
+    },
+    total=True
+)
+
+_FluxoConversa_etapa_OrderByInput = TypedDict(
+    '_FluxoConversa_etapa_OrderByInput',
+    {
+        'etapa': 'SortOrder',
+    },
+    total=True
+)
+
+_FluxoConversa_intencao_OrderByInput = TypedDict(
+    '_FluxoConversa_intencao_OrderByInput',
+    {
+        'intencao': 'SortOrder',
+    },
+    total=True
+)
+
+_FluxoConversa_pedido_OrderByInput = TypedDict(
+    '_FluxoConversa_pedido_OrderByInput',
+    {
+        'pedido': 'SortOrder',
+    },
+    total=True
+)
+
+_FluxoConversa_criadoEm_OrderByInput = TypedDict(
+    '_FluxoConversa_criadoEm_OrderByInput',
+    {
+        'criadoEm': 'SortOrder',
+    },
+    total=True
+)
+
+FluxoConversaOrderByInput = Union[
+    '_FluxoConversa_id_OrderByInput',
+    '_FluxoConversa_sessaoId_OrderByInput',
+    '_FluxoConversa_etapa_OrderByInput',
+    '_FluxoConversa_intencao_OrderByInput',
+    '_FluxoConversa_pedido_OrderByInput',
+    '_FluxoConversa_criadoEm_OrderByInput',
+]
+
+
+
+# recursive FluxoConversa types
+# TODO: cleanup these types
+
+
+# Dict[str, Any] is a mypy limitation
+# see https://github.com/RobertCraigie/prisma-client-py/issues/45
+# switch to pyright for improved types, see https://prisma-client-py.readthedocs.io/en/stable/reference/limitations/
+
+FluxoConversaRelationFilter = TypedDict(
+    'FluxoConversaRelationFilter',
+    {
+        'is': 'Dict[str, Any]',
+        'is_not': 'Dict[str, Any]',
+    },
+    total=False,
+)
+
+
+class FluxoConversaListRelationFilter(TypedDict, total=False):
+    some: 'Dict[str, Any]'
+    none: 'Dict[str, Any]'
+    every: 'Dict[str, Any]'
+
+
+class FluxoConversaInclude(TypedDict, total=False):
+    """FluxoConversa relational arguments"""
+    sessao: Union[bool, 'SessaoArgsFromFluxoConversa']
+
+
+    
+
+class KnowledgeBaseIncludeFromFluxoConversa(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+
+
+class KnowledgeBaseIncludeFromFluxoConversaRecursive1(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+
+
+class KnowledgeBaseIncludeFromFluxoConversaRecursive2(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+
+
+class KnowledgeBaseIncludeFromFluxoConversaRecursive3(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+
+
+class KnowledgeBaseIncludeFromFluxoConversaRecursive4(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+
+    
+
+class KnowledgeBaseArgsFromFluxoConversa(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive1'
+
+
+class KnowledgeBaseArgsFromFluxoConversaRecursive1(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive2'
+
+
+class KnowledgeBaseArgsFromFluxoConversaRecursive2(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive3'
+
+
+class KnowledgeBaseArgsFromFluxoConversaRecursive3(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive4'
+
+
+class KnowledgeBaseArgsFromFluxoConversaRecursive4(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    
+    
+
+class FindManyKnowledgeBaseArgsFromFluxoConversa(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive1'
+
+
+class FindManyKnowledgeBaseArgsFromFluxoConversaRecursive1(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive2'
+
+
+class FindManyKnowledgeBaseArgsFromFluxoConversaRecursive2(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive3'
+
+
+class FindManyKnowledgeBaseArgsFromFluxoConversaRecursive3(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive4'
+
+
+class FindManyKnowledgeBaseArgsFromFluxoConversaRecursive4(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    
+    
+
+class UsuarioIncludeFromFluxoConversa(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromFluxoConversaRecursive1']
+
+
+class UsuarioIncludeFromFluxoConversaRecursive1(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromFluxoConversaRecursive2']
+
+
+class UsuarioIncludeFromFluxoConversaRecursive2(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromFluxoConversaRecursive3']
+
+
+class UsuarioIncludeFromFluxoConversaRecursive3(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromFluxoConversaRecursive4']
+
+
+class UsuarioIncludeFromFluxoConversaRecursive4(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+
+    
+
+class UsuarioArgsFromFluxoConversa(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'UsuarioIncludeFromUsuarioRecursive1'
+
+
+class UsuarioArgsFromFluxoConversaRecursive1(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'UsuarioIncludeFromUsuarioRecursive2'
+
+
+class UsuarioArgsFromFluxoConversaRecursive2(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'UsuarioIncludeFromUsuarioRecursive3'
+
+
+class UsuarioArgsFromFluxoConversaRecursive3(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'UsuarioIncludeFromUsuarioRecursive4'
+
+
+class UsuarioArgsFromFluxoConversaRecursive4(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    
+    
+
+class FindManyUsuarioArgsFromFluxoConversa(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive1'
+
+
+class FindManyUsuarioArgsFromFluxoConversaRecursive1(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive2'
+
+
+class FindManyUsuarioArgsFromFluxoConversaRecursive2(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive3'
+
+
+class FindManyUsuarioArgsFromFluxoConversaRecursive3(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive4'
+
+
+class FindManyUsuarioArgsFromFluxoConversaRecursive4(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    
+    
+
+class SessaoIncludeFromFluxoConversa(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    usuario: Union[bool, 'UsuarioArgsFromFluxoConversaRecursive1']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromFluxoConversaRecursive1']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromFluxoConversaRecursive1']
+
+
+class SessaoIncludeFromFluxoConversaRecursive1(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    usuario: Union[bool, 'UsuarioArgsFromFluxoConversaRecursive2']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromFluxoConversaRecursive2']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromFluxoConversaRecursive2']
+
+
+class SessaoIncludeFromFluxoConversaRecursive2(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    usuario: Union[bool, 'UsuarioArgsFromFluxoConversaRecursive3']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromFluxoConversaRecursive3']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromFluxoConversaRecursive3']
+
+
+class SessaoIncludeFromFluxoConversaRecursive3(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    usuario: Union[bool, 'UsuarioArgsFromFluxoConversaRecursive4']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromFluxoConversaRecursive4']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromFluxoConversaRecursive4']
+
+
+class SessaoIncludeFromFluxoConversaRecursive4(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+
+    
+
+class SessaoArgsFromFluxoConversa(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'SessaoIncludeFromSessaoRecursive1'
+
+
+class SessaoArgsFromFluxoConversaRecursive1(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'SessaoIncludeFromSessaoRecursive2'
+
+
+class SessaoArgsFromFluxoConversaRecursive2(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'SessaoIncludeFromSessaoRecursive3'
+
+
+class SessaoArgsFromFluxoConversaRecursive3(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'SessaoIncludeFromSessaoRecursive4'
+
+
+class SessaoArgsFromFluxoConversaRecursive4(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    
+    
+
+class FindManySessaoArgsFromFluxoConversa(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive1'
+
+
+class FindManySessaoArgsFromFluxoConversaRecursive1(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive2'
+
+
+class FindManySessaoArgsFromFluxoConversaRecursive2(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive3'
+
+
+class FindManySessaoArgsFromFluxoConversaRecursive3(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive4'
+
+
+class FindManySessaoArgsFromFluxoConversaRecursive4(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    
+    
+
+class FluxoConversaIncludeFromFluxoConversa(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    sessao: Union[bool, 'SessaoArgsFromFluxoConversaRecursive1']
+
+
+class FluxoConversaIncludeFromFluxoConversaRecursive1(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    sessao: Union[bool, 'SessaoArgsFromFluxoConversaRecursive2']
+
+
+class FluxoConversaIncludeFromFluxoConversaRecursive2(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    sessao: Union[bool, 'SessaoArgsFromFluxoConversaRecursive3']
+
+
+class FluxoConversaIncludeFromFluxoConversaRecursive3(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    sessao: Union[bool, 'SessaoArgsFromFluxoConversaRecursive4']
+
+
+class FluxoConversaIncludeFromFluxoConversaRecursive4(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+
+    
+
+class FluxoConversaArgsFromFluxoConversa(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive1'
+
+
+class FluxoConversaArgsFromFluxoConversaRecursive1(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive2'
+
+
+class FluxoConversaArgsFromFluxoConversaRecursive2(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive3'
+
+
+class FluxoConversaArgsFromFluxoConversaRecursive3(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive4'
+
+
+class FluxoConversaArgsFromFluxoConversaRecursive4(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    
+    
+
+class FindManyFluxoConversaArgsFromFluxoConversa(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive1'
+
+
+class FindManyFluxoConversaArgsFromFluxoConversaRecursive1(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive2'
+
+
+class FindManyFluxoConversaArgsFromFluxoConversaRecursive2(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive3'
+
+
+class FindManyFluxoConversaArgsFromFluxoConversaRecursive3(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive4'
+
+
+class FindManyFluxoConversaArgsFromFluxoConversaRecursive4(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    
+    
+
+class MensagemIncludeFromFluxoConversa(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    sessao: Union[bool, 'SessaoArgsFromFluxoConversaRecursive1']
+
+
+class MensagemIncludeFromFluxoConversaRecursive1(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    sessao: Union[bool, 'SessaoArgsFromFluxoConversaRecursive2']
+
+
+class MensagemIncludeFromFluxoConversaRecursive2(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    sessao: Union[bool, 'SessaoArgsFromFluxoConversaRecursive3']
+
+
+class MensagemIncludeFromFluxoConversaRecursive3(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    sessao: Union[bool, 'SessaoArgsFromFluxoConversaRecursive4']
+
+
+class MensagemIncludeFromFluxoConversaRecursive4(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+
+    
+
+class MensagemArgsFromFluxoConversa(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'MensagemIncludeFromMensagemRecursive1'
+
+
+class MensagemArgsFromFluxoConversaRecursive1(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'MensagemIncludeFromMensagemRecursive2'
+
+
+class MensagemArgsFromFluxoConversaRecursive2(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'MensagemIncludeFromMensagemRecursive3'
+
+
+class MensagemArgsFromFluxoConversaRecursive3(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'MensagemIncludeFromMensagemRecursive4'
+
+
+class MensagemArgsFromFluxoConversaRecursive4(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    
+    
+
+class FindManyMensagemArgsFromFluxoConversa(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive1'
+
+
+class FindManyMensagemArgsFromFluxoConversaRecursive1(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive2'
+
+
+class FindManyMensagemArgsFromFluxoConversaRecursive2(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive3'
+
+
+class FindManyMensagemArgsFromFluxoConversaRecursive3(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive4'
+
+
+class FindManyMensagemArgsFromFluxoConversaRecursive4(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    
+
+
+FindManyFluxoConversaArgs = FindManyFluxoConversaArgsFromFluxoConversa
+FindFirstFluxoConversaArgs = FindManyFluxoConversaArgsFromFluxoConversa
+
+
+    
+
+class FluxoConversaWhereInput(TypedDict, total=False):
+    """FluxoConversa arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    sessao: 'SessaoRelationFilter'
+    sessaoId: Union[_int, 'types.IntFilter']
+    etapa: Union[_str, 'types.StringFilter']
+    intencao: Union[_str, 'types.StringFilter']
+    pedido: Union[None, _str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+
+    # should be noted that AND and NOT should be Union['FluxoConversaWhereInputRecursive1', List['FluxoConversaWhereInputRecursive1']]
+    # but this causes mypy to hang :/
+    AND: List['FluxoConversaWhereInputRecursive1']
+    OR: List['FluxoConversaWhereInputRecursive1']
+    NOT: List['FluxoConversaWhereInputRecursive1']
+
+
+class FluxoConversaWhereInputRecursive1(TypedDict, total=False):
+    """FluxoConversa arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    sessao: 'SessaoRelationFilter'
+    sessaoId: Union[_int, 'types.IntFilter']
+    etapa: Union[_str, 'types.StringFilter']
+    intencao: Union[_str, 'types.StringFilter']
+    pedido: Union[None, _str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+
+    # should be noted that AND and NOT should be Union['FluxoConversaWhereInputRecursive2', List['FluxoConversaWhereInputRecursive2']]
+    # but this causes mypy to hang :/
+    AND: List['FluxoConversaWhereInputRecursive2']
+    OR: List['FluxoConversaWhereInputRecursive2']
+    NOT: List['FluxoConversaWhereInputRecursive2']
+
+
+class FluxoConversaWhereInputRecursive2(TypedDict, total=False):
+    """FluxoConversa arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    sessao: 'SessaoRelationFilter'
+    sessaoId: Union[_int, 'types.IntFilter']
+    etapa: Union[_str, 'types.StringFilter']
+    intencao: Union[_str, 'types.StringFilter']
+    pedido: Union[None, _str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+
+    # should be noted that AND and NOT should be Union['FluxoConversaWhereInputRecursive3', List['FluxoConversaWhereInputRecursive3']]
+    # but this causes mypy to hang :/
+    AND: List['FluxoConversaWhereInputRecursive3']
+    OR: List['FluxoConversaWhereInputRecursive3']
+    NOT: List['FluxoConversaWhereInputRecursive3']
+
+
+class FluxoConversaWhereInputRecursive3(TypedDict, total=False):
+    """FluxoConversa arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    sessao: 'SessaoRelationFilter'
+    sessaoId: Union[_int, 'types.IntFilter']
+    etapa: Union[_str, 'types.StringFilter']
+    intencao: Union[_str, 'types.StringFilter']
+    pedido: Union[None, _str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+
+    # should be noted that AND and NOT should be Union['FluxoConversaWhereInputRecursive4', List['FluxoConversaWhereInputRecursive4']]
+    # but this causes mypy to hang :/
+    AND: List['FluxoConversaWhereInputRecursive4']
+    OR: List['FluxoConversaWhereInputRecursive4']
+    NOT: List['FluxoConversaWhereInputRecursive4']
+
+
+class FluxoConversaWhereInputRecursive4(TypedDict, total=False):
+    """FluxoConversa arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    sessao: 'SessaoRelationFilter'
+    sessaoId: Union[_int, 'types.IntFilter']
+    etapa: Union[_str, 'types.StringFilter']
+    intencao: Union[_str, 'types.StringFilter']
+    pedido: Union[None, _str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+
+
+
+# aggregate FluxoConversa types
+
+
+    
+
+class FluxoConversaScalarWhereWithAggregatesInput(TypedDict, total=False):
+    """FluxoConversa arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    sessaoId: Union[_int, 'types.IntWithAggregatesFilter']
+    etapa: Union[_str, 'types.StringWithAggregatesFilter']
+    intencao: Union[_str, 'types.StringWithAggregatesFilter']
+    pedido: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['FluxoConversaScalarWhereWithAggregatesInputRecursive1']
+    OR: List['FluxoConversaScalarWhereWithAggregatesInputRecursive1']
+    NOT: List['FluxoConversaScalarWhereWithAggregatesInputRecursive1']
+
+
+class FluxoConversaScalarWhereWithAggregatesInputRecursive1(TypedDict, total=False):
+    """FluxoConversa arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    sessaoId: Union[_int, 'types.IntWithAggregatesFilter']
+    etapa: Union[_str, 'types.StringWithAggregatesFilter']
+    intencao: Union[_str, 'types.StringWithAggregatesFilter']
+    pedido: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['FluxoConversaScalarWhereWithAggregatesInputRecursive2']
+    OR: List['FluxoConversaScalarWhereWithAggregatesInputRecursive2']
+    NOT: List['FluxoConversaScalarWhereWithAggregatesInputRecursive2']
+
+
+class FluxoConversaScalarWhereWithAggregatesInputRecursive2(TypedDict, total=False):
+    """FluxoConversa arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    sessaoId: Union[_int, 'types.IntWithAggregatesFilter']
+    etapa: Union[_str, 'types.StringWithAggregatesFilter']
+    intencao: Union[_str, 'types.StringWithAggregatesFilter']
+    pedido: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['FluxoConversaScalarWhereWithAggregatesInputRecursive3']
+    OR: List['FluxoConversaScalarWhereWithAggregatesInputRecursive3']
+    NOT: List['FluxoConversaScalarWhereWithAggregatesInputRecursive3']
+
+
+class FluxoConversaScalarWhereWithAggregatesInputRecursive3(TypedDict, total=False):
+    """FluxoConversa arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    sessaoId: Union[_int, 'types.IntWithAggregatesFilter']
+    etapa: Union[_str, 'types.StringWithAggregatesFilter']
+    intencao: Union[_str, 'types.StringWithAggregatesFilter']
+    pedido: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['FluxoConversaScalarWhereWithAggregatesInputRecursive4']
+    OR: List['FluxoConversaScalarWhereWithAggregatesInputRecursive4']
+    NOT: List['FluxoConversaScalarWhereWithAggregatesInputRecursive4']
+
+
+class FluxoConversaScalarWhereWithAggregatesInputRecursive4(TypedDict, total=False):
+    """FluxoConversa arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    sessaoId: Union[_int, 'types.IntWithAggregatesFilter']
+    etapa: Union[_str, 'types.StringWithAggregatesFilter']
+    intencao: Union[_str, 'types.StringWithAggregatesFilter']
+    pedido: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+
+
+class FluxoConversaGroupByOutput(TypedDict, total=False):
+    id: _int
+    sessaoId: _int
+    etapa: _str
+    intencao: _str
+    pedido: _str
+    criadoEm: datetime.datetime
+    _sum: 'FluxoConversaSumAggregateOutput'
+    _avg: 'FluxoConversaAvgAggregateOutput'
+    _min: 'FluxoConversaMinAggregateOutput'
+    _max: 'FluxoConversaMaxAggregateOutput'
+    _count: 'FluxoConversaCountAggregateOutput'
+
+
+class FluxoConversaAvgAggregateOutput(TypedDict, total=False):
+    """FluxoConversa output for aggregating averages"""
+    id: float
+    sessaoId: float
+
+
+class FluxoConversaSumAggregateOutput(TypedDict, total=False):
+    """FluxoConversa output for aggregating sums"""
+    id: _int
+    sessaoId: _int
+
+
+class FluxoConversaScalarAggregateOutput(TypedDict, total=False):
+    """FluxoConversa output including scalar fields"""
+    id: _int
+    sessaoId: _int
+    etapa: _str
+    intencao: _str
+    pedido: _str
+    criadoEm: datetime.datetime
+
+
+FluxoConversaMinAggregateOutput = FluxoConversaScalarAggregateOutput
+FluxoConversaMaxAggregateOutput = FluxoConversaScalarAggregateOutput
+
+
+class FluxoConversaMaxAggregateInput(TypedDict, total=False):
+    """FluxoConversa input for aggregating by max"""
+    id: bool
+    sessaoId: bool
+    etapa: bool
+    intencao: bool
+    pedido: bool
+    criadoEm: bool
+
+
+class FluxoConversaMinAggregateInput(TypedDict, total=False):
+    """FluxoConversa input for aggregating by min"""
+    id: bool
+    sessaoId: bool
+    etapa: bool
+    intencao: bool
+    pedido: bool
+    criadoEm: bool
+
+
+class FluxoConversaNumberAggregateInput(TypedDict, total=False):
+    """FluxoConversa input for aggregating numbers"""
+    id: bool
+    sessaoId: bool
+
+
+FluxoConversaAvgAggregateInput = FluxoConversaNumberAggregateInput
+FluxoConversaSumAggregateInput = FluxoConversaNumberAggregateInput
+
+
+FluxoConversaCountAggregateInput = TypedDict(
+    'FluxoConversaCountAggregateInput',
+    {
+        'id': bool,
+        'sessaoId': bool,
+        'etapa': bool,
+        'intencao': bool,
+        'pedido': bool,
+        'criadoEm': bool,
+        '_all': bool,
+    },
+    total=False,
+)
+
+FluxoConversaCountAggregateOutput = TypedDict(
+    'FluxoConversaCountAggregateOutput',
+    {
+        'id': int,
+        'sessaoId': int,
+        'etapa': int,
+        'intencao': int,
+        'pedido': int,
+        'criadoEm': int,
+        '_all': int,
+    },
+    total=False,
+)
+
+
+FluxoConversaKeys = Literal[
+    'id',
+    'sessao',
+    'sessaoId',
+    'etapa',
+    'intencao',
+    'pedido',
+    'criadoEm',
+]
+FluxoConversaScalarFieldKeys = Literal[
+    'id',
+    'sessaoId',
+    'etapa',
+    'intencao',
+    'pedido',
+    'criadoEm',
+]
+FluxoConversaScalarFieldKeysT = TypeVar('FluxoConversaScalarFieldKeysT', bound=FluxoConversaScalarFieldKeys)
+
+FluxoConversaRelationalFieldKeys = Literal[
+        'sessao',
+    ]
+
+# Mensagem types
+
+class MensagemOptionalCreateInput(TypedDict, total=False):
+    """Optional arguments to the Mensagem create method"""
+    id: _int
+    sessao: 'SessaoCreateNestedWithoutRelationsInput'
+    sessaoId: _int
+    criadoEm: datetime.datetime
+
+
+class MensagemCreateInput(MensagemOptionalCreateInput):
+    """Required arguments to the Mensagem create method"""
+    texto: _str
+    role: _str
+
+
+# TODO: remove this in favour of without explicit relations
+# e.g. PostCreateWithoutAuthorInput
+
+class MensagemOptionalCreateWithoutRelationsInput(TypedDict, total=False):
+    """Optional arguments to the Mensagem create method, without relations"""
+    id: _int
+    sessaoId: _int
+    criadoEm: datetime.datetime
+
+
+class MensagemCreateWithoutRelationsInput(MensagemOptionalCreateWithoutRelationsInput):
+    """Required arguments to the Mensagem create method, without relations"""
+    texto: _str
+    role: _str
+
+class MensagemConnectOrCreateWithoutRelationsInput(TypedDict):
+    create: 'MensagemCreateWithoutRelationsInput'
+    where: 'MensagemWhereUniqueInput'
+
+class MensagemCreateNestedWithoutRelationsInput(TypedDict, total=False):
+    create: 'MensagemCreateWithoutRelationsInput'
+    connect: 'MensagemWhereUniqueInput'
+    connect_or_create: 'MensagemConnectOrCreateWithoutRelationsInput'
+
+
+class MensagemCreateManyNestedWithoutRelationsInput(TypedDict, total=False):
+    create: Union['MensagemCreateWithoutRelationsInput', List['MensagemCreateWithoutRelationsInput']]
+    connect: Union['MensagemWhereUniqueInput', List['MensagemWhereUniqueInput']]
+    connect_or_create: Union['MensagemConnectOrCreateWithoutRelationsInput', List['MensagemConnectOrCreateWithoutRelationsInput']]
+
+_MensagemWhereUnique_id_Input = TypedDict(
+    '_MensagemWhereUnique_id_Input',
+    {
+        'id': '_int',
+    },
+    total=True
+)
+
+MensagemWhereUniqueInput = _MensagemWhereUnique_id_Input
+
+
+class MensagemUpdateInput(TypedDict, total=False):
+    """Optional arguments for updating a record"""
+    id: Union[AtomicIntInput, _int]
+    sessao: 'SessaoUpdateOneWithoutRelationsInput'
+    texto: _str
+    role: _str
+    criadoEm: datetime.datetime
+
+
+class MensagemUpdateManyMutationInput(TypedDict, total=False):
+    """Arguments for updating many records"""
+    id: Union[AtomicIntInput, _int]
+    texto: _str
+    role: _str
+    criadoEm: datetime.datetime
+
+
+class MensagemUpdateManyWithoutRelationsInput(TypedDict, total=False):
+    create: List['MensagemCreateWithoutRelationsInput']
+    connect: List['MensagemWhereUniqueInput']
+    connect_or_create: List['MensagemConnectOrCreateWithoutRelationsInput']
+    set: List['MensagemWhereUniqueInput']
+    disconnect: List['MensagemWhereUniqueInput']
+    delete: List['MensagemWhereUniqueInput']
+
+    # TODO
+    # update: List['MensagemUpdateWithWhereUniqueWithoutRelationsInput']
+    # updateMany: List['MensagemUpdateManyWithWhereUniqueWithoutRelationsInput']
+    # deleteMany: List['MensagemScalarWhereInput']
+    # upsert: List['MensagemUpserteWithWhereUniqueWithoutRelationsInput']
+
+
+class MensagemUpdateOneWithoutRelationsInput(TypedDict, total=False):
+    create: 'MensagemCreateWithoutRelationsInput'
+    connect: 'MensagemWhereUniqueInput'
+    connect_or_create: 'MensagemConnectOrCreateWithoutRelationsInput'
+    disconnect: bool
+    delete: bool
+
+    # TODO
+    # update: 'MensagemUpdateInput'
+    # upsert: 'MensagemUpsertWithoutRelationsInput'
+
+
+class MensagemUpsertInput(TypedDict):
+    create: 'MensagemCreateInput'
+    update: 'MensagemUpdateInput'  # pyright: ignore[reportIncompatibleMethodOverride]
+
+
+_Mensagem_id_OrderByInput = TypedDict(
+    '_Mensagem_id_OrderByInput',
+    {
+        'id': 'SortOrder',
+    },
+    total=True
+)
+
+_Mensagem_sessaoId_OrderByInput = TypedDict(
+    '_Mensagem_sessaoId_OrderByInput',
+    {
+        'sessaoId': 'SortOrder',
+    },
+    total=True
+)
+
+_Mensagem_texto_OrderByInput = TypedDict(
+    '_Mensagem_texto_OrderByInput',
+    {
+        'texto': 'SortOrder',
+    },
+    total=True
+)
+
+_Mensagem_role_OrderByInput = TypedDict(
+    '_Mensagem_role_OrderByInput',
+    {
+        'role': 'SortOrder',
+    },
+    total=True
+)
+
+_Mensagem_criadoEm_OrderByInput = TypedDict(
+    '_Mensagem_criadoEm_OrderByInput',
+    {
+        'criadoEm': 'SortOrder',
+    },
+    total=True
+)
+
+MensagemOrderByInput = Union[
+    '_Mensagem_id_OrderByInput',
+    '_Mensagem_sessaoId_OrderByInput',
+    '_Mensagem_texto_OrderByInput',
+    '_Mensagem_role_OrderByInput',
+    '_Mensagem_criadoEm_OrderByInput',
+]
+
+
+
+# recursive Mensagem types
+# TODO: cleanup these types
+
+
+# Dict[str, Any] is a mypy limitation
+# see https://github.com/RobertCraigie/prisma-client-py/issues/45
+# switch to pyright for improved types, see https://prisma-client-py.readthedocs.io/en/stable/reference/limitations/
+
+MensagemRelationFilter = TypedDict(
+    'MensagemRelationFilter',
+    {
+        'is': 'Dict[str, Any]',
+        'is_not': 'Dict[str, Any]',
+    },
+    total=False,
+)
+
+
+class MensagemListRelationFilter(TypedDict, total=False):
+    some: 'Dict[str, Any]'
+    none: 'Dict[str, Any]'
+    every: 'Dict[str, Any]'
+
+
+class MensagemInclude(TypedDict, total=False):
+    """Mensagem relational arguments"""
+    sessao: Union[bool, 'SessaoArgsFromMensagem']
+
+
+    
+
+class KnowledgeBaseIncludeFromMensagem(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+
+
+class KnowledgeBaseIncludeFromMensagemRecursive1(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+
+
+class KnowledgeBaseIncludeFromMensagemRecursive2(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+
+
+class KnowledgeBaseIncludeFromMensagemRecursive3(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+
+
+class KnowledgeBaseIncludeFromMensagemRecursive4(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+
+    
+
+class KnowledgeBaseArgsFromMensagem(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive1'
+
+
+class KnowledgeBaseArgsFromMensagemRecursive1(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive2'
+
+
+class KnowledgeBaseArgsFromMensagemRecursive2(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive3'
+
+
+class KnowledgeBaseArgsFromMensagemRecursive3(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive4'
+
+
+class KnowledgeBaseArgsFromMensagemRecursive4(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    
+    
+
+class FindManyKnowledgeBaseArgsFromMensagem(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive1'
+
+
+class FindManyKnowledgeBaseArgsFromMensagemRecursive1(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive2'
+
+
+class FindManyKnowledgeBaseArgsFromMensagemRecursive2(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive3'
+
+
+class FindManyKnowledgeBaseArgsFromMensagemRecursive3(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive4'
+
+
+class FindManyKnowledgeBaseArgsFromMensagemRecursive4(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    
+    
+
+class UsuarioIncludeFromMensagem(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromMensagemRecursive1']
+
+
+class UsuarioIncludeFromMensagemRecursive1(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromMensagemRecursive2']
+
+
+class UsuarioIncludeFromMensagemRecursive2(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromMensagemRecursive3']
+
+
+class UsuarioIncludeFromMensagemRecursive3(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromMensagemRecursive4']
+
+
+class UsuarioIncludeFromMensagemRecursive4(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+
+    
+
+class UsuarioArgsFromMensagem(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'UsuarioIncludeFromUsuarioRecursive1'
+
+
+class UsuarioArgsFromMensagemRecursive1(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'UsuarioIncludeFromUsuarioRecursive2'
+
+
+class UsuarioArgsFromMensagemRecursive2(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'UsuarioIncludeFromUsuarioRecursive3'
+
+
+class UsuarioArgsFromMensagemRecursive3(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'UsuarioIncludeFromUsuarioRecursive4'
+
+
+class UsuarioArgsFromMensagemRecursive4(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    
+    
+
+class FindManyUsuarioArgsFromMensagem(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive1'
+
+
+class FindManyUsuarioArgsFromMensagemRecursive1(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive2'
+
+
+class FindManyUsuarioArgsFromMensagemRecursive2(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive3'
+
+
+class FindManyUsuarioArgsFromMensagemRecursive3(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive4'
+
+
+class FindManyUsuarioArgsFromMensagemRecursive4(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    
+    
+
+class SessaoIncludeFromMensagem(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    usuario: Union[bool, 'UsuarioArgsFromMensagemRecursive1']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromMensagemRecursive1']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromMensagemRecursive1']
+
+
+class SessaoIncludeFromMensagemRecursive1(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    usuario: Union[bool, 'UsuarioArgsFromMensagemRecursive2']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromMensagemRecursive2']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromMensagemRecursive2']
+
+
+class SessaoIncludeFromMensagemRecursive2(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    usuario: Union[bool, 'UsuarioArgsFromMensagemRecursive3']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromMensagemRecursive3']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromMensagemRecursive3']
+
+
+class SessaoIncludeFromMensagemRecursive3(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    usuario: Union[bool, 'UsuarioArgsFromMensagemRecursive4']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromMensagemRecursive4']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromMensagemRecursive4']
+
+
+class SessaoIncludeFromMensagemRecursive4(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+
+    
+
+class SessaoArgsFromMensagem(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'SessaoIncludeFromSessaoRecursive1'
+
+
+class SessaoArgsFromMensagemRecursive1(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'SessaoIncludeFromSessaoRecursive2'
+
+
+class SessaoArgsFromMensagemRecursive2(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'SessaoIncludeFromSessaoRecursive3'
+
+
+class SessaoArgsFromMensagemRecursive3(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'SessaoIncludeFromSessaoRecursive4'
+
+
+class SessaoArgsFromMensagemRecursive4(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    
+    
+
+class FindManySessaoArgsFromMensagem(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive1'
+
+
+class FindManySessaoArgsFromMensagemRecursive1(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive2'
+
+
+class FindManySessaoArgsFromMensagemRecursive2(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive3'
+
+
+class FindManySessaoArgsFromMensagemRecursive3(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive4'
+
+
+class FindManySessaoArgsFromMensagemRecursive4(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    
+    
+
+class FluxoConversaIncludeFromMensagem(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    sessao: Union[bool, 'SessaoArgsFromMensagemRecursive1']
+
+
+class FluxoConversaIncludeFromMensagemRecursive1(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    sessao: Union[bool, 'SessaoArgsFromMensagemRecursive2']
+
+
+class FluxoConversaIncludeFromMensagemRecursive2(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    sessao: Union[bool, 'SessaoArgsFromMensagemRecursive3']
+
+
+class FluxoConversaIncludeFromMensagemRecursive3(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    sessao: Union[bool, 'SessaoArgsFromMensagemRecursive4']
+
+
+class FluxoConversaIncludeFromMensagemRecursive4(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+
+    
+
+class FluxoConversaArgsFromMensagem(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive1'
+
+
+class FluxoConversaArgsFromMensagemRecursive1(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive2'
+
+
+class FluxoConversaArgsFromMensagemRecursive2(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive3'
+
+
+class FluxoConversaArgsFromMensagemRecursive3(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive4'
+
+
+class FluxoConversaArgsFromMensagemRecursive4(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    
+    
+
+class FindManyFluxoConversaArgsFromMensagem(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive1'
+
+
+class FindManyFluxoConversaArgsFromMensagemRecursive1(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive2'
+
+
+class FindManyFluxoConversaArgsFromMensagemRecursive2(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive3'
+
+
+class FindManyFluxoConversaArgsFromMensagemRecursive3(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive4'
+
+
+class FindManyFluxoConversaArgsFromMensagemRecursive4(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    
+    
+
+class MensagemIncludeFromMensagem(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    sessao: Union[bool, 'SessaoArgsFromMensagemRecursive1']
+
+
+class MensagemIncludeFromMensagemRecursive1(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    sessao: Union[bool, 'SessaoArgsFromMensagemRecursive2']
+
+
+class MensagemIncludeFromMensagemRecursive2(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    sessao: Union[bool, 'SessaoArgsFromMensagemRecursive3']
+
+
+class MensagemIncludeFromMensagemRecursive3(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    sessao: Union[bool, 'SessaoArgsFromMensagemRecursive4']
+
+
+class MensagemIncludeFromMensagemRecursive4(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+
+    
+
+class MensagemArgsFromMensagem(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'MensagemIncludeFromMensagemRecursive1'
+
+
+class MensagemArgsFromMensagemRecursive1(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'MensagemIncludeFromMensagemRecursive2'
+
+
+class MensagemArgsFromMensagemRecursive2(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'MensagemIncludeFromMensagemRecursive3'
+
+
+class MensagemArgsFromMensagemRecursive3(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'MensagemIncludeFromMensagemRecursive4'
+
+
+class MensagemArgsFromMensagemRecursive4(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    
+    
+
+class FindManyMensagemArgsFromMensagem(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive1'
+
+
+class FindManyMensagemArgsFromMensagemRecursive1(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive2'
+
+
+class FindManyMensagemArgsFromMensagemRecursive2(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive3'
+
+
+class FindManyMensagemArgsFromMensagemRecursive3(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive4'
+
+
+class FindManyMensagemArgsFromMensagemRecursive4(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    
+
+
+FindManyMensagemArgs = FindManyMensagemArgsFromMensagem
+FindFirstMensagemArgs = FindManyMensagemArgsFromMensagem
+
+
+    
+
+class MensagemWhereInput(TypedDict, total=False):
+    """Mensagem arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    sessao: 'SessaoRelationFilter'
+    sessaoId: Union[_int, 'types.IntFilter']
+    texto: Union[_str, 'types.StringFilter']
+    role: Union[_str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+
+    # should be noted that AND and NOT should be Union['MensagemWhereInputRecursive1', List['MensagemWhereInputRecursive1']]
+    # but this causes mypy to hang :/
+    AND: List['MensagemWhereInputRecursive1']
+    OR: List['MensagemWhereInputRecursive1']
+    NOT: List['MensagemWhereInputRecursive1']
+
+
+class MensagemWhereInputRecursive1(TypedDict, total=False):
+    """Mensagem arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    sessao: 'SessaoRelationFilter'
+    sessaoId: Union[_int, 'types.IntFilter']
+    texto: Union[_str, 'types.StringFilter']
+    role: Union[_str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+
+    # should be noted that AND and NOT should be Union['MensagemWhereInputRecursive2', List['MensagemWhereInputRecursive2']]
+    # but this causes mypy to hang :/
+    AND: List['MensagemWhereInputRecursive2']
+    OR: List['MensagemWhereInputRecursive2']
+    NOT: List['MensagemWhereInputRecursive2']
+
+
+class MensagemWhereInputRecursive2(TypedDict, total=False):
+    """Mensagem arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    sessao: 'SessaoRelationFilter'
+    sessaoId: Union[_int, 'types.IntFilter']
+    texto: Union[_str, 'types.StringFilter']
+    role: Union[_str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+
+    # should be noted that AND and NOT should be Union['MensagemWhereInputRecursive3', List['MensagemWhereInputRecursive3']]
+    # but this causes mypy to hang :/
+    AND: List['MensagemWhereInputRecursive3']
+    OR: List['MensagemWhereInputRecursive3']
+    NOT: List['MensagemWhereInputRecursive3']
+
+
+class MensagemWhereInputRecursive3(TypedDict, total=False):
+    """Mensagem arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    sessao: 'SessaoRelationFilter'
+    sessaoId: Union[_int, 'types.IntFilter']
+    texto: Union[_str, 'types.StringFilter']
+    role: Union[_str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+
+    # should be noted that AND and NOT should be Union['MensagemWhereInputRecursive4', List['MensagemWhereInputRecursive4']]
+    # but this causes mypy to hang :/
+    AND: List['MensagemWhereInputRecursive4']
+    OR: List['MensagemWhereInputRecursive4']
+    NOT: List['MensagemWhereInputRecursive4']
+
+
+class MensagemWhereInputRecursive4(TypedDict, total=False):
+    """Mensagem arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    sessao: 'SessaoRelationFilter'
+    sessaoId: Union[_int, 'types.IntFilter']
+    texto: Union[_str, 'types.StringFilter']
+    role: Union[_str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+
+
+
+# aggregate Mensagem types
+
+
+    
+
+class MensagemScalarWhereWithAggregatesInput(TypedDict, total=False):
+    """Mensagem arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    sessaoId: Union[_int, 'types.IntWithAggregatesFilter']
+    texto: Union[_str, 'types.StringWithAggregatesFilter']
+    role: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['MensagemScalarWhereWithAggregatesInputRecursive1']
+    OR: List['MensagemScalarWhereWithAggregatesInputRecursive1']
+    NOT: List['MensagemScalarWhereWithAggregatesInputRecursive1']
+
+
+class MensagemScalarWhereWithAggregatesInputRecursive1(TypedDict, total=False):
+    """Mensagem arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    sessaoId: Union[_int, 'types.IntWithAggregatesFilter']
+    texto: Union[_str, 'types.StringWithAggregatesFilter']
+    role: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['MensagemScalarWhereWithAggregatesInputRecursive2']
+    OR: List['MensagemScalarWhereWithAggregatesInputRecursive2']
+    NOT: List['MensagemScalarWhereWithAggregatesInputRecursive2']
+
+
+class MensagemScalarWhereWithAggregatesInputRecursive2(TypedDict, total=False):
+    """Mensagem arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    sessaoId: Union[_int, 'types.IntWithAggregatesFilter']
+    texto: Union[_str, 'types.StringWithAggregatesFilter']
+    role: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['MensagemScalarWhereWithAggregatesInputRecursive3']
+    OR: List['MensagemScalarWhereWithAggregatesInputRecursive3']
+    NOT: List['MensagemScalarWhereWithAggregatesInputRecursive3']
+
+
+class MensagemScalarWhereWithAggregatesInputRecursive3(TypedDict, total=False):
+    """Mensagem arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    sessaoId: Union[_int, 'types.IntWithAggregatesFilter']
+    texto: Union[_str, 'types.StringWithAggregatesFilter']
+    role: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['MensagemScalarWhereWithAggregatesInputRecursive4']
+    OR: List['MensagemScalarWhereWithAggregatesInputRecursive4']
+    NOT: List['MensagemScalarWhereWithAggregatesInputRecursive4']
+
+
+class MensagemScalarWhereWithAggregatesInputRecursive4(TypedDict, total=False):
+    """Mensagem arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    sessaoId: Union[_int, 'types.IntWithAggregatesFilter']
+    texto: Union[_str, 'types.StringWithAggregatesFilter']
+    role: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+
+
+class MensagemGroupByOutput(TypedDict, total=False):
+    id: _int
+    sessaoId: _int
+    texto: _str
+    role: _str
+    criadoEm: datetime.datetime
+    _sum: 'MensagemSumAggregateOutput'
+    _avg: 'MensagemAvgAggregateOutput'
+    _min: 'MensagemMinAggregateOutput'
+    _max: 'MensagemMaxAggregateOutput'
+    _count: 'MensagemCountAggregateOutput'
+
+
+class MensagemAvgAggregateOutput(TypedDict, total=False):
+    """Mensagem output for aggregating averages"""
+    id: float
+    sessaoId: float
+
+
+class MensagemSumAggregateOutput(TypedDict, total=False):
+    """Mensagem output for aggregating sums"""
+    id: _int
+    sessaoId: _int
+
+
+class MensagemScalarAggregateOutput(TypedDict, total=False):
+    """Mensagem output including scalar fields"""
+    id: _int
+    sessaoId: _int
+    texto: _str
+    role: _str
+    criadoEm: datetime.datetime
+
+
+MensagemMinAggregateOutput = MensagemScalarAggregateOutput
+MensagemMaxAggregateOutput = MensagemScalarAggregateOutput
+
+
+class MensagemMaxAggregateInput(TypedDict, total=False):
+    """Mensagem input for aggregating by max"""
+    id: bool
+    sessaoId: bool
+    texto: bool
+    role: bool
+    criadoEm: bool
+
+
+class MensagemMinAggregateInput(TypedDict, total=False):
+    """Mensagem input for aggregating by min"""
+    id: bool
+    sessaoId: bool
+    texto: bool
+    role: bool
+    criadoEm: bool
+
+
+class MensagemNumberAggregateInput(TypedDict, total=False):
+    """Mensagem input for aggregating numbers"""
+    id: bool
+    sessaoId: bool
+
+
+MensagemAvgAggregateInput = MensagemNumberAggregateInput
+MensagemSumAggregateInput = MensagemNumberAggregateInput
+
+
+MensagemCountAggregateInput = TypedDict(
+    'MensagemCountAggregateInput',
+    {
+        'id': bool,
+        'sessaoId': bool,
+        'texto': bool,
+        'role': bool,
+        'criadoEm': bool,
+        '_all': bool,
+    },
+    total=False,
+)
+
+MensagemCountAggregateOutput = TypedDict(
+    'MensagemCountAggregateOutput',
+    {
+        'id': int,
+        'sessaoId': int,
+        'texto': int,
+        'role': int,
+        'criadoEm': int,
+        '_all': int,
+    },
+    total=False,
+)
+
+
+MensagemKeys = Literal[
+    'id',
+    'sessao',
+    'sessaoId',
+    'texto',
+    'role',
+    'criadoEm',
+]
+MensagemScalarFieldKeys = Literal[
+    'id',
+    'sessaoId',
+    'texto',
+    'role',
+    'criadoEm',
+]
+MensagemScalarFieldKeysT = TypeVar('MensagemScalarFieldKeysT', bound=MensagemScalarFieldKeys)
+
+MensagemRelationalFieldKeys = Literal[
+        'sessao',
+    ]
 
 
 

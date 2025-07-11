@@ -8,7 +8,7 @@ from langchain.chains import RetrievalQAWithSourcesChain
 from langchain_core.documents import Document
 from app.generated.client import Prisma
 
-async def setup_rag_chain():
+async def setup_rag_chain(sessao_token: str):
     prisma = Prisma()
     await prisma.connect()
 
@@ -38,7 +38,8 @@ async def setup_rag_chain():
 
     # 🔹 Recupera documentos com embedding
     docs_db = await prisma.knowledgebase.find_many(
-    where={"embedding": {"not": ""}})
+        where={"embedding": {"not": ""}}
+    )
     docs = [Document(page_content=doc.conteudo, metadata={"id": doc.id, "source": doc.origem}) for doc in docs_db]
 
     # 🔹 Cria vetores e retriever
@@ -61,16 +62,15 @@ async def setup_rag_chain():
     """)
 
     rag_chain = RetrievalQAWithSourcesChain.from_chain_type(
-    llm=llm,
-    retriever=retriever,
-    return_source_documents=True,
-    chain_type="stuff",
-    chain_type_kwargs={
-        "prompt": resposta_prompt,
-        "document_variable_name": "context" 
-    }
-)
-
+        llm=llm,
+        retriever=retriever,
+        return_source_documents=True,
+        chain_type="stuff",
+        chain_type_kwargs={
+            "prompt": resposta_prompt,
+            "document_variable_name": "context"
+        }
+    )
 
     return {
         "prisma": prisma,

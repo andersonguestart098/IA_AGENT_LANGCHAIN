@@ -95,9 +95,17 @@ class Prisma(AsyncBasePrisma):
     # Note: these property names can be customised using `/// @Python(instance_name: '...')`
     # https://prisma-client-py.readthedocs.io/en/stable/reference/schema-extensions/#instance_name
     knowledgebase: 'actions.KnowledgeBaseActions[models.KnowledgeBase]'
+    usuario: 'actions.UsuarioActions[models.Usuario]'
+    sessao: 'actions.SessaoActions[models.Sessao]'
+    fluxoconversa: 'actions.FluxoConversaActions[models.FluxoConversa]'
+    mensagem: 'actions.MensagemActions[models.Mensagem]'
 
     __slots__ = (
         'knowledgebase',
+        'usuario',
+        'sessao',
+        'fluxoconversa',
+        'mensagem',
     )
 
     def __init__(
@@ -129,6 +137,10 @@ class Prisma(AsyncBasePrisma):
         )
 
         self.knowledgebase = actions.KnowledgeBaseActions[models.KnowledgeBase](self, models.KnowledgeBase)
+        self.usuario = actions.UsuarioActions[models.Usuario](self, models.Usuario)
+        self.sessao = actions.SessaoActions[models.Sessao](self, models.Sessao)
+        self.fluxoconversa = actions.FluxoConversaActions[models.FluxoConversa](self, models.FluxoConversa)
+        self.mensagem = actions.MensagemActions[models.Mensagem](self, models.Mensagem)
 
         if auto_register:
             register(self)
@@ -280,12 +292,20 @@ TransactionManager = AsyncTransactionManager[Prisma]
 # TODO: don't require copy-pasting arguments between actions and batch actions
 class Batch:
     knowledgebase: 'KnowledgeBaseBatchActions'
+    usuario: 'UsuarioBatchActions'
+    sessao: 'SessaoBatchActions'
+    fluxoconversa: 'FluxoConversaBatchActions'
+    mensagem: 'MensagemBatchActions'
 
     def __init__(self, client: Prisma) -> None:
         self.__client = client
         self.__queries: List[str] = []
         self._active_provider = client._active_provider
         self.knowledgebase = KnowledgeBaseBatchActions(self)
+        self.usuario = UsuarioBatchActions(self)
+        self.sessao = SessaoBatchActions(self)
+        self.fluxoconversa = FluxoConversaBatchActions(self)
+        self.mensagem = MensagemBatchActions(self)
 
     def _add(self, **kwargs: Any) -> None:
         builder = QueryBuilder(
@@ -443,6 +463,450 @@ class KnowledgeBaseBatchActions:
         self._batcher._add(
             method='delete_many',
             model=models.KnowledgeBase,
+            arguments={'where': where},
+            root_selection=['count'],
+        )
+
+
+
+# NOTE: some arguments are meaningless in this context but are included
+# for completeness sake
+class UsuarioBatchActions:
+    def __init__(self, batcher: Batch) -> None:
+        self._batcher = batcher
+
+    def create(
+        self,
+        data: types.UsuarioCreateInput,
+        include: Optional[types.UsuarioInclude] = None
+    ) -> None:
+        self._batcher._add(
+            method='create',
+            model=models.Usuario,
+            arguments={
+                'data': data,
+                'include': include,
+            },
+        )
+
+    def create_many(
+        self,
+        data: List[types.UsuarioCreateWithoutRelationsInput],
+        *,
+        skip_duplicates: Optional[bool] = None,
+    ) -> None:
+        if skip_duplicates and self._batcher._active_provider in CREATE_MANY_SKIP_DUPLICATES_UNSUPPORTED:
+            raise errors.UnsupportedDatabaseError(self._batcher._active_provider, 'create_many_skip_duplicates')
+
+        self._batcher._add(
+            method='create_many',
+            model=models.Usuario,
+            arguments={
+                'data': data,
+                'skipDuplicates': skip_duplicates,
+            },
+            root_selection=['count'],
+        )
+
+    def delete(
+        self,
+        where: types.UsuarioWhereUniqueInput,
+        include: Optional[types.UsuarioInclude] = None,
+    ) -> None:
+        self._batcher._add(
+            method='delete',
+            model=models.Usuario,
+            arguments={
+                'where': where,
+                'include': include,
+            },
+        )
+
+    def update(
+        self,
+        data: types.UsuarioUpdateInput,
+        where: types.UsuarioWhereUniqueInput,
+        include: Optional[types.UsuarioInclude] = None
+    ) -> None:
+        self._batcher._add(
+            method='update',
+            model=models.Usuario,
+            arguments={
+                'data': data,
+                'where': where,
+                'include': include,
+            },
+        )
+
+    def upsert(
+        self,
+        where: types.UsuarioWhereUniqueInput,
+        data: types.UsuarioUpsertInput,
+        include: Optional[types.UsuarioInclude] = None,
+    ) -> None:
+        self._batcher._add(
+            method='upsert',
+            model=models.Usuario,
+            arguments={
+                'where': where,
+                'include': include,
+                'create': data.get('create'),
+                'update': data.get('update'),
+            },
+        )
+
+    def update_many(
+        self,
+        data: types.UsuarioUpdateManyMutationInput,
+        where: types.UsuarioWhereInput,
+    ) -> None:
+        self._batcher._add(
+            method='update_many',
+            model=models.Usuario,
+            arguments={'data': data, 'where': where,},
+            root_selection=['count'],
+        )
+
+    def delete_many(
+        self,
+        where: Optional[types.UsuarioWhereInput] = None,
+    ) -> None:
+        self._batcher._add(
+            method='delete_many',
+            model=models.Usuario,
+            arguments={'where': where},
+            root_selection=['count'],
+        )
+
+
+
+# NOTE: some arguments are meaningless in this context but are included
+# for completeness sake
+class SessaoBatchActions:
+    def __init__(self, batcher: Batch) -> None:
+        self._batcher = batcher
+
+    def create(
+        self,
+        data: types.SessaoCreateInput,
+        include: Optional[types.SessaoInclude] = None
+    ) -> None:
+        self._batcher._add(
+            method='create',
+            model=models.Sessao,
+            arguments={
+                'data': data,
+                'include': include,
+            },
+        )
+
+    def create_many(
+        self,
+        data: List[types.SessaoCreateWithoutRelationsInput],
+        *,
+        skip_duplicates: Optional[bool] = None,
+    ) -> None:
+        if skip_duplicates and self._batcher._active_provider in CREATE_MANY_SKIP_DUPLICATES_UNSUPPORTED:
+            raise errors.UnsupportedDatabaseError(self._batcher._active_provider, 'create_many_skip_duplicates')
+
+        self._batcher._add(
+            method='create_many',
+            model=models.Sessao,
+            arguments={
+                'data': data,
+                'skipDuplicates': skip_duplicates,
+            },
+            root_selection=['count'],
+        )
+
+    def delete(
+        self,
+        where: types.SessaoWhereUniqueInput,
+        include: Optional[types.SessaoInclude] = None,
+    ) -> None:
+        self._batcher._add(
+            method='delete',
+            model=models.Sessao,
+            arguments={
+                'where': where,
+                'include': include,
+            },
+        )
+
+    def update(
+        self,
+        data: types.SessaoUpdateInput,
+        where: types.SessaoWhereUniqueInput,
+        include: Optional[types.SessaoInclude] = None
+    ) -> None:
+        self._batcher._add(
+            method='update',
+            model=models.Sessao,
+            arguments={
+                'data': data,
+                'where': where,
+                'include': include,
+            },
+        )
+
+    def upsert(
+        self,
+        where: types.SessaoWhereUniqueInput,
+        data: types.SessaoUpsertInput,
+        include: Optional[types.SessaoInclude] = None,
+    ) -> None:
+        self._batcher._add(
+            method='upsert',
+            model=models.Sessao,
+            arguments={
+                'where': where,
+                'include': include,
+                'create': data.get('create'),
+                'update': data.get('update'),
+            },
+        )
+
+    def update_many(
+        self,
+        data: types.SessaoUpdateManyMutationInput,
+        where: types.SessaoWhereInput,
+    ) -> None:
+        self._batcher._add(
+            method='update_many',
+            model=models.Sessao,
+            arguments={'data': data, 'where': where,},
+            root_selection=['count'],
+        )
+
+    def delete_many(
+        self,
+        where: Optional[types.SessaoWhereInput] = None,
+    ) -> None:
+        self._batcher._add(
+            method='delete_many',
+            model=models.Sessao,
+            arguments={'where': where},
+            root_selection=['count'],
+        )
+
+
+
+# NOTE: some arguments are meaningless in this context but are included
+# for completeness sake
+class FluxoConversaBatchActions:
+    def __init__(self, batcher: Batch) -> None:
+        self._batcher = batcher
+
+    def create(
+        self,
+        data: types.FluxoConversaCreateInput,
+        include: Optional[types.FluxoConversaInclude] = None
+    ) -> None:
+        self._batcher._add(
+            method='create',
+            model=models.FluxoConversa,
+            arguments={
+                'data': data,
+                'include': include,
+            },
+        )
+
+    def create_many(
+        self,
+        data: List[types.FluxoConversaCreateWithoutRelationsInput],
+        *,
+        skip_duplicates: Optional[bool] = None,
+    ) -> None:
+        if skip_duplicates and self._batcher._active_provider in CREATE_MANY_SKIP_DUPLICATES_UNSUPPORTED:
+            raise errors.UnsupportedDatabaseError(self._batcher._active_provider, 'create_many_skip_duplicates')
+
+        self._batcher._add(
+            method='create_many',
+            model=models.FluxoConversa,
+            arguments={
+                'data': data,
+                'skipDuplicates': skip_duplicates,
+            },
+            root_selection=['count'],
+        )
+
+    def delete(
+        self,
+        where: types.FluxoConversaWhereUniqueInput,
+        include: Optional[types.FluxoConversaInclude] = None,
+    ) -> None:
+        self._batcher._add(
+            method='delete',
+            model=models.FluxoConversa,
+            arguments={
+                'where': where,
+                'include': include,
+            },
+        )
+
+    def update(
+        self,
+        data: types.FluxoConversaUpdateInput,
+        where: types.FluxoConversaWhereUniqueInput,
+        include: Optional[types.FluxoConversaInclude] = None
+    ) -> None:
+        self._batcher._add(
+            method='update',
+            model=models.FluxoConversa,
+            arguments={
+                'data': data,
+                'where': where,
+                'include': include,
+            },
+        )
+
+    def upsert(
+        self,
+        where: types.FluxoConversaWhereUniqueInput,
+        data: types.FluxoConversaUpsertInput,
+        include: Optional[types.FluxoConversaInclude] = None,
+    ) -> None:
+        self._batcher._add(
+            method='upsert',
+            model=models.FluxoConversa,
+            arguments={
+                'where': where,
+                'include': include,
+                'create': data.get('create'),
+                'update': data.get('update'),
+            },
+        )
+
+    def update_many(
+        self,
+        data: types.FluxoConversaUpdateManyMutationInput,
+        where: types.FluxoConversaWhereInput,
+    ) -> None:
+        self._batcher._add(
+            method='update_many',
+            model=models.FluxoConversa,
+            arguments={'data': data, 'where': where,},
+            root_selection=['count'],
+        )
+
+    def delete_many(
+        self,
+        where: Optional[types.FluxoConversaWhereInput] = None,
+    ) -> None:
+        self._batcher._add(
+            method='delete_many',
+            model=models.FluxoConversa,
+            arguments={'where': where},
+            root_selection=['count'],
+        )
+
+
+
+# NOTE: some arguments are meaningless in this context but are included
+# for completeness sake
+class MensagemBatchActions:
+    def __init__(self, batcher: Batch) -> None:
+        self._batcher = batcher
+
+    def create(
+        self,
+        data: types.MensagemCreateInput,
+        include: Optional[types.MensagemInclude] = None
+    ) -> None:
+        self._batcher._add(
+            method='create',
+            model=models.Mensagem,
+            arguments={
+                'data': data,
+                'include': include,
+            },
+        )
+
+    def create_many(
+        self,
+        data: List[types.MensagemCreateWithoutRelationsInput],
+        *,
+        skip_duplicates: Optional[bool] = None,
+    ) -> None:
+        if skip_duplicates and self._batcher._active_provider in CREATE_MANY_SKIP_DUPLICATES_UNSUPPORTED:
+            raise errors.UnsupportedDatabaseError(self._batcher._active_provider, 'create_many_skip_duplicates')
+
+        self._batcher._add(
+            method='create_many',
+            model=models.Mensagem,
+            arguments={
+                'data': data,
+                'skipDuplicates': skip_duplicates,
+            },
+            root_selection=['count'],
+        )
+
+    def delete(
+        self,
+        where: types.MensagemWhereUniqueInput,
+        include: Optional[types.MensagemInclude] = None,
+    ) -> None:
+        self._batcher._add(
+            method='delete',
+            model=models.Mensagem,
+            arguments={
+                'where': where,
+                'include': include,
+            },
+        )
+
+    def update(
+        self,
+        data: types.MensagemUpdateInput,
+        where: types.MensagemWhereUniqueInput,
+        include: Optional[types.MensagemInclude] = None
+    ) -> None:
+        self._batcher._add(
+            method='update',
+            model=models.Mensagem,
+            arguments={
+                'data': data,
+                'where': where,
+                'include': include,
+            },
+        )
+
+    def upsert(
+        self,
+        where: types.MensagemWhereUniqueInput,
+        data: types.MensagemUpsertInput,
+        include: Optional[types.MensagemInclude] = None,
+    ) -> None:
+        self._batcher._add(
+            method='upsert',
+            model=models.Mensagem,
+            arguments={
+                'where': where,
+                'include': include,
+                'create': data.get('create'),
+                'update': data.get('update'),
+            },
+        )
+
+    def update_many(
+        self,
+        data: types.MensagemUpdateManyMutationInput,
+        where: types.MensagemWhereInput,
+    ) -> None:
+        self._batcher._add(
+            method='update_many',
+            model=models.Mensagem,
+            arguments={'data': data, 'where': where,},
+            root_selection=['count'],
+        )
+
+    def delete_many(
+        self,
+        where: Optional[types.MensagemWhereInput] = None,
+    ) -> None:
+        self._batcher._add(
+            method='delete_many',
+            model=models.Mensagem,
             arguments={'where': where},
             root_selection=['count'],
         )

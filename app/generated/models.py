@@ -164,6 +164,539 @@ class KnowledgeBase(bases.BaseKnowledgeBase):
         _created_partial_types.add(name)
 
 
+class Usuario(bases.BaseUsuario):
+    """Represents a Usuario record"""
+
+    id: _int
+    nome: Optional[_str] = None
+    email: Optional[_str] = None
+    criadoEm: datetime.datetime
+    sessoes: Optional[List['models.Sessao']] = None
+
+    # take *args and **kwargs so that other metaclasses can define arguments
+    def __init_subclass__(
+        cls,
+        *args: Any,
+        warn_subclass: Optional[bool] = None,
+        **kwargs: Any,
+    ) -> None:
+        super().__init_subclass__()
+        if warn_subclass is not None:
+            warnings.warn(
+                'The `warn_subclass` argument is deprecated as it is no longer necessary and will be removed in the next release',
+                DeprecationWarning,
+                stacklevel=3,
+            )
+
+
+    @staticmethod
+    def create_partial(
+        name: str,
+        include: Optional[Iterable['types.UsuarioKeys']] = None,
+        exclude: Optional[Iterable['types.UsuarioKeys']] = None,
+        required: Optional[Iterable['types.UsuarioKeys']] = None,
+        optional: Optional[Iterable['types.UsuarioKeys']] = None,
+        relations: Optional[Mapping['types.UsuarioRelationalFieldKeys', str]] = None,
+        exclude_relational_fields: bool = False,
+    ) -> None:
+        if not os.environ.get('PRISMA_GENERATOR_INVOCATION'):
+            raise RuntimeError(
+                'Attempted to create a partial type outside of client generation.'
+            )
+
+        if name in _created_partial_types:
+            raise ValueError(f'Partial type "{name}" has already been created.')
+
+        if include is not None:
+            if exclude is not None:
+                raise TypeError('Exclude and include are mutually exclusive.')
+            if exclude_relational_fields is True:
+                raise TypeError('Include and exclude_relational_fields=True are mutually exclusive.')
+
+        if required and optional:
+            shared = set(required) & set(optional)
+            if shared:
+                raise ValueError(f'Cannot make the same field(s) required and optional {shared}')
+
+        if exclude_relational_fields and relations:
+            raise ValueError(
+                'exclude_relational_fields and relations are mutually exclusive'
+            )
+
+        fields: Dict['types.UsuarioKeys', PartialModelField] = OrderedDict()
+
+        try:
+            if include:
+                for field in include:
+                    fields[field] = _Usuario_fields[field].copy()
+            elif exclude:
+                for field in exclude:
+                    if field not in _Usuario_fields:
+                        raise KeyError(field)
+
+                fields = {
+                    key: data.copy()
+                    for key, data in _Usuario_fields.items()
+                    if key not in exclude
+                }
+            else:
+                fields = {
+                    key: data.copy()
+                    for key, data in _Usuario_fields.items()
+                }
+
+            if required:
+                for field in required:
+                    fields[field]['optional'] = False
+
+            if optional:
+                for field in optional:
+                    fields[field]['optional'] = True
+
+            if exclude_relational_fields:
+                fields = {
+                    key: data
+                    for key, data in fields.items()
+                    if key not in _Usuario_relational_fields
+                }
+
+            if relations:
+                for field, type_ in relations.items():
+                    if field not in _Usuario_relational_fields:
+                        raise errors.UnknownRelationalFieldError('Usuario', field)
+
+                    # TODO: this method of validating types is not ideal
+                    # as it means we cannot two create partial types that
+                    # reference each other
+                    if type_ not in _created_partial_types:
+                        raise ValueError(
+                            f'Unknown partial type: "{type_}". '
+                            f'Did you remember to generate the {type_} type before this one?'
+                        )
+
+                    # TODO: support non prisma.partials models
+                    info = fields[field]
+                    if info['is_list']:
+                        info['type'] = f'List[\'partials.{type_}\']'
+                    else:
+                        info['type'] = f'\'partials.{type_}\''
+        except KeyError as exc:
+            raise ValueError(
+                f'{exc.args[0]} is not a valid Usuario / {name} field.'
+            ) from None
+
+        models = partial_models_ctx.get()
+        models.append(
+            {
+                'name': name,
+                'fields': cast(Mapping[str, PartialModelField], fields),
+                'from_model': 'Usuario',
+            }
+        )
+        _created_partial_types.add(name)
+
+
+class Sessao(bases.BaseSessao):
+    """Represents a Sessao record"""
+
+    id: _int
+    token: _str
+    usuario: Optional['models.Usuario'] = None
+    usuarioId: Optional[_int] = None
+    criadoEm: datetime.datetime
+    mensagens: Optional[List['models.Mensagem']] = None
+    fluxo: Optional[List['models.FluxoConversa']] = None
+
+    # take *args and **kwargs so that other metaclasses can define arguments
+    def __init_subclass__(
+        cls,
+        *args: Any,
+        warn_subclass: Optional[bool] = None,
+        **kwargs: Any,
+    ) -> None:
+        super().__init_subclass__()
+        if warn_subclass is not None:
+            warnings.warn(
+                'The `warn_subclass` argument is deprecated as it is no longer necessary and will be removed in the next release',
+                DeprecationWarning,
+                stacklevel=3,
+            )
+
+
+    @staticmethod
+    def create_partial(
+        name: str,
+        include: Optional[Iterable['types.SessaoKeys']] = None,
+        exclude: Optional[Iterable['types.SessaoKeys']] = None,
+        required: Optional[Iterable['types.SessaoKeys']] = None,
+        optional: Optional[Iterable['types.SessaoKeys']] = None,
+        relations: Optional[Mapping['types.SessaoRelationalFieldKeys', str]] = None,
+        exclude_relational_fields: bool = False,
+    ) -> None:
+        if not os.environ.get('PRISMA_GENERATOR_INVOCATION'):
+            raise RuntimeError(
+                'Attempted to create a partial type outside of client generation.'
+            )
+
+        if name in _created_partial_types:
+            raise ValueError(f'Partial type "{name}" has already been created.')
+
+        if include is not None:
+            if exclude is not None:
+                raise TypeError('Exclude and include are mutually exclusive.')
+            if exclude_relational_fields is True:
+                raise TypeError('Include and exclude_relational_fields=True are mutually exclusive.')
+
+        if required and optional:
+            shared = set(required) & set(optional)
+            if shared:
+                raise ValueError(f'Cannot make the same field(s) required and optional {shared}')
+
+        if exclude_relational_fields and relations:
+            raise ValueError(
+                'exclude_relational_fields and relations are mutually exclusive'
+            )
+
+        fields: Dict['types.SessaoKeys', PartialModelField] = OrderedDict()
+
+        try:
+            if include:
+                for field in include:
+                    fields[field] = _Sessao_fields[field].copy()
+            elif exclude:
+                for field in exclude:
+                    if field not in _Sessao_fields:
+                        raise KeyError(field)
+
+                fields = {
+                    key: data.copy()
+                    for key, data in _Sessao_fields.items()
+                    if key not in exclude
+                }
+            else:
+                fields = {
+                    key: data.copy()
+                    for key, data in _Sessao_fields.items()
+                }
+
+            if required:
+                for field in required:
+                    fields[field]['optional'] = False
+
+            if optional:
+                for field in optional:
+                    fields[field]['optional'] = True
+
+            if exclude_relational_fields:
+                fields = {
+                    key: data
+                    for key, data in fields.items()
+                    if key not in _Sessao_relational_fields
+                }
+
+            if relations:
+                for field, type_ in relations.items():
+                    if field not in _Sessao_relational_fields:
+                        raise errors.UnknownRelationalFieldError('Sessao', field)
+
+                    # TODO: this method of validating types is not ideal
+                    # as it means we cannot two create partial types that
+                    # reference each other
+                    if type_ not in _created_partial_types:
+                        raise ValueError(
+                            f'Unknown partial type: "{type_}". '
+                            f'Did you remember to generate the {type_} type before this one?'
+                        )
+
+                    # TODO: support non prisma.partials models
+                    info = fields[field]
+                    if info['is_list']:
+                        info['type'] = f'List[\'partials.{type_}\']'
+                    else:
+                        info['type'] = f'\'partials.{type_}\''
+        except KeyError as exc:
+            raise ValueError(
+                f'{exc.args[0]} is not a valid Sessao / {name} field.'
+            ) from None
+
+        models = partial_models_ctx.get()
+        models.append(
+            {
+                'name': name,
+                'fields': cast(Mapping[str, PartialModelField], fields),
+                'from_model': 'Sessao',
+            }
+        )
+        _created_partial_types.add(name)
+
+
+class FluxoConversa(bases.BaseFluxoConversa):
+    """Represents a FluxoConversa record"""
+
+    id: _int
+    sessao: Optional['models.Sessao'] = None
+    sessaoId: _int
+    etapa: _str
+    intencao: _str
+    pedido: Optional[_str] = None
+    criadoEm: datetime.datetime
+
+    # take *args and **kwargs so that other metaclasses can define arguments
+    def __init_subclass__(
+        cls,
+        *args: Any,
+        warn_subclass: Optional[bool] = None,
+        **kwargs: Any,
+    ) -> None:
+        super().__init_subclass__()
+        if warn_subclass is not None:
+            warnings.warn(
+                'The `warn_subclass` argument is deprecated as it is no longer necessary and will be removed in the next release',
+                DeprecationWarning,
+                stacklevel=3,
+            )
+
+
+    @staticmethod
+    def create_partial(
+        name: str,
+        include: Optional[Iterable['types.FluxoConversaKeys']] = None,
+        exclude: Optional[Iterable['types.FluxoConversaKeys']] = None,
+        required: Optional[Iterable['types.FluxoConversaKeys']] = None,
+        optional: Optional[Iterable['types.FluxoConversaKeys']] = None,
+        relations: Optional[Mapping['types.FluxoConversaRelationalFieldKeys', str]] = None,
+        exclude_relational_fields: bool = False,
+    ) -> None:
+        if not os.environ.get('PRISMA_GENERATOR_INVOCATION'):
+            raise RuntimeError(
+                'Attempted to create a partial type outside of client generation.'
+            )
+
+        if name in _created_partial_types:
+            raise ValueError(f'Partial type "{name}" has already been created.')
+
+        if include is not None:
+            if exclude is not None:
+                raise TypeError('Exclude and include are mutually exclusive.')
+            if exclude_relational_fields is True:
+                raise TypeError('Include and exclude_relational_fields=True are mutually exclusive.')
+
+        if required and optional:
+            shared = set(required) & set(optional)
+            if shared:
+                raise ValueError(f'Cannot make the same field(s) required and optional {shared}')
+
+        if exclude_relational_fields and relations:
+            raise ValueError(
+                'exclude_relational_fields and relations are mutually exclusive'
+            )
+
+        fields: Dict['types.FluxoConversaKeys', PartialModelField] = OrderedDict()
+
+        try:
+            if include:
+                for field in include:
+                    fields[field] = _FluxoConversa_fields[field].copy()
+            elif exclude:
+                for field in exclude:
+                    if field not in _FluxoConversa_fields:
+                        raise KeyError(field)
+
+                fields = {
+                    key: data.copy()
+                    for key, data in _FluxoConversa_fields.items()
+                    if key not in exclude
+                }
+            else:
+                fields = {
+                    key: data.copy()
+                    for key, data in _FluxoConversa_fields.items()
+                }
+
+            if required:
+                for field in required:
+                    fields[field]['optional'] = False
+
+            if optional:
+                for field in optional:
+                    fields[field]['optional'] = True
+
+            if exclude_relational_fields:
+                fields = {
+                    key: data
+                    for key, data in fields.items()
+                    if key not in _FluxoConversa_relational_fields
+                }
+
+            if relations:
+                for field, type_ in relations.items():
+                    if field not in _FluxoConversa_relational_fields:
+                        raise errors.UnknownRelationalFieldError('FluxoConversa', field)
+
+                    # TODO: this method of validating types is not ideal
+                    # as it means we cannot two create partial types that
+                    # reference each other
+                    if type_ not in _created_partial_types:
+                        raise ValueError(
+                            f'Unknown partial type: "{type_}". '
+                            f'Did you remember to generate the {type_} type before this one?'
+                        )
+
+                    # TODO: support non prisma.partials models
+                    info = fields[field]
+                    if info['is_list']:
+                        info['type'] = f'List[\'partials.{type_}\']'
+                    else:
+                        info['type'] = f'\'partials.{type_}\''
+        except KeyError as exc:
+            raise ValueError(
+                f'{exc.args[0]} is not a valid FluxoConversa / {name} field.'
+            ) from None
+
+        models = partial_models_ctx.get()
+        models.append(
+            {
+                'name': name,
+                'fields': cast(Mapping[str, PartialModelField], fields),
+                'from_model': 'FluxoConversa',
+            }
+        )
+        _created_partial_types.add(name)
+
+
+class Mensagem(bases.BaseMensagem):
+    """Represents a Mensagem record"""
+
+    id: _int
+    sessao: Optional['models.Sessao'] = None
+    sessaoId: _int
+    texto: _str
+    role: _str
+    criadoEm: datetime.datetime
+
+    # take *args and **kwargs so that other metaclasses can define arguments
+    def __init_subclass__(
+        cls,
+        *args: Any,
+        warn_subclass: Optional[bool] = None,
+        **kwargs: Any,
+    ) -> None:
+        super().__init_subclass__()
+        if warn_subclass is not None:
+            warnings.warn(
+                'The `warn_subclass` argument is deprecated as it is no longer necessary and will be removed in the next release',
+                DeprecationWarning,
+                stacklevel=3,
+            )
+
+
+    @staticmethod
+    def create_partial(
+        name: str,
+        include: Optional[Iterable['types.MensagemKeys']] = None,
+        exclude: Optional[Iterable['types.MensagemKeys']] = None,
+        required: Optional[Iterable['types.MensagemKeys']] = None,
+        optional: Optional[Iterable['types.MensagemKeys']] = None,
+        relations: Optional[Mapping['types.MensagemRelationalFieldKeys', str]] = None,
+        exclude_relational_fields: bool = False,
+    ) -> None:
+        if not os.environ.get('PRISMA_GENERATOR_INVOCATION'):
+            raise RuntimeError(
+                'Attempted to create a partial type outside of client generation.'
+            )
+
+        if name in _created_partial_types:
+            raise ValueError(f'Partial type "{name}" has already been created.')
+
+        if include is not None:
+            if exclude is not None:
+                raise TypeError('Exclude and include are mutually exclusive.')
+            if exclude_relational_fields is True:
+                raise TypeError('Include and exclude_relational_fields=True are mutually exclusive.')
+
+        if required and optional:
+            shared = set(required) & set(optional)
+            if shared:
+                raise ValueError(f'Cannot make the same field(s) required and optional {shared}')
+
+        if exclude_relational_fields and relations:
+            raise ValueError(
+                'exclude_relational_fields and relations are mutually exclusive'
+            )
+
+        fields: Dict['types.MensagemKeys', PartialModelField] = OrderedDict()
+
+        try:
+            if include:
+                for field in include:
+                    fields[field] = _Mensagem_fields[field].copy()
+            elif exclude:
+                for field in exclude:
+                    if field not in _Mensagem_fields:
+                        raise KeyError(field)
+
+                fields = {
+                    key: data.copy()
+                    for key, data in _Mensagem_fields.items()
+                    if key not in exclude
+                }
+            else:
+                fields = {
+                    key: data.copy()
+                    for key, data in _Mensagem_fields.items()
+                }
+
+            if required:
+                for field in required:
+                    fields[field]['optional'] = False
+
+            if optional:
+                for field in optional:
+                    fields[field]['optional'] = True
+
+            if exclude_relational_fields:
+                fields = {
+                    key: data
+                    for key, data in fields.items()
+                    if key not in _Mensagem_relational_fields
+                }
+
+            if relations:
+                for field, type_ in relations.items():
+                    if field not in _Mensagem_relational_fields:
+                        raise errors.UnknownRelationalFieldError('Mensagem', field)
+
+                    # TODO: this method of validating types is not ideal
+                    # as it means we cannot two create partial types that
+                    # reference each other
+                    if type_ not in _created_partial_types:
+                        raise ValueError(
+                            f'Unknown partial type: "{type_}". '
+                            f'Did you remember to generate the {type_} type before this one?'
+                        )
+
+                    # TODO: support non prisma.partials models
+                    info = fields[field]
+                    if info['is_list']:
+                        info['type'] = f'List[\'partials.{type_}\']'
+                    else:
+                        info['type'] = f'\'partials.{type_}\''
+        except KeyError as exc:
+            raise ValueError(
+                f'{exc.args[0]} is not a valid Mensagem / {name} field.'
+            ) from None
+
+        models = partial_models_ctx.get()
+        models.append(
+            {
+                'name': name,
+                'fields': cast(Mapping[str, PartialModelField], fields),
+                'from_model': 'Mensagem',
+            }
+        )
+        _created_partial_types.add(name)
+
+
 
 _KnowledgeBase_relational_fields: Set[str] = set()  # pyright: ignore[reportUnusedVariable]
 _KnowledgeBase_fields: Dict['types.KnowledgeBaseKeys', PartialModelField] = OrderedDict(
@@ -211,6 +744,240 @@ _KnowledgeBase_fields: Dict['types.KnowledgeBaseKeys', PartialModelField] = Orde
     ],
 )
 
+_Usuario_relational_fields: Set[str] = {
+        'sessoes',
+    }
+_Usuario_fields: Dict['types.UsuarioKeys', PartialModelField] = OrderedDict(
+    [
+        ('id', {
+            'name': 'id',
+            'is_list': False,
+            'optional': False,
+            'type': '_int',
+            'is_relational': False,
+            'documentation': None,
+        }),
+        ('nome', {
+            'name': 'nome',
+            'is_list': False,
+            'optional': True,
+            'type': '_str',
+            'is_relational': False,
+            'documentation': None,
+        }),
+        ('email', {
+            'name': 'email',
+            'is_list': False,
+            'optional': True,
+            'type': '_str',
+            'is_relational': False,
+            'documentation': None,
+        }),
+        ('criadoEm', {
+            'name': 'criadoEm',
+            'is_list': False,
+            'optional': False,
+            'type': 'datetime.datetime',
+            'is_relational': False,
+            'documentation': None,
+        }),
+        ('sessoes', {
+            'name': 'sessoes',
+            'is_list': True,
+            'optional': True,
+            'type': 'List[\'models.Sessao\']',
+            'is_relational': True,
+            'documentation': None,
+        }),
+    ],
+)
+
+_Sessao_relational_fields: Set[str] = {
+        'usuario',
+        'mensagens',
+        'fluxo',
+    }
+_Sessao_fields: Dict['types.SessaoKeys', PartialModelField] = OrderedDict(
+    [
+        ('id', {
+            'name': 'id',
+            'is_list': False,
+            'optional': False,
+            'type': '_int',
+            'is_relational': False,
+            'documentation': None,
+        }),
+        ('token', {
+            'name': 'token',
+            'is_list': False,
+            'optional': False,
+            'type': '_str',
+            'is_relational': False,
+            'documentation': None,
+        }),
+        ('usuario', {
+            'name': 'usuario',
+            'is_list': False,
+            'optional': True,
+            'type': 'models.Usuario',
+            'is_relational': True,
+            'documentation': None,
+        }),
+        ('usuarioId', {
+            'name': 'usuarioId',
+            'is_list': False,
+            'optional': True,
+            'type': '_int',
+            'is_relational': False,
+            'documentation': None,
+        }),
+        ('criadoEm', {
+            'name': 'criadoEm',
+            'is_list': False,
+            'optional': False,
+            'type': 'datetime.datetime',
+            'is_relational': False,
+            'documentation': None,
+        }),
+        ('mensagens', {
+            'name': 'mensagens',
+            'is_list': True,
+            'optional': True,
+            'type': 'List[\'models.Mensagem\']',
+            'is_relational': True,
+            'documentation': None,
+        }),
+        ('fluxo', {
+            'name': 'fluxo',
+            'is_list': True,
+            'optional': True,
+            'type': 'List[\'models.FluxoConversa\']',
+            'is_relational': True,
+            'documentation': None,
+        }),
+    ],
+)
+
+_FluxoConversa_relational_fields: Set[str] = {
+        'sessao',
+    }
+_FluxoConversa_fields: Dict['types.FluxoConversaKeys', PartialModelField] = OrderedDict(
+    [
+        ('id', {
+            'name': 'id',
+            'is_list': False,
+            'optional': False,
+            'type': '_int',
+            'is_relational': False,
+            'documentation': None,
+        }),
+        ('sessao', {
+            'name': 'sessao',
+            'is_list': False,
+            'optional': True,
+            'type': 'models.Sessao',
+            'is_relational': True,
+            'documentation': None,
+        }),
+        ('sessaoId', {
+            'name': 'sessaoId',
+            'is_list': False,
+            'optional': False,
+            'type': '_int',
+            'is_relational': False,
+            'documentation': None,
+        }),
+        ('etapa', {
+            'name': 'etapa',
+            'is_list': False,
+            'optional': False,
+            'type': '_str',
+            'is_relational': False,
+            'documentation': None,
+        }),
+        ('intencao', {
+            'name': 'intencao',
+            'is_list': False,
+            'optional': False,
+            'type': '_str',
+            'is_relational': False,
+            'documentation': None,
+        }),
+        ('pedido', {
+            'name': 'pedido',
+            'is_list': False,
+            'optional': True,
+            'type': '_str',
+            'is_relational': False,
+            'documentation': None,
+        }),
+        ('criadoEm', {
+            'name': 'criadoEm',
+            'is_list': False,
+            'optional': False,
+            'type': 'datetime.datetime',
+            'is_relational': False,
+            'documentation': None,
+        }),
+    ],
+)
+
+_Mensagem_relational_fields: Set[str] = {
+        'sessao',
+    }
+_Mensagem_fields: Dict['types.MensagemKeys', PartialModelField] = OrderedDict(
+    [
+        ('id', {
+            'name': 'id',
+            'is_list': False,
+            'optional': False,
+            'type': '_int',
+            'is_relational': False,
+            'documentation': None,
+        }),
+        ('sessao', {
+            'name': 'sessao',
+            'is_list': False,
+            'optional': True,
+            'type': 'models.Sessao',
+            'is_relational': True,
+            'documentation': None,
+        }),
+        ('sessaoId', {
+            'name': 'sessaoId',
+            'is_list': False,
+            'optional': False,
+            'type': '_int',
+            'is_relational': False,
+            'documentation': None,
+        }),
+        ('texto', {
+            'name': 'texto',
+            'is_list': False,
+            'optional': False,
+            'type': '_str',
+            'is_relational': False,
+            'documentation': None,
+        }),
+        ('role', {
+            'name': 'role',
+            'is_list': False,
+            'optional': False,
+            'type': '_str',
+            'is_relational': False,
+            'documentation': None,
+        }),
+        ('criadoEm', {
+            'name': 'criadoEm',
+            'is_list': False,
+            'optional': False,
+            'type': 'datetime.datetime',
+            'is_relational': False,
+            'documentation': None,
+        }),
+    ],
+)
+
 
 
 # we have to import ourselves as relation types are namespaced to models
@@ -219,3 +986,7 @@ from . import models, actions
 
 # required to support relationships between models
 model_rebuild(KnowledgeBase)
+model_rebuild(Usuario)
+model_rebuild(Sessao)
+model_rebuild(FluxoConversa)
+model_rebuild(Mensagem)

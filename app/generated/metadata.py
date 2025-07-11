@@ -7,10 +7,28 @@ from __future__ import annotations
 
 PRISMA_MODELS: set[str] = {
     'KnowledgeBase',
+    'Usuario',
+    'Sessao',
+    'FluxoConversa',
+    'Mensagem',
 }
 
 RELATIONAL_FIELD_MAPPINGS: dict[str, dict[str, str]] = {
     'KnowledgeBase': {
+    },
+    'Usuario': {
+        'sessoes': 'Sessao',
+    },
+    'Sessao': {
+        'usuario': 'Usuario',
+        'mensagens': 'Mensagem',
+        'fluxo': 'FluxoConversa',
+    },
+    'FluxoConversa': {
+        'sessao': 'Sessao',
+    },
+    'Mensagem': {
+        'sessao': 'Sessao',
     },
 }
 

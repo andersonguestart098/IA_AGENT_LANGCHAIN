@@ -84,3 +84,43 @@ class BaseKnowledgeBase(_PrismaModel):
         return actions.KnowledgeBaseActions[_PrismaModelT](client or get_client(), cls)
 
 
+class BaseUsuario(_PrismaModel):
+    __prisma_model__: ClassVar[Literal['Usuario']] = 'Usuario'  # pyright: ignore[reportIncompatibleVariableOverride]
+
+    @classmethod
+    def prisma(cls: Type[_PrismaModelT], client: Optional['Prisma'] = None) -> 'actions.UsuarioActions[_PrismaModelT]':
+        from .client import get_client
+
+        return actions.UsuarioActions[_PrismaModelT](client or get_client(), cls)
+
+
+class BaseSessao(_PrismaModel):
+    __prisma_model__: ClassVar[Literal['Sessao']] = 'Sessao'  # pyright: ignore[reportIncompatibleVariableOverride]
+
+    @classmethod
+    def prisma(cls: Type[_PrismaModelT], client: Optional['Prisma'] = None) -> 'actions.SessaoActions[_PrismaModelT]':
+        from .client import get_client
+
+        return actions.SessaoActions[_PrismaModelT](client or get_client(), cls)
+
+
+class BaseFluxoConversa(_PrismaModel):
+    __prisma_model__: ClassVar[Literal['FluxoConversa']] = 'FluxoConversa'  # pyright: ignore[reportIncompatibleVariableOverride]
+
+    @classmethod
+    def prisma(cls: Type[_PrismaModelT], client: Optional['Prisma'] = None) -> 'actions.FluxoConversaActions[_PrismaModelT]':
+        from .client import get_client
+
+        return actions.FluxoConversaActions[_PrismaModelT](client or get_client(), cls)
+
+
+class BaseMensagem(_PrismaModel):
+    __prisma_model__: ClassVar[Literal['Mensagem']] = 'Mensagem'  # pyright: ignore[reportIncompatibleVariableOverride]
+
+    @classmethod
+    def prisma(cls: Type[_PrismaModelT], client: Optional['Prisma'] = None) -> 'actions.MensagemActions[_PrismaModelT]':
+        from .client import get_client
+
+        return actions.MensagemActions[_PrismaModelT](client or get_client(), cls)
+
+
