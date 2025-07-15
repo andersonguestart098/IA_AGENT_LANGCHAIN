@@ -11,6 +11,7 @@ PRISMA_MODELS: set[str] = {
     'Sessao',
     'FluxoConversa',
     'Mensagem',
+    'SlotPreenchido',
 }
 
 RELATIONAL_FIELD_MAPPINGS: dict[str, dict[str, str]] = {
@@ -26,9 +27,13 @@ RELATIONAL_FIELD_MAPPINGS: dict[str, dict[str, str]] = {
     },
     'FluxoConversa': {
         'sessao': 'Sessao',
+        'slots': 'SlotPreenchido',
     },
     'Mensagem': {
         'sessao': 'Sessao',
+    },
+    'SlotPreenchido': {
+        'fluxo': 'FluxoConversa',
     },
 }
 

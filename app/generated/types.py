@@ -1638,21 +1638,25 @@ class FindManySessaoArgsFromKnowledgeBaseRecursive4(TypedDict, total=False):
 class FluxoConversaIncludeFromKnowledgeBase(TypedDict, total=False):
     """Relational arguments for KnowledgeBase"""
     sessao: Union[bool, 'SessaoArgsFromKnowledgeBaseRecursive1']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromKnowledgeBaseRecursive1']
 
 
 class FluxoConversaIncludeFromKnowledgeBaseRecursive1(TypedDict, total=False):
     """Relational arguments for KnowledgeBase"""
     sessao: Union[bool, 'SessaoArgsFromKnowledgeBaseRecursive2']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromKnowledgeBaseRecursive2']
 
 
 class FluxoConversaIncludeFromKnowledgeBaseRecursive2(TypedDict, total=False):
     """Relational arguments for KnowledgeBase"""
     sessao: Union[bool, 'SessaoArgsFromKnowledgeBaseRecursive3']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromKnowledgeBaseRecursive3']
 
 
 class FluxoConversaIncludeFromKnowledgeBaseRecursive3(TypedDict, total=False):
     """Relational arguments for KnowledgeBase"""
     sessao: Union[bool, 'SessaoArgsFromKnowledgeBaseRecursive4']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromKnowledgeBaseRecursive4']
 
 
 class FluxoConversaIncludeFromKnowledgeBaseRecursive4(TypedDict, total=False):
@@ -1842,6 +1846,111 @@ class FindManyMensagemArgsFromKnowledgeBaseRecursive4(TypedDict, total=False):
     where: 'MensagemWhereInput'
     cursor: 'MensagemWhereUniqueInput'
     distinct: List['MensagemScalarFieldKeys']
+    
+    
+
+class SlotPreenchidoIncludeFromKnowledgeBase(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromKnowledgeBaseRecursive1']
+
+
+class SlotPreenchidoIncludeFromKnowledgeBaseRecursive1(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromKnowledgeBaseRecursive2']
+
+
+class SlotPreenchidoIncludeFromKnowledgeBaseRecursive2(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromKnowledgeBaseRecursive3']
+
+
+class SlotPreenchidoIncludeFromKnowledgeBaseRecursive3(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromKnowledgeBaseRecursive4']
+
+
+class SlotPreenchidoIncludeFromKnowledgeBaseRecursive4(TypedDict, total=False):
+    """Relational arguments for KnowledgeBase"""
+
+    
+
+class SlotPreenchidoArgsFromKnowledgeBase(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive1'
+
+
+class SlotPreenchidoArgsFromKnowledgeBaseRecursive1(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive2'
+
+
+class SlotPreenchidoArgsFromKnowledgeBaseRecursive2(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive3'
+
+
+class SlotPreenchidoArgsFromKnowledgeBaseRecursive3(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive4'
+
+
+class SlotPreenchidoArgsFromKnowledgeBaseRecursive4(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    
+    
+
+class FindManySlotPreenchidoArgsFromKnowledgeBase(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive1'
+
+
+class FindManySlotPreenchidoArgsFromKnowledgeBaseRecursive1(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive2'
+
+
+class FindManySlotPreenchidoArgsFromKnowledgeBaseRecursive2(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive3'
+
+
+class FindManySlotPreenchidoArgsFromKnowledgeBaseRecursive3(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive4'
+
+
+class FindManySlotPreenchidoArgsFromKnowledgeBaseRecursive4(TypedDict, total=False):
+    """Arguments for KnowledgeBase"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
     
 
 
@@ -2109,6 +2218,7 @@ class UsuarioOptionalCreateInput(TypedDict, total=False):
 
 class UsuarioCreateInput(UsuarioOptionalCreateInput):
     """Required arguments to the Usuario create method"""
+    senha_hash: _str
 
 
 # TODO: remove this in favour of without explicit relations
@@ -2124,6 +2234,7 @@ class UsuarioOptionalCreateWithoutRelationsInput(TypedDict, total=False):
 
 class UsuarioCreateWithoutRelationsInput(UsuarioOptionalCreateWithoutRelationsInput):
     """Required arguments to the Usuario create method, without relations"""
+    senha_hash: _str
 
 class UsuarioConnectOrCreateWithoutRelationsInput(TypedDict):
     create: 'UsuarioCreateWithoutRelationsInput'
@@ -2167,6 +2278,7 @@ class UsuarioUpdateInput(TypedDict, total=False):
     id: Union[AtomicIntInput, _int]
     nome: Optional[_str]
     email: Optional[_str]
+    senha_hash: _str
     criadoEm: datetime.datetime
     sessoes: 'SessaoUpdateManyWithoutRelationsInput'
 
@@ -2176,6 +2288,7 @@ class UsuarioUpdateManyMutationInput(TypedDict, total=False):
     id: Union[AtomicIntInput, _int]
     nome: Optional[_str]
     email: Optional[_str]
+    senha_hash: _str
     criadoEm: datetime.datetime
 
 
@@ -2235,6 +2348,14 @@ _Usuario_email_OrderByInput = TypedDict(
     total=True
 )
 
+_Usuario_senha_hash_OrderByInput = TypedDict(
+    '_Usuario_senha_hash_OrderByInput',
+    {
+        'senha_hash': 'SortOrder',
+    },
+    total=True
+)
+
 _Usuario_criadoEm_OrderByInput = TypedDict(
     '_Usuario_criadoEm_OrderByInput',
     {
@@ -2247,6 +2368,7 @@ UsuarioOrderByInput = Union[
     '_Usuario_id_OrderByInput',
     '_Usuario_nome_OrderByInput',
     '_Usuario_email_OrderByInput',
+    '_Usuario_senha_hash_OrderByInput',
     '_Usuario_criadoEm_OrderByInput',
 ]
 
@@ -2605,21 +2727,25 @@ class FindManySessaoArgsFromUsuarioRecursive4(TypedDict, total=False):
 class FluxoConversaIncludeFromUsuario(TypedDict, total=False):
     """Relational arguments for Usuario"""
     sessao: Union[bool, 'SessaoArgsFromUsuarioRecursive1']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromUsuarioRecursive1']
 
 
 class FluxoConversaIncludeFromUsuarioRecursive1(TypedDict, total=False):
     """Relational arguments for Usuario"""
     sessao: Union[bool, 'SessaoArgsFromUsuarioRecursive2']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromUsuarioRecursive2']
 
 
 class FluxoConversaIncludeFromUsuarioRecursive2(TypedDict, total=False):
     """Relational arguments for Usuario"""
     sessao: Union[bool, 'SessaoArgsFromUsuarioRecursive3']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromUsuarioRecursive3']
 
 
 class FluxoConversaIncludeFromUsuarioRecursive3(TypedDict, total=False):
     """Relational arguments for Usuario"""
     sessao: Union[bool, 'SessaoArgsFromUsuarioRecursive4']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromUsuarioRecursive4']
 
 
 class FluxoConversaIncludeFromUsuarioRecursive4(TypedDict, total=False):
@@ -2810,6 +2936,111 @@ class FindManyMensagemArgsFromUsuarioRecursive4(TypedDict, total=False):
     cursor: 'MensagemWhereUniqueInput'
     distinct: List['MensagemScalarFieldKeys']
     
+    
+
+class SlotPreenchidoIncludeFromUsuario(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromUsuarioRecursive1']
+
+
+class SlotPreenchidoIncludeFromUsuarioRecursive1(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromUsuarioRecursive2']
+
+
+class SlotPreenchidoIncludeFromUsuarioRecursive2(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromUsuarioRecursive3']
+
+
+class SlotPreenchidoIncludeFromUsuarioRecursive3(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromUsuarioRecursive4']
+
+
+class SlotPreenchidoIncludeFromUsuarioRecursive4(TypedDict, total=False):
+    """Relational arguments for Usuario"""
+
+    
+
+class SlotPreenchidoArgsFromUsuario(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive1'
+
+
+class SlotPreenchidoArgsFromUsuarioRecursive1(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive2'
+
+
+class SlotPreenchidoArgsFromUsuarioRecursive2(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive3'
+
+
+class SlotPreenchidoArgsFromUsuarioRecursive3(TypedDict, total=False):
+    """Arguments for Usuario"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive4'
+
+
+class SlotPreenchidoArgsFromUsuarioRecursive4(TypedDict, total=False):
+    """Arguments for Usuario"""
+    
+    
+
+class FindManySlotPreenchidoArgsFromUsuario(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive1'
+
+
+class FindManySlotPreenchidoArgsFromUsuarioRecursive1(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive2'
+
+
+class FindManySlotPreenchidoArgsFromUsuarioRecursive2(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive3'
+
+
+class FindManySlotPreenchidoArgsFromUsuarioRecursive3(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive4'
+
+
+class FindManySlotPreenchidoArgsFromUsuarioRecursive4(TypedDict, total=False):
+    """Arguments for Usuario"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    
 
 
 FindManyUsuarioArgs = FindManyUsuarioArgsFromUsuario
@@ -2823,6 +3054,7 @@ class UsuarioWhereInput(TypedDict, total=False):
     id: Union[_int, 'types.IntFilter']
     nome: Union[None, _str, 'types.StringFilter']
     email: Union[None, _str, 'types.StringFilter']
+    senha_hash: Union[_str, 'types.StringFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
     sessoes: 'SessaoListRelationFilter'
 
@@ -2838,6 +3070,7 @@ class UsuarioWhereInputRecursive1(TypedDict, total=False):
     id: Union[_int, 'types.IntFilter']
     nome: Union[None, _str, 'types.StringFilter']
     email: Union[None, _str, 'types.StringFilter']
+    senha_hash: Union[_str, 'types.StringFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
     sessoes: 'SessaoListRelationFilter'
 
@@ -2853,6 +3086,7 @@ class UsuarioWhereInputRecursive2(TypedDict, total=False):
     id: Union[_int, 'types.IntFilter']
     nome: Union[None, _str, 'types.StringFilter']
     email: Union[None, _str, 'types.StringFilter']
+    senha_hash: Union[_str, 'types.StringFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
     sessoes: 'SessaoListRelationFilter'
 
@@ -2868,6 +3102,7 @@ class UsuarioWhereInputRecursive3(TypedDict, total=False):
     id: Union[_int, 'types.IntFilter']
     nome: Union[None, _str, 'types.StringFilter']
     email: Union[None, _str, 'types.StringFilter']
+    senha_hash: Union[_str, 'types.StringFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
     sessoes: 'SessaoListRelationFilter'
 
@@ -2883,6 +3118,7 @@ class UsuarioWhereInputRecursive4(TypedDict, total=False):
     id: Union[_int, 'types.IntFilter']
     nome: Union[None, _str, 'types.StringFilter']
     email: Union[None, _str, 'types.StringFilter']
+    senha_hash: Union[_str, 'types.StringFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
     sessoes: 'SessaoListRelationFilter'
 
@@ -2898,6 +3134,7 @@ class UsuarioScalarWhereWithAggregatesInput(TypedDict, total=False):
     id: Union[_int, 'types.IntWithAggregatesFilter']
     nome: Union[_str, 'types.StringWithAggregatesFilter']
     email: Union[_str, 'types.StringWithAggregatesFilter']
+    senha_hash: Union[_str, 'types.StringWithAggregatesFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
 
     AND: List['UsuarioScalarWhereWithAggregatesInputRecursive1']
@@ -2910,6 +3147,7 @@ class UsuarioScalarWhereWithAggregatesInputRecursive1(TypedDict, total=False):
     id: Union[_int, 'types.IntWithAggregatesFilter']
     nome: Union[_str, 'types.StringWithAggregatesFilter']
     email: Union[_str, 'types.StringWithAggregatesFilter']
+    senha_hash: Union[_str, 'types.StringWithAggregatesFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
 
     AND: List['UsuarioScalarWhereWithAggregatesInputRecursive2']
@@ -2922,6 +3160,7 @@ class UsuarioScalarWhereWithAggregatesInputRecursive2(TypedDict, total=False):
     id: Union[_int, 'types.IntWithAggregatesFilter']
     nome: Union[_str, 'types.StringWithAggregatesFilter']
     email: Union[_str, 'types.StringWithAggregatesFilter']
+    senha_hash: Union[_str, 'types.StringWithAggregatesFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
 
     AND: List['UsuarioScalarWhereWithAggregatesInputRecursive3']
@@ -2934,6 +3173,7 @@ class UsuarioScalarWhereWithAggregatesInputRecursive3(TypedDict, total=False):
     id: Union[_int, 'types.IntWithAggregatesFilter']
     nome: Union[_str, 'types.StringWithAggregatesFilter']
     email: Union[_str, 'types.StringWithAggregatesFilter']
+    senha_hash: Union[_str, 'types.StringWithAggregatesFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
 
     AND: List['UsuarioScalarWhereWithAggregatesInputRecursive4']
@@ -2946,6 +3186,7 @@ class UsuarioScalarWhereWithAggregatesInputRecursive4(TypedDict, total=False):
     id: Union[_int, 'types.IntWithAggregatesFilter']
     nome: Union[_str, 'types.StringWithAggregatesFilter']
     email: Union[_str, 'types.StringWithAggregatesFilter']
+    senha_hash: Union[_str, 'types.StringWithAggregatesFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
 
 
@@ -2954,6 +3195,7 @@ class UsuarioGroupByOutput(TypedDict, total=False):
     id: _int
     nome: _str
     email: _str
+    senha_hash: _str
     criadoEm: datetime.datetime
     _sum: 'UsuarioSumAggregateOutput'
     _avg: 'UsuarioAvgAggregateOutput'
@@ -2977,6 +3219,7 @@ class UsuarioScalarAggregateOutput(TypedDict, total=False):
     id: _int
     nome: _str
     email: _str
+    senha_hash: _str
     criadoEm: datetime.datetime
 
 
@@ -2989,6 +3232,7 @@ class UsuarioMaxAggregateInput(TypedDict, total=False):
     id: bool
     nome: bool
     email: bool
+    senha_hash: bool
     criadoEm: bool
 
 
@@ -2997,6 +3241,7 @@ class UsuarioMinAggregateInput(TypedDict, total=False):
     id: bool
     nome: bool
     email: bool
+    senha_hash: bool
     criadoEm: bool
 
 
@@ -3015,6 +3260,7 @@ UsuarioCountAggregateInput = TypedDict(
         'id': bool,
         'nome': bool,
         'email': bool,
+        'senha_hash': bool,
         'criadoEm': bool,
         '_all': bool,
     },
@@ -3027,6 +3273,7 @@ UsuarioCountAggregateOutput = TypedDict(
         'id': int,
         'nome': int,
         'email': int,
+        'senha_hash': int,
         'criadoEm': int,
         '_all': int,
     },
@@ -3038,6 +3285,7 @@ UsuarioKeys = Literal[
     'id',
     'nome',
     'email',
+    'senha_hash',
     'criadoEm',
     'sessoes',
 ]
@@ -3045,6 +3293,7 @@ UsuarioScalarFieldKeys = Literal[
     'id',
     'nome',
     'email',
+    'senha_hash',
     'criadoEm',
 ]
 UsuarioScalarFieldKeysT = TypeVar('UsuarioScalarFieldKeysT', bound=UsuarioScalarFieldKeys)
@@ -3566,21 +3815,25 @@ class FindManySessaoArgsFromSessaoRecursive4(TypedDict, total=False):
 class FluxoConversaIncludeFromSessao(TypedDict, total=False):
     """Relational arguments for Sessao"""
     sessao: Union[bool, 'SessaoArgsFromSessaoRecursive1']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromSessaoRecursive1']
 
 
 class FluxoConversaIncludeFromSessaoRecursive1(TypedDict, total=False):
     """Relational arguments for Sessao"""
     sessao: Union[bool, 'SessaoArgsFromSessaoRecursive2']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromSessaoRecursive2']
 
 
 class FluxoConversaIncludeFromSessaoRecursive2(TypedDict, total=False):
     """Relational arguments for Sessao"""
     sessao: Union[bool, 'SessaoArgsFromSessaoRecursive3']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromSessaoRecursive3']
 
 
 class FluxoConversaIncludeFromSessaoRecursive3(TypedDict, total=False):
     """Relational arguments for Sessao"""
     sessao: Union[bool, 'SessaoArgsFromSessaoRecursive4']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromSessaoRecursive4']
 
 
 class FluxoConversaIncludeFromSessaoRecursive4(TypedDict, total=False):
@@ -3770,6 +4023,111 @@ class FindManyMensagemArgsFromSessaoRecursive4(TypedDict, total=False):
     where: 'MensagemWhereInput'
     cursor: 'MensagemWhereUniqueInput'
     distinct: List['MensagemScalarFieldKeys']
+    
+    
+
+class SlotPreenchidoIncludeFromSessao(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromSessaoRecursive1']
+
+
+class SlotPreenchidoIncludeFromSessaoRecursive1(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromSessaoRecursive2']
+
+
+class SlotPreenchidoIncludeFromSessaoRecursive2(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromSessaoRecursive3']
+
+
+class SlotPreenchidoIncludeFromSessaoRecursive3(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromSessaoRecursive4']
+
+
+class SlotPreenchidoIncludeFromSessaoRecursive4(TypedDict, total=False):
+    """Relational arguments for Sessao"""
+
+    
+
+class SlotPreenchidoArgsFromSessao(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive1'
+
+
+class SlotPreenchidoArgsFromSessaoRecursive1(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive2'
+
+
+class SlotPreenchidoArgsFromSessaoRecursive2(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive3'
+
+
+class SlotPreenchidoArgsFromSessaoRecursive3(TypedDict, total=False):
+    """Arguments for Sessao"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive4'
+
+
+class SlotPreenchidoArgsFromSessaoRecursive4(TypedDict, total=False):
+    """Arguments for Sessao"""
+    
+    
+
+class FindManySlotPreenchidoArgsFromSessao(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive1'
+
+
+class FindManySlotPreenchidoArgsFromSessaoRecursive1(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive2'
+
+
+class FindManySlotPreenchidoArgsFromSessaoRecursive2(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive3'
+
+
+class FindManySlotPreenchidoArgsFromSessaoRecursive3(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive4'
+
+
+class FindManySlotPreenchidoArgsFromSessaoRecursive4(TypedDict, total=False):
+    """Arguments for Sessao"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
     
 
 
@@ -4040,12 +4398,14 @@ class FluxoConversaOptionalCreateInput(TypedDict, total=False):
     sessaoId: _int
     pedido: Optional[_str]
     criadoEm: datetime.datetime
+    slots: 'SlotPreenchidoCreateManyNestedWithoutRelationsInput'
 
 
 class FluxoConversaCreateInput(FluxoConversaOptionalCreateInput):
     """Required arguments to the FluxoConversa create method"""
     etapa: _str
     intencao: _str
+    resposta: _str
 
 
 # TODO: remove this in favour of without explicit relations
@@ -4063,6 +4423,7 @@ class FluxoConversaCreateWithoutRelationsInput(FluxoConversaOptionalCreateWithou
     """Required arguments to the FluxoConversa create method, without relations"""
     etapa: _str
     intencao: _str
+    resposta: _str
 
 class FluxoConversaConnectOrCreateWithoutRelationsInput(TypedDict):
     create: 'FluxoConversaCreateWithoutRelationsInput'
@@ -4097,7 +4458,9 @@ class FluxoConversaUpdateInput(TypedDict, total=False):
     etapa: _str
     intencao: _str
     pedido: Optional[_str]
+    resposta: _str
     criadoEm: datetime.datetime
+    slots: 'SlotPreenchidoUpdateManyWithoutRelationsInput'
 
 
 class FluxoConversaUpdateManyMutationInput(TypedDict, total=False):
@@ -4106,6 +4469,7 @@ class FluxoConversaUpdateManyMutationInput(TypedDict, total=False):
     etapa: _str
     intencao: _str
     pedido: Optional[_str]
+    resposta: _str
     criadoEm: datetime.datetime
 
 
@@ -4181,6 +4545,14 @@ _FluxoConversa_pedido_OrderByInput = TypedDict(
     total=True
 )
 
+_FluxoConversa_resposta_OrderByInput = TypedDict(
+    '_FluxoConversa_resposta_OrderByInput',
+    {
+        'resposta': 'SortOrder',
+    },
+    total=True
+)
+
 _FluxoConversa_criadoEm_OrderByInput = TypedDict(
     '_FluxoConversa_criadoEm_OrderByInput',
     {
@@ -4195,6 +4567,7 @@ FluxoConversaOrderByInput = Union[
     '_FluxoConversa_etapa_OrderByInput',
     '_FluxoConversa_intencao_OrderByInput',
     '_FluxoConversa_pedido_OrderByInput',
+    '_FluxoConversa_resposta_OrderByInput',
     '_FluxoConversa_criadoEm_OrderByInput',
 ]
 
@@ -4227,6 +4600,7 @@ class FluxoConversaListRelationFilter(TypedDict, total=False):
 class FluxoConversaInclude(TypedDict, total=False):
     """FluxoConversa relational arguments"""
     sessao: Union[bool, 'SessaoArgsFromFluxoConversa']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromFluxoConversa']
 
 
     
@@ -4553,21 +4927,25 @@ class FindManySessaoArgsFromFluxoConversaRecursive4(TypedDict, total=False):
 class FluxoConversaIncludeFromFluxoConversa(TypedDict, total=False):
     """Relational arguments for FluxoConversa"""
     sessao: Union[bool, 'SessaoArgsFromFluxoConversaRecursive1']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromFluxoConversaRecursive1']
 
 
 class FluxoConversaIncludeFromFluxoConversaRecursive1(TypedDict, total=False):
     """Relational arguments for FluxoConversa"""
     sessao: Union[bool, 'SessaoArgsFromFluxoConversaRecursive2']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromFluxoConversaRecursive2']
 
 
 class FluxoConversaIncludeFromFluxoConversaRecursive2(TypedDict, total=False):
     """Relational arguments for FluxoConversa"""
     sessao: Union[bool, 'SessaoArgsFromFluxoConversaRecursive3']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromFluxoConversaRecursive3']
 
 
 class FluxoConversaIncludeFromFluxoConversaRecursive3(TypedDict, total=False):
     """Relational arguments for FluxoConversa"""
     sessao: Union[bool, 'SessaoArgsFromFluxoConversaRecursive4']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromFluxoConversaRecursive4']
 
 
 class FluxoConversaIncludeFromFluxoConversaRecursive4(TypedDict, total=False):
@@ -4758,6 +5136,111 @@ class FindManyMensagemArgsFromFluxoConversaRecursive4(TypedDict, total=False):
     cursor: 'MensagemWhereUniqueInput'
     distinct: List['MensagemScalarFieldKeys']
     
+    
+
+class SlotPreenchidoIncludeFromFluxoConversa(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromFluxoConversaRecursive1']
+
+
+class SlotPreenchidoIncludeFromFluxoConversaRecursive1(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromFluxoConversaRecursive2']
+
+
+class SlotPreenchidoIncludeFromFluxoConversaRecursive2(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromFluxoConversaRecursive3']
+
+
+class SlotPreenchidoIncludeFromFluxoConversaRecursive3(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromFluxoConversaRecursive4']
+
+
+class SlotPreenchidoIncludeFromFluxoConversaRecursive4(TypedDict, total=False):
+    """Relational arguments for FluxoConversa"""
+
+    
+
+class SlotPreenchidoArgsFromFluxoConversa(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive1'
+
+
+class SlotPreenchidoArgsFromFluxoConversaRecursive1(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive2'
+
+
+class SlotPreenchidoArgsFromFluxoConversaRecursive2(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive3'
+
+
+class SlotPreenchidoArgsFromFluxoConversaRecursive3(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive4'
+
+
+class SlotPreenchidoArgsFromFluxoConversaRecursive4(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    
+    
+
+class FindManySlotPreenchidoArgsFromFluxoConversa(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive1'
+
+
+class FindManySlotPreenchidoArgsFromFluxoConversaRecursive1(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive2'
+
+
+class FindManySlotPreenchidoArgsFromFluxoConversaRecursive2(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive3'
+
+
+class FindManySlotPreenchidoArgsFromFluxoConversaRecursive3(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive4'
+
+
+class FindManySlotPreenchidoArgsFromFluxoConversaRecursive4(TypedDict, total=False):
+    """Arguments for FluxoConversa"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    
 
 
 FindManyFluxoConversaArgs = FindManyFluxoConversaArgsFromFluxoConversa
@@ -4774,7 +5257,9 @@ class FluxoConversaWhereInput(TypedDict, total=False):
     etapa: Union[_str, 'types.StringFilter']
     intencao: Union[_str, 'types.StringFilter']
     pedido: Union[None, _str, 'types.StringFilter']
+    resposta: Union[_str, 'types.StringFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+    slots: 'SlotPreenchidoListRelationFilter'
 
     # should be noted that AND and NOT should be Union['FluxoConversaWhereInputRecursive1', List['FluxoConversaWhereInputRecursive1']]
     # but this causes mypy to hang :/
@@ -4791,7 +5276,9 @@ class FluxoConversaWhereInputRecursive1(TypedDict, total=False):
     etapa: Union[_str, 'types.StringFilter']
     intencao: Union[_str, 'types.StringFilter']
     pedido: Union[None, _str, 'types.StringFilter']
+    resposta: Union[_str, 'types.StringFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+    slots: 'SlotPreenchidoListRelationFilter'
 
     # should be noted that AND and NOT should be Union['FluxoConversaWhereInputRecursive2', List['FluxoConversaWhereInputRecursive2']]
     # but this causes mypy to hang :/
@@ -4808,7 +5295,9 @@ class FluxoConversaWhereInputRecursive2(TypedDict, total=False):
     etapa: Union[_str, 'types.StringFilter']
     intencao: Union[_str, 'types.StringFilter']
     pedido: Union[None, _str, 'types.StringFilter']
+    resposta: Union[_str, 'types.StringFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+    slots: 'SlotPreenchidoListRelationFilter'
 
     # should be noted that AND and NOT should be Union['FluxoConversaWhereInputRecursive3', List['FluxoConversaWhereInputRecursive3']]
     # but this causes mypy to hang :/
@@ -4825,7 +5314,9 @@ class FluxoConversaWhereInputRecursive3(TypedDict, total=False):
     etapa: Union[_str, 'types.StringFilter']
     intencao: Union[_str, 'types.StringFilter']
     pedido: Union[None, _str, 'types.StringFilter']
+    resposta: Union[_str, 'types.StringFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+    slots: 'SlotPreenchidoListRelationFilter'
 
     # should be noted that AND and NOT should be Union['FluxoConversaWhereInputRecursive4', List['FluxoConversaWhereInputRecursive4']]
     # but this causes mypy to hang :/
@@ -4842,7 +5333,9 @@ class FluxoConversaWhereInputRecursive4(TypedDict, total=False):
     etapa: Union[_str, 'types.StringFilter']
     intencao: Union[_str, 'types.StringFilter']
     pedido: Union[None, _str, 'types.StringFilter']
+    resposta: Union[_str, 'types.StringFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+    slots: 'SlotPreenchidoListRelationFilter'
 
 
 
@@ -4858,6 +5351,7 @@ class FluxoConversaScalarWhereWithAggregatesInput(TypedDict, total=False):
     etapa: Union[_str, 'types.StringWithAggregatesFilter']
     intencao: Union[_str, 'types.StringWithAggregatesFilter']
     pedido: Union[_str, 'types.StringWithAggregatesFilter']
+    resposta: Union[_str, 'types.StringWithAggregatesFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
 
     AND: List['FluxoConversaScalarWhereWithAggregatesInputRecursive1']
@@ -4872,6 +5366,7 @@ class FluxoConversaScalarWhereWithAggregatesInputRecursive1(TypedDict, total=Fal
     etapa: Union[_str, 'types.StringWithAggregatesFilter']
     intencao: Union[_str, 'types.StringWithAggregatesFilter']
     pedido: Union[_str, 'types.StringWithAggregatesFilter']
+    resposta: Union[_str, 'types.StringWithAggregatesFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
 
     AND: List['FluxoConversaScalarWhereWithAggregatesInputRecursive2']
@@ -4886,6 +5381,7 @@ class FluxoConversaScalarWhereWithAggregatesInputRecursive2(TypedDict, total=Fal
     etapa: Union[_str, 'types.StringWithAggregatesFilter']
     intencao: Union[_str, 'types.StringWithAggregatesFilter']
     pedido: Union[_str, 'types.StringWithAggregatesFilter']
+    resposta: Union[_str, 'types.StringWithAggregatesFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
 
     AND: List['FluxoConversaScalarWhereWithAggregatesInputRecursive3']
@@ -4900,6 +5396,7 @@ class FluxoConversaScalarWhereWithAggregatesInputRecursive3(TypedDict, total=Fal
     etapa: Union[_str, 'types.StringWithAggregatesFilter']
     intencao: Union[_str, 'types.StringWithAggregatesFilter']
     pedido: Union[_str, 'types.StringWithAggregatesFilter']
+    resposta: Union[_str, 'types.StringWithAggregatesFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
 
     AND: List['FluxoConversaScalarWhereWithAggregatesInputRecursive4']
@@ -4914,6 +5411,7 @@ class FluxoConversaScalarWhereWithAggregatesInputRecursive4(TypedDict, total=Fal
     etapa: Union[_str, 'types.StringWithAggregatesFilter']
     intencao: Union[_str, 'types.StringWithAggregatesFilter']
     pedido: Union[_str, 'types.StringWithAggregatesFilter']
+    resposta: Union[_str, 'types.StringWithAggregatesFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
 
 
@@ -4924,6 +5422,7 @@ class FluxoConversaGroupByOutput(TypedDict, total=False):
     etapa: _str
     intencao: _str
     pedido: _str
+    resposta: _str
     criadoEm: datetime.datetime
     _sum: 'FluxoConversaSumAggregateOutput'
     _avg: 'FluxoConversaAvgAggregateOutput'
@@ -4951,6 +5450,7 @@ class FluxoConversaScalarAggregateOutput(TypedDict, total=False):
     etapa: _str
     intencao: _str
     pedido: _str
+    resposta: _str
     criadoEm: datetime.datetime
 
 
@@ -4965,6 +5465,7 @@ class FluxoConversaMaxAggregateInput(TypedDict, total=False):
     etapa: bool
     intencao: bool
     pedido: bool
+    resposta: bool
     criadoEm: bool
 
 
@@ -4975,6 +5476,7 @@ class FluxoConversaMinAggregateInput(TypedDict, total=False):
     etapa: bool
     intencao: bool
     pedido: bool
+    resposta: bool
     criadoEm: bool
 
 
@@ -4996,6 +5498,7 @@ FluxoConversaCountAggregateInput = TypedDict(
         'etapa': bool,
         'intencao': bool,
         'pedido': bool,
+        'resposta': bool,
         'criadoEm': bool,
         '_all': bool,
     },
@@ -5010,6 +5513,7 @@ FluxoConversaCountAggregateOutput = TypedDict(
         'etapa': int,
         'intencao': int,
         'pedido': int,
+        'resposta': int,
         'criadoEm': int,
         '_all': int,
     },
@@ -5024,7 +5528,9 @@ FluxoConversaKeys = Literal[
     'etapa',
     'intencao',
     'pedido',
+    'resposta',
     'criadoEm',
+    'slots',
 ]
 FluxoConversaScalarFieldKeys = Literal[
     'id',
@@ -5032,12 +5538,14 @@ FluxoConversaScalarFieldKeys = Literal[
     'etapa',
     'intencao',
     'pedido',
+    'resposta',
     'criadoEm',
 ]
 FluxoConversaScalarFieldKeysT = TypeVar('FluxoConversaScalarFieldKeysT', bound=FluxoConversaScalarFieldKeys)
 
 FluxoConversaRelationalFieldKeys = Literal[
         'sessao',
+        'slots',
     ]
 
 # Mensagem types
@@ -5549,21 +6057,25 @@ class FindManySessaoArgsFromMensagemRecursive4(TypedDict, total=False):
 class FluxoConversaIncludeFromMensagem(TypedDict, total=False):
     """Relational arguments for Mensagem"""
     sessao: Union[bool, 'SessaoArgsFromMensagemRecursive1']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromMensagemRecursive1']
 
 
 class FluxoConversaIncludeFromMensagemRecursive1(TypedDict, total=False):
     """Relational arguments for Mensagem"""
     sessao: Union[bool, 'SessaoArgsFromMensagemRecursive2']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromMensagemRecursive2']
 
 
 class FluxoConversaIncludeFromMensagemRecursive2(TypedDict, total=False):
     """Relational arguments for Mensagem"""
     sessao: Union[bool, 'SessaoArgsFromMensagemRecursive3']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromMensagemRecursive3']
 
 
 class FluxoConversaIncludeFromMensagemRecursive3(TypedDict, total=False):
     """Relational arguments for Mensagem"""
     sessao: Union[bool, 'SessaoArgsFromMensagemRecursive4']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromMensagemRecursive4']
 
 
 class FluxoConversaIncludeFromMensagemRecursive4(TypedDict, total=False):
@@ -5753,6 +6265,111 @@ class FindManyMensagemArgsFromMensagemRecursive4(TypedDict, total=False):
     where: 'MensagemWhereInput'
     cursor: 'MensagemWhereUniqueInput'
     distinct: List['MensagemScalarFieldKeys']
+    
+    
+
+class SlotPreenchidoIncludeFromMensagem(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromMensagemRecursive1']
+
+
+class SlotPreenchidoIncludeFromMensagemRecursive1(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromMensagemRecursive2']
+
+
+class SlotPreenchidoIncludeFromMensagemRecursive2(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromMensagemRecursive3']
+
+
+class SlotPreenchidoIncludeFromMensagemRecursive3(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromMensagemRecursive4']
+
+
+class SlotPreenchidoIncludeFromMensagemRecursive4(TypedDict, total=False):
+    """Relational arguments for Mensagem"""
+
+    
+
+class SlotPreenchidoArgsFromMensagem(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive1'
+
+
+class SlotPreenchidoArgsFromMensagemRecursive1(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive2'
+
+
+class SlotPreenchidoArgsFromMensagemRecursive2(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive3'
+
+
+class SlotPreenchidoArgsFromMensagemRecursive3(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive4'
+
+
+class SlotPreenchidoArgsFromMensagemRecursive4(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    
+    
+
+class FindManySlotPreenchidoArgsFromMensagem(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive1'
+
+
+class FindManySlotPreenchidoArgsFromMensagemRecursive1(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive2'
+
+
+class FindManySlotPreenchidoArgsFromMensagemRecursive2(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive3'
+
+
+class FindManySlotPreenchidoArgsFromMensagemRecursive3(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive4'
+
+
+class FindManySlotPreenchidoArgsFromMensagemRecursive4(TypedDict, total=False):
+    """Arguments for Mensagem"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
     
 
 
@@ -6016,6 +6633,1093 @@ MensagemScalarFieldKeysT = TypeVar('MensagemScalarFieldKeysT', bound=MensagemSca
 
 MensagemRelationalFieldKeys = Literal[
         'sessao',
+    ]
+
+# SlotPreenchido types
+
+class SlotPreenchidoOptionalCreateInput(TypedDict, total=False):
+    """Optional arguments to the SlotPreenchido create method"""
+    id: _int
+    fluxo: 'FluxoConversaCreateNestedWithoutRelationsInput'
+    fluxoId: _int
+    criadoEm: datetime.datetime
+
+
+class SlotPreenchidoCreateInput(SlotPreenchidoOptionalCreateInput):
+    """Required arguments to the SlotPreenchido create method"""
+    nome: _str
+    valor: _str
+
+
+# TODO: remove this in favour of without explicit relations
+# e.g. PostCreateWithoutAuthorInput
+
+class SlotPreenchidoOptionalCreateWithoutRelationsInput(TypedDict, total=False):
+    """Optional arguments to the SlotPreenchido create method, without relations"""
+    id: _int
+    fluxoId: _int
+    criadoEm: datetime.datetime
+
+
+class SlotPreenchidoCreateWithoutRelationsInput(SlotPreenchidoOptionalCreateWithoutRelationsInput):
+    """Required arguments to the SlotPreenchido create method, without relations"""
+    nome: _str
+    valor: _str
+
+class SlotPreenchidoConnectOrCreateWithoutRelationsInput(TypedDict):
+    create: 'SlotPreenchidoCreateWithoutRelationsInput'
+    where: 'SlotPreenchidoWhereUniqueInput'
+
+class SlotPreenchidoCreateNestedWithoutRelationsInput(TypedDict, total=False):
+    create: 'SlotPreenchidoCreateWithoutRelationsInput'
+    connect: 'SlotPreenchidoWhereUniqueInput'
+    connect_or_create: 'SlotPreenchidoConnectOrCreateWithoutRelationsInput'
+
+
+class SlotPreenchidoCreateManyNestedWithoutRelationsInput(TypedDict, total=False):
+    create: Union['SlotPreenchidoCreateWithoutRelationsInput', List['SlotPreenchidoCreateWithoutRelationsInput']]
+    connect: Union['SlotPreenchidoWhereUniqueInput', List['SlotPreenchidoWhereUniqueInput']]
+    connect_or_create: Union['SlotPreenchidoConnectOrCreateWithoutRelationsInput', List['SlotPreenchidoConnectOrCreateWithoutRelationsInput']]
+
+_SlotPreenchidoWhereUnique_id_Input = TypedDict(
+    '_SlotPreenchidoWhereUnique_id_Input',
+    {
+        'id': '_int',
+    },
+    total=True
+)
+
+SlotPreenchidoWhereUniqueInput = _SlotPreenchidoWhereUnique_id_Input
+
+
+class SlotPreenchidoUpdateInput(TypedDict, total=False):
+    """Optional arguments for updating a record"""
+    id: Union[AtomicIntInput, _int]
+    fluxo: 'FluxoConversaUpdateOneWithoutRelationsInput'
+    nome: _str
+    valor: _str
+    criadoEm: datetime.datetime
+
+
+class SlotPreenchidoUpdateManyMutationInput(TypedDict, total=False):
+    """Arguments for updating many records"""
+    id: Union[AtomicIntInput, _int]
+    nome: _str
+    valor: _str
+    criadoEm: datetime.datetime
+
+
+class SlotPreenchidoUpdateManyWithoutRelationsInput(TypedDict, total=False):
+    create: List['SlotPreenchidoCreateWithoutRelationsInput']
+    connect: List['SlotPreenchidoWhereUniqueInput']
+    connect_or_create: List['SlotPreenchidoConnectOrCreateWithoutRelationsInput']
+    set: List['SlotPreenchidoWhereUniqueInput']
+    disconnect: List['SlotPreenchidoWhereUniqueInput']
+    delete: List['SlotPreenchidoWhereUniqueInput']
+
+    # TODO
+    # update: List['SlotPreenchidoUpdateWithWhereUniqueWithoutRelationsInput']
+    # updateMany: List['SlotPreenchidoUpdateManyWithWhereUniqueWithoutRelationsInput']
+    # deleteMany: List['SlotPreenchidoScalarWhereInput']
+    # upsert: List['SlotPreenchidoUpserteWithWhereUniqueWithoutRelationsInput']
+
+
+class SlotPreenchidoUpdateOneWithoutRelationsInput(TypedDict, total=False):
+    create: 'SlotPreenchidoCreateWithoutRelationsInput'
+    connect: 'SlotPreenchidoWhereUniqueInput'
+    connect_or_create: 'SlotPreenchidoConnectOrCreateWithoutRelationsInput'
+    disconnect: bool
+    delete: bool
+
+    # TODO
+    # update: 'SlotPreenchidoUpdateInput'
+    # upsert: 'SlotPreenchidoUpsertWithoutRelationsInput'
+
+
+class SlotPreenchidoUpsertInput(TypedDict):
+    create: 'SlotPreenchidoCreateInput'
+    update: 'SlotPreenchidoUpdateInput'  # pyright: ignore[reportIncompatibleMethodOverride]
+
+
+_SlotPreenchido_id_OrderByInput = TypedDict(
+    '_SlotPreenchido_id_OrderByInput',
+    {
+        'id': 'SortOrder',
+    },
+    total=True
+)
+
+_SlotPreenchido_fluxoId_OrderByInput = TypedDict(
+    '_SlotPreenchido_fluxoId_OrderByInput',
+    {
+        'fluxoId': 'SortOrder',
+    },
+    total=True
+)
+
+_SlotPreenchido_nome_OrderByInput = TypedDict(
+    '_SlotPreenchido_nome_OrderByInput',
+    {
+        'nome': 'SortOrder',
+    },
+    total=True
+)
+
+_SlotPreenchido_valor_OrderByInput = TypedDict(
+    '_SlotPreenchido_valor_OrderByInput',
+    {
+        'valor': 'SortOrder',
+    },
+    total=True
+)
+
+_SlotPreenchido_criadoEm_OrderByInput = TypedDict(
+    '_SlotPreenchido_criadoEm_OrderByInput',
+    {
+        'criadoEm': 'SortOrder',
+    },
+    total=True
+)
+
+SlotPreenchidoOrderByInput = Union[
+    '_SlotPreenchido_id_OrderByInput',
+    '_SlotPreenchido_fluxoId_OrderByInput',
+    '_SlotPreenchido_nome_OrderByInput',
+    '_SlotPreenchido_valor_OrderByInput',
+    '_SlotPreenchido_criadoEm_OrderByInput',
+]
+
+
+
+# recursive SlotPreenchido types
+# TODO: cleanup these types
+
+
+# Dict[str, Any] is a mypy limitation
+# see https://github.com/RobertCraigie/prisma-client-py/issues/45
+# switch to pyright for improved types, see https://prisma-client-py.readthedocs.io/en/stable/reference/limitations/
+
+SlotPreenchidoRelationFilter = TypedDict(
+    'SlotPreenchidoRelationFilter',
+    {
+        'is': 'Dict[str, Any]',
+        'is_not': 'Dict[str, Any]',
+    },
+    total=False,
+)
+
+
+class SlotPreenchidoListRelationFilter(TypedDict, total=False):
+    some: 'Dict[str, Any]'
+    none: 'Dict[str, Any]'
+    every: 'Dict[str, Any]'
+
+
+class SlotPreenchidoInclude(TypedDict, total=False):
+    """SlotPreenchido relational arguments"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromSlotPreenchido']
+
+
+    
+
+class KnowledgeBaseIncludeFromSlotPreenchido(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+
+
+class KnowledgeBaseIncludeFromSlotPreenchidoRecursive1(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+
+
+class KnowledgeBaseIncludeFromSlotPreenchidoRecursive2(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+
+
+class KnowledgeBaseIncludeFromSlotPreenchidoRecursive3(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+
+
+class KnowledgeBaseIncludeFromSlotPreenchidoRecursive4(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+
+    
+
+class KnowledgeBaseArgsFromSlotPreenchido(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive1'
+
+
+class KnowledgeBaseArgsFromSlotPreenchidoRecursive1(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive2'
+
+
+class KnowledgeBaseArgsFromSlotPreenchidoRecursive2(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive3'
+
+
+class KnowledgeBaseArgsFromSlotPreenchidoRecursive3(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive4'
+
+
+class KnowledgeBaseArgsFromSlotPreenchidoRecursive4(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    
+    
+
+class FindManyKnowledgeBaseArgsFromSlotPreenchido(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive1'
+
+
+class FindManyKnowledgeBaseArgsFromSlotPreenchidoRecursive1(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive2'
+
+
+class FindManyKnowledgeBaseArgsFromSlotPreenchidoRecursive2(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive3'
+
+
+class FindManyKnowledgeBaseArgsFromSlotPreenchidoRecursive3(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    include: 'KnowledgeBaseIncludeFromKnowledgeBaseRecursive4'
+
+
+class FindManyKnowledgeBaseArgsFromSlotPreenchidoRecursive4(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['KnowledgeBaseOrderByInput', List['KnowledgeBaseOrderByInput']]
+    where: 'KnowledgeBaseWhereInput'
+    cursor: 'KnowledgeBaseWhereUniqueInput'
+    distinct: List['KnowledgeBaseScalarFieldKeys']
+    
+    
+
+class UsuarioIncludeFromSlotPreenchido(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromSlotPreenchidoRecursive1']
+
+
+class UsuarioIncludeFromSlotPreenchidoRecursive1(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromSlotPreenchidoRecursive2']
+
+
+class UsuarioIncludeFromSlotPreenchidoRecursive2(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromSlotPreenchidoRecursive3']
+
+
+class UsuarioIncludeFromSlotPreenchidoRecursive3(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    sessoes: Union[bool, 'FindManySessaoArgsFromSlotPreenchidoRecursive4']
+
+
+class UsuarioIncludeFromSlotPreenchidoRecursive4(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+
+    
+
+class UsuarioArgsFromSlotPreenchido(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'UsuarioIncludeFromUsuarioRecursive1'
+
+
+class UsuarioArgsFromSlotPreenchidoRecursive1(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'UsuarioIncludeFromUsuarioRecursive2'
+
+
+class UsuarioArgsFromSlotPreenchidoRecursive2(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'UsuarioIncludeFromUsuarioRecursive3'
+
+
+class UsuarioArgsFromSlotPreenchidoRecursive3(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'UsuarioIncludeFromUsuarioRecursive4'
+
+
+class UsuarioArgsFromSlotPreenchidoRecursive4(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    
+    
+
+class FindManyUsuarioArgsFromSlotPreenchido(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive1'
+
+
+class FindManyUsuarioArgsFromSlotPreenchidoRecursive1(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive2'
+
+
+class FindManyUsuarioArgsFromSlotPreenchidoRecursive2(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive3'
+
+
+class FindManyUsuarioArgsFromSlotPreenchidoRecursive3(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    include: 'UsuarioIncludeFromUsuarioRecursive4'
+
+
+class FindManyUsuarioArgsFromSlotPreenchidoRecursive4(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['UsuarioOrderByInput', List['UsuarioOrderByInput']]
+    where: 'UsuarioWhereInput'
+    cursor: 'UsuarioWhereUniqueInput'
+    distinct: List['UsuarioScalarFieldKeys']
+    
+    
+
+class SessaoIncludeFromSlotPreenchido(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    usuario: Union[bool, 'UsuarioArgsFromSlotPreenchidoRecursive1']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromSlotPreenchidoRecursive1']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromSlotPreenchidoRecursive1']
+
+
+class SessaoIncludeFromSlotPreenchidoRecursive1(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    usuario: Union[bool, 'UsuarioArgsFromSlotPreenchidoRecursive2']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromSlotPreenchidoRecursive2']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromSlotPreenchidoRecursive2']
+
+
+class SessaoIncludeFromSlotPreenchidoRecursive2(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    usuario: Union[bool, 'UsuarioArgsFromSlotPreenchidoRecursive3']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromSlotPreenchidoRecursive3']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromSlotPreenchidoRecursive3']
+
+
+class SessaoIncludeFromSlotPreenchidoRecursive3(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    usuario: Union[bool, 'UsuarioArgsFromSlotPreenchidoRecursive4']
+    mensagens: Union[bool, 'FindManyMensagemArgsFromSlotPreenchidoRecursive4']
+    fluxo: Union[bool, 'FindManyFluxoConversaArgsFromSlotPreenchidoRecursive4']
+
+
+class SessaoIncludeFromSlotPreenchidoRecursive4(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+
+    
+
+class SessaoArgsFromSlotPreenchido(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'SessaoIncludeFromSessaoRecursive1'
+
+
+class SessaoArgsFromSlotPreenchidoRecursive1(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'SessaoIncludeFromSessaoRecursive2'
+
+
+class SessaoArgsFromSlotPreenchidoRecursive2(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'SessaoIncludeFromSessaoRecursive3'
+
+
+class SessaoArgsFromSlotPreenchidoRecursive3(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'SessaoIncludeFromSessaoRecursive4'
+
+
+class SessaoArgsFromSlotPreenchidoRecursive4(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    
+    
+
+class FindManySessaoArgsFromSlotPreenchido(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive1'
+
+
+class FindManySessaoArgsFromSlotPreenchidoRecursive1(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive2'
+
+
+class FindManySessaoArgsFromSlotPreenchidoRecursive2(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive3'
+
+
+class FindManySessaoArgsFromSlotPreenchidoRecursive3(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    include: 'SessaoIncludeFromSessaoRecursive4'
+
+
+class FindManySessaoArgsFromSlotPreenchidoRecursive4(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['SessaoOrderByInput', List['SessaoOrderByInput']]
+    where: 'SessaoWhereInput'
+    cursor: 'SessaoWhereUniqueInput'
+    distinct: List['SessaoScalarFieldKeys']
+    
+    
+
+class FluxoConversaIncludeFromSlotPreenchido(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    sessao: Union[bool, 'SessaoArgsFromSlotPreenchidoRecursive1']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromSlotPreenchidoRecursive1']
+
+
+class FluxoConversaIncludeFromSlotPreenchidoRecursive1(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    sessao: Union[bool, 'SessaoArgsFromSlotPreenchidoRecursive2']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromSlotPreenchidoRecursive2']
+
+
+class FluxoConversaIncludeFromSlotPreenchidoRecursive2(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    sessao: Union[bool, 'SessaoArgsFromSlotPreenchidoRecursive3']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromSlotPreenchidoRecursive3']
+
+
+class FluxoConversaIncludeFromSlotPreenchidoRecursive3(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    sessao: Union[bool, 'SessaoArgsFromSlotPreenchidoRecursive4']
+    slots: Union[bool, 'FindManySlotPreenchidoArgsFromSlotPreenchidoRecursive4']
+
+
+class FluxoConversaIncludeFromSlotPreenchidoRecursive4(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+
+    
+
+class FluxoConversaArgsFromSlotPreenchido(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive1'
+
+
+class FluxoConversaArgsFromSlotPreenchidoRecursive1(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive2'
+
+
+class FluxoConversaArgsFromSlotPreenchidoRecursive2(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive3'
+
+
+class FluxoConversaArgsFromSlotPreenchidoRecursive3(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive4'
+
+
+class FluxoConversaArgsFromSlotPreenchidoRecursive4(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    
+    
+
+class FindManyFluxoConversaArgsFromSlotPreenchido(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive1'
+
+
+class FindManyFluxoConversaArgsFromSlotPreenchidoRecursive1(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive2'
+
+
+class FindManyFluxoConversaArgsFromSlotPreenchidoRecursive2(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive3'
+
+
+class FindManyFluxoConversaArgsFromSlotPreenchidoRecursive3(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    include: 'FluxoConversaIncludeFromFluxoConversaRecursive4'
+
+
+class FindManyFluxoConversaArgsFromSlotPreenchidoRecursive4(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['FluxoConversaOrderByInput', List['FluxoConversaOrderByInput']]
+    where: 'FluxoConversaWhereInput'
+    cursor: 'FluxoConversaWhereUniqueInput'
+    distinct: List['FluxoConversaScalarFieldKeys']
+    
+    
+
+class MensagemIncludeFromSlotPreenchido(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    sessao: Union[bool, 'SessaoArgsFromSlotPreenchidoRecursive1']
+
+
+class MensagemIncludeFromSlotPreenchidoRecursive1(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    sessao: Union[bool, 'SessaoArgsFromSlotPreenchidoRecursive2']
+
+
+class MensagemIncludeFromSlotPreenchidoRecursive2(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    sessao: Union[bool, 'SessaoArgsFromSlotPreenchidoRecursive3']
+
+
+class MensagemIncludeFromSlotPreenchidoRecursive3(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    sessao: Union[bool, 'SessaoArgsFromSlotPreenchidoRecursive4']
+
+
+class MensagemIncludeFromSlotPreenchidoRecursive4(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+
+    
+
+class MensagemArgsFromSlotPreenchido(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'MensagemIncludeFromMensagemRecursive1'
+
+
+class MensagemArgsFromSlotPreenchidoRecursive1(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'MensagemIncludeFromMensagemRecursive2'
+
+
+class MensagemArgsFromSlotPreenchidoRecursive2(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'MensagemIncludeFromMensagemRecursive3'
+
+
+class MensagemArgsFromSlotPreenchidoRecursive3(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'MensagemIncludeFromMensagemRecursive4'
+
+
+class MensagemArgsFromSlotPreenchidoRecursive4(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    
+    
+
+class FindManyMensagemArgsFromSlotPreenchido(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive1'
+
+
+class FindManyMensagemArgsFromSlotPreenchidoRecursive1(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive2'
+
+
+class FindManyMensagemArgsFromSlotPreenchidoRecursive2(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive3'
+
+
+class FindManyMensagemArgsFromSlotPreenchidoRecursive3(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    include: 'MensagemIncludeFromMensagemRecursive4'
+
+
+class FindManyMensagemArgsFromSlotPreenchidoRecursive4(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['MensagemOrderByInput', List['MensagemOrderByInput']]
+    where: 'MensagemWhereInput'
+    cursor: 'MensagemWhereUniqueInput'
+    distinct: List['MensagemScalarFieldKeys']
+    
+    
+
+class SlotPreenchidoIncludeFromSlotPreenchido(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromSlotPreenchidoRecursive1']
+
+
+class SlotPreenchidoIncludeFromSlotPreenchidoRecursive1(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromSlotPreenchidoRecursive2']
+
+
+class SlotPreenchidoIncludeFromSlotPreenchidoRecursive2(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromSlotPreenchidoRecursive3']
+
+
+class SlotPreenchidoIncludeFromSlotPreenchidoRecursive3(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+    fluxo: Union[bool, 'FluxoConversaArgsFromSlotPreenchidoRecursive4']
+
+
+class SlotPreenchidoIncludeFromSlotPreenchidoRecursive4(TypedDict, total=False):
+    """Relational arguments for SlotPreenchido"""
+
+    
+
+class SlotPreenchidoArgsFromSlotPreenchido(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive1'
+
+
+class SlotPreenchidoArgsFromSlotPreenchidoRecursive1(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive2'
+
+
+class SlotPreenchidoArgsFromSlotPreenchidoRecursive2(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive3'
+
+
+class SlotPreenchidoArgsFromSlotPreenchidoRecursive3(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive4'
+
+
+class SlotPreenchidoArgsFromSlotPreenchidoRecursive4(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    
+    
+
+class FindManySlotPreenchidoArgsFromSlotPreenchido(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive1'
+
+
+class FindManySlotPreenchidoArgsFromSlotPreenchidoRecursive1(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive2'
+
+
+class FindManySlotPreenchidoArgsFromSlotPreenchidoRecursive2(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive3'
+
+
+class FindManySlotPreenchidoArgsFromSlotPreenchidoRecursive3(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    include: 'SlotPreenchidoIncludeFromSlotPreenchidoRecursive4'
+
+
+class FindManySlotPreenchidoArgsFromSlotPreenchidoRecursive4(TypedDict, total=False):
+    """Arguments for SlotPreenchido"""
+    take: int
+    skip: int
+    order_by: Union['SlotPreenchidoOrderByInput', List['SlotPreenchidoOrderByInput']]
+    where: 'SlotPreenchidoWhereInput'
+    cursor: 'SlotPreenchidoWhereUniqueInput'
+    distinct: List['SlotPreenchidoScalarFieldKeys']
+    
+
+
+FindManySlotPreenchidoArgs = FindManySlotPreenchidoArgsFromSlotPreenchido
+FindFirstSlotPreenchidoArgs = FindManySlotPreenchidoArgsFromSlotPreenchido
+
+
+    
+
+class SlotPreenchidoWhereInput(TypedDict, total=False):
+    """SlotPreenchido arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    fluxo: 'FluxoConversaRelationFilter'
+    fluxoId: Union[_int, 'types.IntFilter']
+    nome: Union[_str, 'types.StringFilter']
+    valor: Union[_str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+
+    # should be noted that AND and NOT should be Union['SlotPreenchidoWhereInputRecursive1', List['SlotPreenchidoWhereInputRecursive1']]
+    # but this causes mypy to hang :/
+    AND: List['SlotPreenchidoWhereInputRecursive1']
+    OR: List['SlotPreenchidoWhereInputRecursive1']
+    NOT: List['SlotPreenchidoWhereInputRecursive1']
+
+
+class SlotPreenchidoWhereInputRecursive1(TypedDict, total=False):
+    """SlotPreenchido arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    fluxo: 'FluxoConversaRelationFilter'
+    fluxoId: Union[_int, 'types.IntFilter']
+    nome: Union[_str, 'types.StringFilter']
+    valor: Union[_str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+
+    # should be noted that AND and NOT should be Union['SlotPreenchidoWhereInputRecursive2', List['SlotPreenchidoWhereInputRecursive2']]
+    # but this causes mypy to hang :/
+    AND: List['SlotPreenchidoWhereInputRecursive2']
+    OR: List['SlotPreenchidoWhereInputRecursive2']
+    NOT: List['SlotPreenchidoWhereInputRecursive2']
+
+
+class SlotPreenchidoWhereInputRecursive2(TypedDict, total=False):
+    """SlotPreenchido arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    fluxo: 'FluxoConversaRelationFilter'
+    fluxoId: Union[_int, 'types.IntFilter']
+    nome: Union[_str, 'types.StringFilter']
+    valor: Union[_str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+
+    # should be noted that AND and NOT should be Union['SlotPreenchidoWhereInputRecursive3', List['SlotPreenchidoWhereInputRecursive3']]
+    # but this causes mypy to hang :/
+    AND: List['SlotPreenchidoWhereInputRecursive3']
+    OR: List['SlotPreenchidoWhereInputRecursive3']
+    NOT: List['SlotPreenchidoWhereInputRecursive3']
+
+
+class SlotPreenchidoWhereInputRecursive3(TypedDict, total=False):
+    """SlotPreenchido arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    fluxo: 'FluxoConversaRelationFilter'
+    fluxoId: Union[_int, 'types.IntFilter']
+    nome: Union[_str, 'types.StringFilter']
+    valor: Union[_str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+
+    # should be noted that AND and NOT should be Union['SlotPreenchidoWhereInputRecursive4', List['SlotPreenchidoWhereInputRecursive4']]
+    # but this causes mypy to hang :/
+    AND: List['SlotPreenchidoWhereInputRecursive4']
+    OR: List['SlotPreenchidoWhereInputRecursive4']
+    NOT: List['SlotPreenchidoWhereInputRecursive4']
+
+
+class SlotPreenchidoWhereInputRecursive4(TypedDict, total=False):
+    """SlotPreenchido arguments for searching"""
+    id: Union[_int, 'types.IntFilter']
+    fluxo: 'FluxoConversaRelationFilter'
+    fluxoId: Union[_int, 'types.IntFilter']
+    nome: Union[_str, 'types.StringFilter']
+    valor: Union[_str, 'types.StringFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
+
+
+
+# aggregate SlotPreenchido types
+
+
+    
+
+class SlotPreenchidoScalarWhereWithAggregatesInput(TypedDict, total=False):
+    """SlotPreenchido arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    fluxoId: Union[_int, 'types.IntWithAggregatesFilter']
+    nome: Union[_str, 'types.StringWithAggregatesFilter']
+    valor: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['SlotPreenchidoScalarWhereWithAggregatesInputRecursive1']
+    OR: List['SlotPreenchidoScalarWhereWithAggregatesInputRecursive1']
+    NOT: List['SlotPreenchidoScalarWhereWithAggregatesInputRecursive1']
+
+
+class SlotPreenchidoScalarWhereWithAggregatesInputRecursive1(TypedDict, total=False):
+    """SlotPreenchido arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    fluxoId: Union[_int, 'types.IntWithAggregatesFilter']
+    nome: Union[_str, 'types.StringWithAggregatesFilter']
+    valor: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['SlotPreenchidoScalarWhereWithAggregatesInputRecursive2']
+    OR: List['SlotPreenchidoScalarWhereWithAggregatesInputRecursive2']
+    NOT: List['SlotPreenchidoScalarWhereWithAggregatesInputRecursive2']
+
+
+class SlotPreenchidoScalarWhereWithAggregatesInputRecursive2(TypedDict, total=False):
+    """SlotPreenchido arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    fluxoId: Union[_int, 'types.IntWithAggregatesFilter']
+    nome: Union[_str, 'types.StringWithAggregatesFilter']
+    valor: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['SlotPreenchidoScalarWhereWithAggregatesInputRecursive3']
+    OR: List['SlotPreenchidoScalarWhereWithAggregatesInputRecursive3']
+    NOT: List['SlotPreenchidoScalarWhereWithAggregatesInputRecursive3']
+
+
+class SlotPreenchidoScalarWhereWithAggregatesInputRecursive3(TypedDict, total=False):
+    """SlotPreenchido arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    fluxoId: Union[_int, 'types.IntWithAggregatesFilter']
+    nome: Union[_str, 'types.StringWithAggregatesFilter']
+    valor: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+    AND: List['SlotPreenchidoScalarWhereWithAggregatesInputRecursive4']
+    OR: List['SlotPreenchidoScalarWhereWithAggregatesInputRecursive4']
+    NOT: List['SlotPreenchidoScalarWhereWithAggregatesInputRecursive4']
+
+
+class SlotPreenchidoScalarWhereWithAggregatesInputRecursive4(TypedDict, total=False):
+    """SlotPreenchido arguments for searching"""
+    id: Union[_int, 'types.IntWithAggregatesFilter']
+    fluxoId: Union[_int, 'types.IntWithAggregatesFilter']
+    nome: Union[_str, 'types.StringWithAggregatesFilter']
+    valor: Union[_str, 'types.StringWithAggregatesFilter']
+    criadoEm: Union[datetime.datetime, 'types.DateTimeWithAggregatesFilter']
+
+
+
+class SlotPreenchidoGroupByOutput(TypedDict, total=False):
+    id: _int
+    fluxoId: _int
+    nome: _str
+    valor: _str
+    criadoEm: datetime.datetime
+    _sum: 'SlotPreenchidoSumAggregateOutput'
+    _avg: 'SlotPreenchidoAvgAggregateOutput'
+    _min: 'SlotPreenchidoMinAggregateOutput'
+    _max: 'SlotPreenchidoMaxAggregateOutput'
+    _count: 'SlotPreenchidoCountAggregateOutput'
+
+
+class SlotPreenchidoAvgAggregateOutput(TypedDict, total=False):
+    """SlotPreenchido output for aggregating averages"""
+    id: float
+    fluxoId: float
+
+
+class SlotPreenchidoSumAggregateOutput(TypedDict, total=False):
+    """SlotPreenchido output for aggregating sums"""
+    id: _int
+    fluxoId: _int
+
+
+class SlotPreenchidoScalarAggregateOutput(TypedDict, total=False):
+    """SlotPreenchido output including scalar fields"""
+    id: _int
+    fluxoId: _int
+    nome: _str
+    valor: _str
+    criadoEm: datetime.datetime
+
+
+SlotPreenchidoMinAggregateOutput = SlotPreenchidoScalarAggregateOutput
+SlotPreenchidoMaxAggregateOutput = SlotPreenchidoScalarAggregateOutput
+
+
+class SlotPreenchidoMaxAggregateInput(TypedDict, total=False):
+    """SlotPreenchido input for aggregating by max"""
+    id: bool
+    fluxoId: bool
+    nome: bool
+    valor: bool
+    criadoEm: bool
+
+
+class SlotPreenchidoMinAggregateInput(TypedDict, total=False):
+    """SlotPreenchido input for aggregating by min"""
+    id: bool
+    fluxoId: bool
+    nome: bool
+    valor: bool
+    criadoEm: bool
+
+
+class SlotPreenchidoNumberAggregateInput(TypedDict, total=False):
+    """SlotPreenchido input for aggregating numbers"""
+    id: bool
+    fluxoId: bool
+
+
+SlotPreenchidoAvgAggregateInput = SlotPreenchidoNumberAggregateInput
+SlotPreenchidoSumAggregateInput = SlotPreenchidoNumberAggregateInput
+
+
+SlotPreenchidoCountAggregateInput = TypedDict(
+    'SlotPreenchidoCountAggregateInput',
+    {
+        'id': bool,
+        'fluxoId': bool,
+        'nome': bool,
+        'valor': bool,
+        'criadoEm': bool,
+        '_all': bool,
+    },
+    total=False,
+)
+
+SlotPreenchidoCountAggregateOutput = TypedDict(
+    'SlotPreenchidoCountAggregateOutput',
+    {
+        'id': int,
+        'fluxoId': int,
+        'nome': int,
+        'valor': int,
+        'criadoEm': int,
+        '_all': int,
+    },
+    total=False,
+)
+
+
+SlotPreenchidoKeys = Literal[
+    'id',
+    'fluxo',
+    'fluxoId',
+    'nome',
+    'valor',
+    'criadoEm',
+]
+SlotPreenchidoScalarFieldKeys = Literal[
+    'id',
+    'fluxoId',
+    'nome',
+    'valor',
+    'criadoEm',
+]
+SlotPreenchidoScalarFieldKeysT = TypeVar('SlotPreenchidoScalarFieldKeysT', bound=SlotPreenchidoScalarFieldKeys)
+
+SlotPreenchidoRelationalFieldKeys = Literal[
+        'fluxo',
     ]
 
 

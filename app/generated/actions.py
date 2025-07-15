@@ -1208,6 +1208,7 @@ class UsuarioActions(Generic[_PrismaModelT]):
         usuario = await Usuario.prisma().create(
             data={
                 # data to create a Usuario record
+                'senha_hash': 'bghffegacj',
             },
         )
         ```
@@ -1262,9 +1263,11 @@ class UsuarioActions(Generic[_PrismaModelT]):
             data=[
                 {
                     # data to create a Usuario record
+                    'senha_hash': 'bhghchehcc',
                 },
                 {
                     # data to create a Usuario record
+                    'senha_hash': 'dcgchcbbf',
                 },
             ],
             skip_duplicates=True,
@@ -1318,7 +1321,7 @@ class UsuarioActions(Generic[_PrismaModelT]):
         ```py
         usuario = await Usuario.prisma().delete(
             where={
-                'id': 1675546029,
+                'id': 1343201072,
             },
         )
         ```
@@ -1370,7 +1373,7 @@ class UsuarioActions(Generic[_PrismaModelT]):
         ```py
         usuario = await Usuario.prisma().find_unique(
             where={
-                'id': 1767274722,
+                'id': 675780521,
             },
         )
         ```
@@ -1421,7 +1424,7 @@ class UsuarioActions(Generic[_PrismaModelT]):
         ```py
         usuario = await Usuario.prisma().find_unique_or_raise(
             where={
-                'id': 326272115,
+                'id': 744964398,
             },
         )
         ```
@@ -1548,11 +1551,11 @@ class UsuarioActions(Generic[_PrismaModelT]):
         Example
         -------
         ```py
-        # find the second Usuario record ordered by the criadoEm field
+        # find the second Usuario record ordered by the senha_hash field
         usuario = await Usuario.prisma().find_first(
             skip=1,
             order={
-                'criadoEm': 'desc',
+                'senha_hash': 'desc',
             },
         )
         ```
@@ -1616,11 +1619,11 @@ class UsuarioActions(Generic[_PrismaModelT]):
         Example
         -------
         ```py
-        # find the second Usuario record ordered by the id field
+        # find the second Usuario record ordered by the criadoEm field
         usuario = await Usuario.prisma().find_first_or_raise(
             skip=1,
             order={
-                'id': 'desc',
+                'criadoEm': 'desc',
             },
         )
         ```
@@ -1673,7 +1676,7 @@ class UsuarioActions(Generic[_PrismaModelT]):
         ```py
         usuario = await Usuario.prisma().update(
             where={
-                'id': 1343201072,
+                'id': 1969681615,
             },
             data={
                 # data to update the Usuario record to
@@ -1730,13 +1733,15 @@ class UsuarioActions(Generic[_PrismaModelT]):
         ```py
         usuario = await Usuario.prisma().upsert(
             where={
-                'id': 675780521,
+                'id': 1116175964,
             },
             data={
                 'create': {
-                    'id': 675780521,
+                    'id': 1116175964,
+                    'senha_hash': 'dcgchcbbf',
                 },
                 'update': {
+                    'senha_hash': 'dcgchcbbf',
                 },
             },
         )
@@ -1784,7 +1789,7 @@ class UsuarioActions(Generic[_PrismaModelT]):
         # update all Usuario records
         total = await Usuario.prisma().update_many(
             data={
-                'nome': 'heejgedji'
+                'id': 861472101
             },
             where={}
         )
@@ -1848,7 +1853,7 @@ class UsuarioActions(Generic[_PrismaModelT]):
         results = await Usuario.prisma().count(
             select={
                 '_all': True,
-                'email': True,
+                'nome': True,
             },
         )
         ```
@@ -1915,7 +1920,7 @@ class UsuarioActions(Generic[_PrismaModelT]):
         results = await Usuario.prisma().count(
             select={
                 '_all': True,
-                'criadoEm': True,
+                'email': True,
             },
         )
         ```
@@ -2055,10 +2060,10 @@ class UsuarioActions(Generic[_PrismaModelT]):
         Example
         -------
         ```py
-        # group Usuario records by id values
+        # group Usuario records by senha_hash values
         # and count how many records are in each group
         results = await Usuario.prisma().group_by(
-            ['id'],
+            ['senha_hash'],
             count=True,
         )
         ```
@@ -2147,7 +2152,7 @@ class SessaoActions(Generic[_PrismaModelT]):
         ```py
         users = await Sessao.prisma().query_raw(
             'SELECT * FROM Sessao WHERE id = ?',
-            1969681615,
+            1303003706,
         )
         ```
         """
@@ -2187,7 +2192,7 @@ class SessaoActions(Generic[_PrismaModelT]):
         ```py
         user = await Sessao.prisma().query_first(
             'SELECT * FROM Sessao WHERE token = ?',
-            'bbbgbhfjge',
+            'bgiggdidbf',
         )
         ```
         """
@@ -2226,7 +2231,7 @@ class SessaoActions(Generic[_PrismaModelT]):
         sessao = await Sessao.prisma().create(
             data={
                 # data to create a Sessao record
-                'token': 'igbehcbab',
+                'token': 'caaaedabfc',
             },
         )
         ```
@@ -2281,11 +2286,11 @@ class SessaoActions(Generic[_PrismaModelT]):
             data=[
                 {
                     # data to create a Sessao record
-                    'token': 'bdadaadhag',
+                    'token': 'bigibebcib',
                 },
                 {
                     # data to create a Sessao record
-                    'token': 'bgiggdidbf',
+                    'token': 'bigaiehgcc',
                 },
             ],
             skip_duplicates=True,
@@ -2339,7 +2344,7 @@ class SessaoActions(Generic[_PrismaModelT]):
         ```py
         sessao = await Sessao.prisma().delete(
             where={
-                'id': 2000430152,
+                'id': 1448521415,
             },
         )
         ```
@@ -2391,7 +2396,7 @@ class SessaoActions(Generic[_PrismaModelT]):
         ```py
         sessao = await Sessao.prisma().find_unique(
             where={
-                'id': 1868141281,
+                'id': 1628650740,
             },
         )
         ```
@@ -2442,7 +2447,7 @@ class SessaoActions(Generic[_PrismaModelT]):
         ```py
         sessao = await Sessao.prisma().find_unique_or_raise(
             where={
-                'id': 1860847622,
+                'id': 1249606685,
             },
         )
         ```
@@ -2694,7 +2699,7 @@ class SessaoActions(Generic[_PrismaModelT]):
         ```py
         sessao = await Sessao.prisma().update(
             where={
-                'id': 1448521415,
+                'id': 835903122,
             },
             data={
                 # data to update the Sessao record to
@@ -2751,15 +2756,15 @@ class SessaoActions(Generic[_PrismaModelT]):
         ```py
         sessao = await Sessao.prisma().upsert(
             where={
-                'id': 1628650740,
+                'id': 763719779,
             },
             data={
                 'create': {
-                    'id': 1628650740,
-                    'token': 'bgiggdidbf',
+                    'id': 763719779,
+                    'token': 'bigaiehgcc',
                 },
                 'update': {
-                    'token': 'bgiggdidbf',
+                    'token': 'bigaiehgcc',
                 },
             },
         )
@@ -2807,7 +2812,7 @@ class SessaoActions(Generic[_PrismaModelT]):
         # update all Sessao records
         total = await Sessao.prisma().update_many(
             data={
-                'token': 'bcejgaggif'
+                'token': 'ecjjjfbae'
             },
             where={}
         )
@@ -3170,7 +3175,7 @@ class FluxoConversaActions(Generic[_PrismaModelT]):
         ```py
         users = await FluxoConversa.prisma().query_raw(
             'SELECT * FROM FluxoConversa WHERE id = ?',
-            835903122,
+            1775811865,
         )
         ```
         """
@@ -3210,7 +3215,7 @@ class FluxoConversaActions(Generic[_PrismaModelT]):
         ```py
         user = await FluxoConversa.prisma().query_first(
             'SELECT * FROM FluxoConversa WHERE sessaoId = ?',
-            763719779,
+            893145566,
         )
         ```
         """
@@ -3249,9 +3254,10 @@ class FluxoConversaActions(Generic[_PrismaModelT]):
         fluxoconversa = await FluxoConversa.prisma().create(
             data={
                 # data to create a FluxoConversa record
-                'sessaoId': 429995104,
-                'etapa': 'bhhfibbigf',
-                'intencao': 'ijdbeffgg',
+                'sessaoId': 995405759,
+                'etapa': 'cbachdgfce',
+                'intencao': 'chbfcacbd',
+                'resposta': 'efggddide',
             },
         )
         ```
@@ -3306,15 +3312,17 @@ class FluxoConversaActions(Generic[_PrismaModelT]):
             data=[
                 {
                     # data to create a FluxoConversa record
-                    'sessaoId': 995405759,
-                    'etapa': 'cbachdgfce',
-                    'intencao': 'chbfcacbd',
+                    'sessaoId': 2058258651,
+                    'etapa': 'bfidgijfjc',
+                    'intencao': 'ihieecagf',
+                    'resposta': 'bghfciaafe',
                 },
                 {
                     # data to create a FluxoConversa record
-                    'sessaoId': 456633834,
-                    'etapa': 'caficfigfb',
-                    'intencao': 'bfidgijfjc',
+                    'sessaoId': 1627576247,
+                    'etapa': 'cafeiaccbc',
+                    'intencao': 'gaddfhfh',
+                    'resposta': 'gieegcbeg',
                 },
             ],
             skip_duplicates=True,
@@ -3368,7 +3376,7 @@ class FluxoConversaActions(Generic[_PrismaModelT]):
         ```py
         fluxoconversa = await FluxoConversa.prisma().delete(
             where={
-                'id': 878442065,
+                'id': 1625503827,
             },
         )
         ```
@@ -3420,7 +3428,7 @@ class FluxoConversaActions(Generic[_PrismaModelT]):
         ```py
         fluxoconversa = await FluxoConversa.prisma().find_unique(
             where={
-                'id': 1675280054,
+                'id': 521827728,
             },
         )
         ```
@@ -3471,7 +3479,7 @@ class FluxoConversaActions(Generic[_PrismaModelT]):
         ```py
         fluxoconversa = await FluxoConversa.prisma().find_unique_or_raise(
             where={
-                'id': 1627576247,
+                'id': 1266032265,
             },
         )
         ```
@@ -3723,7 +3731,7 @@ class FluxoConversaActions(Generic[_PrismaModelT]):
         ```py
         fluxoconversa = await FluxoConversa.prisma().update(
             where={
-                'id': 2054802212,
+                'id': 93253262,
             },
             data={
                 # data to update the FluxoConversa record to
@@ -3780,19 +3788,21 @@ class FluxoConversaActions(Generic[_PrismaModelT]):
         ```py
         fluxoconversa = await FluxoConversa.prisma().upsert(
             where={
-                'id': 60335757,
+                'id': 2053047983,
             },
             data={
                 'create': {
-                    'id': 60335757,
-                    'sessaoId': 456633834,
-                    'etapa': 'caficfigfb',
-                    'intencao': 'bfidgijfjc',
+                    'id': 2053047983,
+                    'sessaoId': 1627576247,
+                    'etapa': 'cafeiaccbc',
+                    'intencao': 'gaddfhfh',
+                    'resposta': 'gieegcbeg',
                 },
                 'update': {
-                    'sessaoId': 456633834,
-                    'etapa': 'caficfigfb',
-                    'intencao': 'bfidgijfjc',
+                    'sessaoId': 1627576247,
+                    'etapa': 'cafeiaccbc',
+                    'intencao': 'gaddfhfh',
+                    'resposta': 'gieegcbeg',
                 },
             },
         )
@@ -3840,7 +3850,7 @@ class FluxoConversaActions(Generic[_PrismaModelT]):
         # update all FluxoConversa records
         total = await FluxoConversa.prisma().update_many(
             data={
-                'criadoEm': datetime.datetime.utcnow()
+                'resposta': 'gifdddbia'
             },
             where={}
         )
@@ -3904,7 +3914,7 @@ class FluxoConversaActions(Generic[_PrismaModelT]):
         results = await FluxoConversa.prisma().count(
             select={
                 '_all': True,
-                'id': True,
+                'criadoEm': True,
             },
         )
         ```
@@ -3971,7 +3981,7 @@ class FluxoConversaActions(Generic[_PrismaModelT]):
         results = await FluxoConversa.prisma().count(
             select={
                 '_all': True,
-                'sessaoId': True,
+                'id': True,
             },
         )
         ```
@@ -4111,10 +4121,10 @@ class FluxoConversaActions(Generic[_PrismaModelT]):
         Example
         -------
         ```py
-        # group FluxoConversa records by etapa values
+        # group FluxoConversa records by sessaoId values
         # and count how many records are in each group
         results = await FluxoConversa.prisma().group_by(
-            ['etapa'],
+            ['sessaoId'],
             count=True,
         )
         ```
@@ -4203,7 +4213,7 @@ class MensagemActions(Generic[_PrismaModelT]):
         ```py
         users = await Mensagem.prisma().query_raw(
             'SELECT * FROM Mensagem WHERE id = ?',
-            684462146,
+            127474245,
         )
         ```
         """
@@ -4243,7 +4253,7 @@ class MensagemActions(Generic[_PrismaModelT]):
         ```py
         user = await Mensagem.prisma().query_first(
             'SELECT * FROM Mensagem WHERE sessaoId = ?',
-            1625503827,
+            948921754,
         )
         ```
         """
@@ -4282,9 +4292,9 @@ class MensagemActions(Generic[_PrismaModelT]):
         mensagem = await Mensagem.prisma().create(
             data={
                 # data to create a Mensagem record
-                'sessaoId': 521827728,
-                'texto': 'bcggadccgf',
-                'role': 'jdcfdcgc',
+                'sessaoId': 1964990155,
+                'texto': 'bcciijbibg',
+                'role': 'cffcachfd',
             },
         )
         ```
@@ -4339,15 +4349,15 @@ class MensagemActions(Generic[_PrismaModelT]):
             data=[
                 {
                     # data to create a Mensagem record
-                    'sessaoId': 2053047983,
-                    'texto': 'gifdddbia',
-                    'role': 'bchehecef',
+                    'sessaoId': 1223573862,
+                    'texto': 'febcgjbfj',
+                    'role': 'bageiegghg',
                 },
                 {
                     # data to create a Mensagem record
-                    'sessaoId': 948921754,
-                    'texto': 'bjgejjabff',
-                    'role': 'bcciijbibg',
+                    'sessaoId': 508382461,
+                    'texto': 'bacecgfhbe',
+                    'role': 'ihcahiead',
                 },
             ],
             skip_duplicates=True,
@@ -4401,7 +4411,7 @@ class MensagemActions(Generic[_PrismaModelT]):
         ```py
         mensagem = await Mensagem.prisma().delete(
             where={
-                'id': 255202753,
+                'id': 1874748096,
             },
         )
         ```
@@ -4453,7 +4463,7 @@ class MensagemActions(Generic[_PrismaModelT]):
         ```py
         mensagem = await Mensagem.prisma().find_unique(
             where={
-                'id': 1223573862,
+                'id': 916896761,
             },
         )
         ```
@@ -4504,7 +4514,7 @@ class MensagemActions(Generic[_PrismaModelT]):
         ```py
         mensagem = await Mensagem.prisma().find_unique_or_raise(
             where={
-                'id': 541269159,
+                'id': 769267518,
             },
         )
         ```
@@ -4756,7 +4766,7 @@ class MensagemActions(Generic[_PrismaModelT]):
         ```py
         mensagem = await Mensagem.prisma().update(
             where={
-                'id': 1064846676,
+                'id': 820312479,
             },
             data={
                 # data to update the Mensagem record to
@@ -4813,19 +4823,19 @@ class MensagemActions(Generic[_PrismaModelT]):
         ```py
         mensagem = await Mensagem.prisma().upsert(
             where={
-                'id': 508382461,
+                'id': 92728044,
             },
             data={
                 'create': {
-                    'id': 508382461,
-                    'sessaoId': 948921754,
-                    'texto': 'bjgejjabff',
-                    'role': 'bcciijbibg',
+                    'id': 92728044,
+                    'sessaoId': 508382461,
+                    'texto': 'bacecgfhbe',
+                    'role': 'ihcahiead',
                 },
                 'update': {
-                    'sessaoId': 948921754,
-                    'texto': 'bjgejjabff',
-                    'role': 'bcciijbibg',
+                    'sessaoId': 508382461,
+                    'texto': 'bacecgfhbe',
+                    'role': 'ihcahiead',
                 },
             },
         )
@@ -4873,7 +4883,7 @@ class MensagemActions(Generic[_PrismaModelT]):
         # update all Mensagem records
         total = await Mensagem.prisma().update_many(
             data={
-                'id': 1024265714
+                'id': 344858293
             },
             where={}
         )
@@ -5148,6 +5158,1039 @@ class MensagemActions(Generic[_PrismaModelT]):
         # and count how many records are in each group
         results = await Mensagem.prisma().group_by(
             ['role'],
+            count=True,
+        )
+        ```
+        """
+        if order is None:
+            if take is not None:
+                raise TypeError('Missing argument: \'order\' which is required when \'take\' is present')
+
+            if skip is not None:
+                raise TypeError('Missing argument: \'order\' which is required when \'skip\' is present')
+
+        root_selection: List[str] = [*by]
+        if avg is not None:
+            root_selection.append(_select_fields('_avg', avg))
+
+        if min is not None:
+            root_selection.append(_select_fields('_min', min))
+
+        if sum is not None:
+            root_selection.append(_select_fields('_sum', sum))
+
+        if max is not None:
+            root_selection.append(_select_fields('_max', max))
+
+        if count is not None:
+            if count is True:
+                root_selection.append('_count { _all }')
+            elif isinstance(count, dict):
+                root_selection.append(_select_fields('_count', count))
+
+        resp = await self._client._execute(
+            method='group_by',
+            model=self._model,
+            arguments={
+                'by': by,
+                'take': take,
+                'skip': skip,
+                'where': where,
+                'having': having,
+                'orderBy': order,
+            },
+            root_selection=root_selection,
+        )
+        return resp['data']['result']  # type: ignore[no-any-return]
+
+
+class SlotPreenchidoActions(Generic[_PrismaModelT]):
+    __slots__ = (
+        '_client',
+        '_model',
+    )
+
+    def __init__(self, client: Prisma, model: Type[_PrismaModelT]) -> None:
+        self._client = client
+        self._model = model
+
+    async def query_raw(
+        self,
+        query: LiteralString,
+        *args: Any,
+    ) -> List[_PrismaModelT]:
+        """Execute a raw SQL query
+
+        Parameters
+        ----------
+        query
+            The raw SQL query string to be executed
+        *args
+            Parameters to be passed to the SQL query, these MUST be used over
+            string formatting to avoid an SQL injection vulnerability
+
+        Returns
+        -------
+        List[prisma.models.SlotPreenchido]
+            The records returned by the SQL query
+
+        Raises
+        ------
+        prisma_errors.RawQueryError
+            This could be due to invalid syntax, mismatched number of parameters or any other error
+        prisma.errors.PrismaError
+            Catch all for every exception raised by Prisma Client Python
+
+        Example
+        -------
+        ```py
+        users = await SlotPreenchido.prisma().query_raw(
+            'SELECT * FROM SlotPreenchido WHERE id = ?',
+            1121741130,
+        )
+        ```
+        """
+        return await self._client.query_raw(query, *args, model=self._model)
+
+    async def query_first(
+        self,
+        query: LiteralString,
+        *args: Any,
+    ) -> Optional[_PrismaModelT]:
+        """Execute a raw SQL query, returning the first result
+
+        Parameters
+        ----------
+        query
+            The raw SQL query string to be executed
+        *args
+            Parameters to be passed to the SQL query, these MUST be used over
+            string formatting to avoid an SQL injection vulnerability
+
+        Returns
+        -------
+        prisma.models.SlotPreenchido
+            The first record returned by the SQL query
+        None
+            The raw SQL query did not return any records
+
+        Raises
+        ------
+        prisma_errors.RawQueryError
+            This could be due to invalid syntax, mismatched number of parameters or any other error
+        prisma.errors.PrismaError
+            Catch all for every exception raised by Prisma Client Python
+
+        Example
+        -------
+        ```py
+        user = await SlotPreenchido.prisma().query_first(
+            'SELECT * FROM SlotPreenchido WHERE fluxoId = ?',
+            1495896251,
+        )
+        ```
+        """
+        return await self._client.query_first(query, *args, model=self._model)
+
+    async def create(
+        self,
+        data: types.SlotPreenchidoCreateInput,
+        include: Optional[types.SlotPreenchidoInclude] = None
+    ) -> _PrismaModelT:
+        """Create a new SlotPreenchido record.
+
+        Parameters
+        ----------
+        data
+            SlotPreenchido record data
+        include
+            Specifies which relations should be loaded on the returned SlotPreenchido model
+
+        Returns
+        -------
+        prisma.models.SlotPreenchido
+            The created SlotPreenchido record
+
+        Raises
+        ------
+        prisma.errors.MissingRequiredValueError
+            Value is required but was not found
+        prisma.errors.PrismaError
+            Catch all for every exception raised by Prisma Client Python
+
+        Example
+        -------
+        ```py
+        # create a SlotPreenchido record from just the required fields
+        slotpreenchido = await SlotPreenchido.prisma().create(
+            data={
+                # data to create a SlotPreenchido record
+                'fluxoId': 208521688,
+                'nome': 'igaibbfgj',
+                'valor': 'bggajdcbbi',
+            },
+        )
+        ```
+        """
+        resp = await self._client._execute(
+            method='create',
+            model=self._model,
+            arguments={
+                'data': data,
+                'include': include,
+            },
+        )
+        return model_parse(self._model, resp['data']['result'])
+
+    async def create_many(
+        self,
+        data: List[types.SlotPreenchidoCreateWithoutRelationsInput],
+        *,
+        skip_duplicates: Optional[bool] = None,
+    ) -> int:
+        """Create multiple SlotPreenchido records at once.
+
+        This function is *not* available when using SQLite.
+
+        Parameters
+        ----------
+        data
+            List of SlotPreenchido record data
+        skip_duplicates
+            Boolean flag for ignoring unique constraint errors
+
+        Returns
+        -------
+        int
+            The total number of records created
+
+        Raises
+        ------
+        prisma.errors.UnsupportedDatabaseError
+            Attempting to query when using SQLite
+        prisma.errors.UniqueViolationError
+            A unique constraint check has failed, these can be ignored with the `skip_duplicates` argument
+        prisma.errors.MissingRequiredValueError
+            Value is required but was not found
+        prisma.errors.PrismaError
+            Catch all for every exception raised by Prisma Client Python
+
+        Example
+        -------
+        ```py
+        total = await SlotPreenchido.prisma().create_many(
+            data=[
+                {
+                    # data to create a SlotPreenchido record
+                    'fluxoId': 525761943,
+                    'nome': 'hdgcajhjg',
+                    'valor': 'ejdjahicb',
+                },
+                {
+                    # data to create a SlotPreenchido record
+                    'fluxoId': 639686562,
+                    'nome': 'gfeaahdeh',
+                    'valor': 'bjafcgbffc',
+                },
+            ],
+            skip_duplicates=True,
+        )
+        ```
+        """
+        if skip_duplicates and self._client._active_provider in CREATE_MANY_SKIP_DUPLICATES_UNSUPPORTED:
+            raise errors.UnsupportedDatabaseError(self._client._active_provider, 'create_many_skip_duplicates')
+
+        resp = await self._client._execute(
+            method='create_many',
+            model=self._model,
+            arguments={
+                'data': data,
+                'skipDuplicates': skip_duplicates,
+            },
+            root_selection=['count'],
+        )
+        return int(resp['data']['result']['count'])
+
+    async def delete(
+        self,
+        where: types.SlotPreenchidoWhereUniqueInput,
+        include: Optional[types.SlotPreenchidoInclude] = None
+    ) -> Optional[_PrismaModelT]:
+        """Delete a single SlotPreenchido record.
+
+        Parameters
+        ----------
+        where
+            SlotPreenchido filter to select the record to be deleted, must be unique
+        include
+            Specifies which relations should be loaded on the returned SlotPreenchido model
+
+        Returns
+        -------
+        prisma.models.SlotPreenchido
+            The deleted SlotPreenchido record
+        None
+            Could not find a record to delete
+
+        Raises
+        ------
+        prisma.errors.PrismaError
+            Catch all for every exception raised by Prisma Client Python
+        prisma.errors.MissingRequiredValueError
+            Value is required but was not found
+
+        Example
+        -------
+        ```py
+        slotpreenchido = await SlotPreenchido.prisma().delete(
+            where={
+                'id': 78746985,
+            },
+        )
+        ```
+        """
+        try:
+            resp = await self._client._execute(
+                method='delete',
+                model=self._model,
+                arguments={
+                    'where': where,
+                    'include': include,
+                },
+            )
+        except errors.RecordNotFoundError:
+            return None
+
+        return model_parse(self._model, resp['data']['result'])
+
+    async def find_unique(
+        self,
+        where: types.SlotPreenchidoWhereUniqueInput,
+        include: Optional[types.SlotPreenchidoInclude] = None
+    ) -> Optional[_PrismaModelT]:
+        """Find a unique SlotPreenchido record.
+
+        Parameters
+        ----------
+        where
+            SlotPreenchido filter to find the record, must be unique
+        include
+            Specifies which relations should be loaded on the returned SlotPreenchido model
+
+        Returns
+        -------
+        prisma.models.SlotPreenchido
+            The found SlotPreenchido record
+        None
+            No record matching the given input could be found
+
+        Raises
+        ------
+        prisma.errors.PrismaError
+            Catch all for every exception raised by Prisma Client Python
+        prisma.errors.MissingRequiredValueError
+            Value is required but was not found
+
+        Example
+        -------
+        ```py
+        slotpreenchido = await SlotPreenchido.prisma().find_unique(
+            where={
+                'id': 1398328302,
+            },
+        )
+        ```
+        """
+        resp = await self._client._execute(
+            method='find_unique',
+            model=self._model,
+            arguments={
+                'where': where,
+                'include': include,
+            },
+        )
+        result = resp['data']['result']
+        if result is None:
+            return None
+        return model_parse(self._model, result)
+
+    async def find_unique_or_raise(
+        self,
+        where: types.SlotPreenchidoWhereUniqueInput,
+        include: Optional[types.SlotPreenchidoInclude] = None
+    ) -> _PrismaModelT:
+        """Find a unique SlotPreenchido record. Raises `RecordNotFoundError` if no record is found.
+
+        Parameters
+        ----------
+        where
+            SlotPreenchido filter to find the record, must be unique
+        include
+            Specifies which relations should be loaded on the returned SlotPreenchido model
+
+        Returns
+        -------
+        prisma.models.SlotPreenchido
+            The found SlotPreenchido record
+
+        Raises
+        ------
+        prisma.errors.RecordNotFoundError
+            No record was found
+        prisma.errors.PrismaError
+            Catch all for every exception raised by Prisma Client Python
+        prisma.errors.MissingRequiredValueError
+            Value is required but was not found
+
+        Example
+        -------
+        ```py
+        slotpreenchido = await SlotPreenchido.prisma().find_unique_or_raise(
+            where={
+                'id': 856000655,
+            },
+        )
+        ```
+        """
+        resp = await self._client._execute(
+            method='find_unique_or_raise',
+            model=self._model,
+            arguments={
+                'where': where,
+                'include': include,
+            },
+        )
+        return model_parse(self._model, resp['data']['result'])
+
+    async def find_many(
+        self,
+        take: Optional[int] = None,
+        skip: Optional[int] = None,
+        where: Optional[types.SlotPreenchidoWhereInput] = None,
+        cursor: Optional[types.SlotPreenchidoWhereUniqueInput] = None,
+        include: Optional[types.SlotPreenchidoInclude] = None,
+        order: Optional[Union[types.SlotPreenchidoOrderByInput, List[types.SlotPreenchidoOrderByInput]]] = None,
+        distinct: Optional[List[types.SlotPreenchidoScalarFieldKeys]] = None,
+    ) -> List[_PrismaModelT]:
+        """Find multiple SlotPreenchido records.
+
+        An empty list is returned if no records could be found.
+
+        Parameters
+        ----------
+        take
+            Limit the maximum number of SlotPreenchido records returned
+        skip
+            Ignore the first N results
+        where
+            SlotPreenchido filter to select records
+        cursor
+            Specifies the position in the list to start returning results from, (typically an ID field)
+        include
+            Specifies which relations should be loaded on the returned SlotPreenchido model
+        order
+            Order the returned SlotPreenchido records by any field
+        distinct
+            Filter SlotPreenchido records by either a single distinct field or distinct combinations of fields
+
+        Returns
+        -------
+        List[prisma.models.SlotPreenchido]
+            The list of all SlotPreenchido records that could be found
+
+        Raises
+        ------
+        prisma.errors.PrismaError
+            Catch all for every exception raised by Prisma Client Python
+
+        Example
+        -------
+        ```py
+        # find the first 10 SlotPreenchido records
+        slotpreenchidos = await SlotPreenchido.prisma().find_many(take=10)
+
+        # find the first 5 SlotPreenchido records ordered by the nome field
+        slotpreenchidos = await SlotPreenchido.prisma().find_many(
+            take=5,
+            order={
+                'nome': 'desc',
+            },
+        )
+        ```
+        """
+        resp = await self._client._execute(
+            method='find_many',
+            model=self._model,
+            arguments={
+                'take': take,
+                'skip': skip,
+                'where': where,
+                'order_by': order,
+                'cursor': cursor,
+                'include': include,
+                'distinct': distinct,
+            },
+        )
+        return [model_parse(self._model, r) for r in resp['data']['result']]
+
+    async def find_first(
+        self,
+        skip: Optional[int] = None,
+        where: Optional[types.SlotPreenchidoWhereInput] = None,
+        cursor: Optional[types.SlotPreenchidoWhereUniqueInput] = None,
+        include: Optional[types.SlotPreenchidoInclude] = None,
+        order: Optional[Union[types.SlotPreenchidoOrderByInput, List[types.SlotPreenchidoOrderByInput]]] = None,
+        distinct: Optional[List[types.SlotPreenchidoScalarFieldKeys]] = None,
+    ) -> Optional[_PrismaModelT]:
+        """Find a single SlotPreenchido record.
+
+        Parameters
+        ----------
+        skip
+            Ignore the first N records
+        where
+            SlotPreenchido filter to select the record
+        cursor
+            Specifies the position in the list to start returning results from, (typically an ID field)
+        include
+            Specifies which relations should be loaded on the returned SlotPreenchido model
+        order
+            Order the returned SlotPreenchido records by any field
+        distinct
+            Filter SlotPreenchido records by either a single distinct field or distinct combinations of fields
+
+        Returns
+        -------
+        prisma.models.SlotPreenchido
+            The first SlotPreenchido record found, matching the given arguments
+        None
+            No record could be found
+
+        Raises
+        ------
+        prisma.errors.PrismaError
+            Catch all for every exception raised by Prisma Client Python
+
+        Example
+        -------
+        ```py
+        # find the second SlotPreenchido record ordered by the valor field
+        slotpreenchido = await SlotPreenchido.prisma().find_first(
+            skip=1,
+            order={
+                'valor': 'desc',
+            },
+        )
+        ```
+        """
+        resp = await self._client._execute(
+            method='find_first',
+            model=self._model,
+            arguments={
+                'skip': skip,
+                'where': where,
+                'order_by': order,
+                'cursor': cursor,
+                'include': include,
+                'distinct': distinct,
+            },
+        )
+        result = resp['data']['result']
+        if result is None:
+            return None
+
+        return model_parse(self._model, result)
+
+    async def find_first_or_raise(
+        self,
+        skip: Optional[int] = None,
+        where: Optional[types.SlotPreenchidoWhereInput] = None,
+        cursor: Optional[types.SlotPreenchidoWhereUniqueInput] = None,
+        include: Optional[types.SlotPreenchidoInclude] = None,
+        order: Optional[Union[types.SlotPreenchidoOrderByInput, List[types.SlotPreenchidoOrderByInput]]] = None,
+        distinct: Optional[List[types.SlotPreenchidoScalarFieldKeys]] = None,
+    ) -> _PrismaModelT:
+        """Find a single SlotPreenchido record. Raises `RecordNotFoundError` if no record was found.
+
+        Parameters
+        ----------
+        skip
+            Ignore the first N records
+        where
+            SlotPreenchido filter to select the record
+        cursor
+            Specifies the position in the list to start returning results from, (typically an ID field)
+        include
+            Specifies which relations should be loaded on the returned SlotPreenchido model
+        order
+            Order the returned SlotPreenchido records by any field
+        distinct
+            Filter SlotPreenchido records by either a single distinct field or distinct combinations of fields
+
+        Returns
+        -------
+        prisma.models.SlotPreenchido
+            The first SlotPreenchido record found, matching the given arguments
+
+        Raises
+        ------
+        prisma.errors.RecordNotFoundError
+            No record was found
+        prisma.errors.PrismaError
+            Catch all for every exception raised by Prisma Client Python
+
+        Example
+        -------
+        ```py
+        # find the second SlotPreenchido record ordered by the criadoEm field
+        slotpreenchido = await SlotPreenchido.prisma().find_first_or_raise(
+            skip=1,
+            order={
+                'criadoEm': 'desc',
+            },
+        )
+        ```
+        """
+        resp = await self._client._execute(
+            method='find_first_or_raise',
+            model=self._model,
+            arguments={
+                'skip': skip,
+                'where': where,
+                'order_by': order,
+                'cursor': cursor,
+                'include': include,
+                'distinct': distinct,
+            },
+        )
+        return model_parse(self._model, resp['data']['result'])
+
+    async def update(
+        self,
+        data: types.SlotPreenchidoUpdateInput,
+        where: types.SlotPreenchidoWhereUniqueInput,
+        include: Optional[types.SlotPreenchidoInclude] = None
+    ) -> Optional[_PrismaModelT]:
+        """Update a single SlotPreenchido record.
+
+        Parameters
+        ----------
+        data
+            SlotPreenchido record data specifying what to update
+        where
+            SlotPreenchido filter to select the unique record to create / update
+        include
+            Specifies which relations should be loaded on the returned SlotPreenchido model
+
+        Returns
+        -------
+        prisma.models.SlotPreenchido
+            The updated SlotPreenchido record
+        None
+            No record could be found
+
+        Raises
+        ------
+        prisma.errors.PrismaError
+            Catch all for every exception raised by Prisma Client Python
+
+        Example
+        -------
+        ```py
+        slotpreenchido = await SlotPreenchido.prisma().update(
+            where={
+                'id': 1452336924,
+            },
+            data={
+                # data to update the SlotPreenchido record to
+            },
+        )
+        ```
+        """
+        try:
+            resp = await self._client._execute(
+                method='update',
+                model=self._model,
+                arguments={
+                    'data': data,
+                    'where': where,
+                    'include': include,
+                },
+            )
+        except errors.RecordNotFoundError:
+            return None
+
+        return model_parse(self._model, resp['data']['result'])
+
+    async def upsert(
+        self,
+        where: types.SlotPreenchidoWhereUniqueInput,
+        data: types.SlotPreenchidoUpsertInput,
+        include: Optional[types.SlotPreenchidoInclude] = None,
+    ) -> _PrismaModelT:
+        """Updates an existing record or create a new one
+
+        Parameters
+        ----------
+        where
+            SlotPreenchido filter to select the unique record to create / update
+        data
+            Data specifying what fields to set on create and update
+        include
+            Specifies which relations should be loaded on the returned SlotPreenchido model
+
+        Returns
+        -------
+        prisma.models.SlotPreenchido
+            The created or updated SlotPreenchido record
+
+        Raises
+        ------
+        prisma.errors.PrismaError
+            Catch all for every exception raised by Prisma Client Python
+        prisma.errors.MissingRequiredValueError
+            Value is required but was not found
+
+        Example
+        -------
+        ```py
+        slotpreenchido = await SlotPreenchido.prisma().upsert(
+            where={
+                'id': 1573199653,
+            },
+            data={
+                'create': {
+                    'id': 1573199653,
+                    'fluxoId': 639686562,
+                    'nome': 'gfeaahdeh',
+                    'valor': 'bjafcgbffc',
+                },
+                'update': {
+                    'fluxoId': 639686562,
+                    'nome': 'gfeaahdeh',
+                    'valor': 'bjafcgbffc',
+                },
+            },
+        )
+        ```
+        """
+        resp = await self._client._execute(
+            method='upsert',
+            model=self._model,
+            arguments={
+                'where': where,
+                'include': include,
+                'create': data.get('create'),
+                'update': data.get('update'),
+            },
+        )
+        return model_parse(self._model, resp['data']['result'])
+
+    async def update_many(
+        self,
+        data: types.SlotPreenchidoUpdateManyMutationInput,
+        where: types.SlotPreenchidoWhereInput,
+    ) -> int:
+        """Update multiple SlotPreenchido records
+
+        Parameters
+        ----------
+        data
+            SlotPreenchido data to update the selected SlotPreenchido records to
+        where
+            Filter to select the SlotPreenchido records to update
+
+        Returns
+        -------
+        int
+            The total number of SlotPreenchido records that were updated
+
+        Raises
+        ------
+        prisma.errors.PrismaError
+            Catch all for every exception raised by Prisma Client Python
+
+        Example
+        -------
+        ```py
+        # update all SlotPreenchido records
+        total = await SlotPreenchido.prisma().update_many(
+            data={
+                'id': 2013903098
+            },
+            where={}
+        )
+        ```
+        """
+        resp = await self._client._execute(
+            method='update_many',
+            model=self._model,
+            arguments={'data': data, 'where': where,},
+            root_selection=['count'],
+        )
+        return int(resp['data']['result']['count'])
+
+    @overload
+    async def count(
+        self,
+        select: None = None,
+        take: Optional[int] = None,
+        skip: Optional[int] = None,
+        where: Optional[types.SlotPreenchidoWhereInput] = None,
+        cursor: Optional[types.SlotPreenchidoWhereUniqueInput] = None,
+    ) -> int:
+        """Count the number of SlotPreenchido records present in the database
+
+        Parameters
+        ----------
+        select
+            Select the SlotPreenchido fields to be counted
+        take
+            Limit the maximum result
+        skip
+            Ignore the first N records
+        where
+            SlotPreenchido filter to find records
+        cursor
+            Specifies the position in the list to start counting results from, (typically an ID field)
+        order
+            This parameter is deprecated and will be removed in a future release
+
+        Returns
+        -------
+        int
+            The total number of records found, returned if `select` is not given
+
+        prisma.types.SlotPreenchidoCountAggregateOutput
+            Data returned when `select` is used, the fields present in this dictionary will
+            match the fields passed in the `select` argument
+
+        Raises
+        ------
+        prisma.errors.PrismaError
+            Catch all for every exception raised by Prisma Client Python
+
+        Example
+        -------
+        ```py
+        # total: int
+        total = await SlotPreenchido.prisma().count()
+
+        # results: prisma.types.SlotPreenchidoCountAggregateOutput
+        results = await SlotPreenchido.prisma().count(
+            select={
+                '_all': True,
+                'fluxoId': True,
+            },
+        )
+        ```
+        """
+
+
+    @overload
+    async def count(
+        self,
+        select: types.SlotPreenchidoCountAggregateInput,
+        take: Optional[int] = None,
+        skip: Optional[int] = None,
+        where: Optional[types.SlotPreenchidoWhereInput] = None,
+        cursor: Optional[types.SlotPreenchidoWhereUniqueInput] = None,
+    ) -> types.SlotPreenchidoCountAggregateOutput:
+        ...
+
+    async def count(
+        self,
+        select: Optional[types.SlotPreenchidoCountAggregateInput] = None,
+        take: Optional[int] = None,
+        skip: Optional[int] = None,
+        where: Optional[types.SlotPreenchidoWhereInput] = None,
+        cursor: Optional[types.SlotPreenchidoWhereUniqueInput] = None,
+    ) -> Union[int, types.SlotPreenchidoCountAggregateOutput]:
+        """Count the number of SlotPreenchido records present in the database
+
+        Parameters
+        ----------
+        select
+            Select the SlotPreenchido fields to be counted
+        take
+            Limit the maximum result
+        skip
+            Ignore the first N records
+        where
+            SlotPreenchido filter to find records
+        cursor
+            Specifies the position in the list to start counting results from, (typically an ID field)
+        order
+            This parameter is deprecated and will be removed in a future release
+
+        Returns
+        -------
+        int
+            The total number of records found, returned if `select` is not given
+
+        prisma.types.SlotPreenchidoCountAggregateOutput
+            Data returned when `select` is used, the fields present in this dictionary will
+            match the fields passed in the `select` argument
+
+        Raises
+        ------
+        prisma.errors.PrismaError
+            Catch all for every exception raised by Prisma Client Python
+
+        Example
+        -------
+        ```py
+        # total: int
+        total = await SlotPreenchido.prisma().count()
+
+        # results: prisma.types.SlotPreenchidoCountAggregateOutput
+        results = await SlotPreenchido.prisma().count(
+            select={
+                '_all': True,
+                'nome': True,
+            },
+        )
+        ```
+        """
+
+        # TODO: this selection building should be moved to the QueryBuilder
+        #
+        # note the distinction between checking for `not select` here and `select is None`
+        # later is to handle the case that the given select dictionary is empty, this
+        # is a limitation of our types.
+        if not select:
+            root_selection = ['_count { _all }']
+        else:
+
+            root_selection = [
+                '_count {{ {0} }}'.format(' '.join(k for k, v in select.items() if v is True))
+            ]
+
+        resp = await self._client._execute(
+            method='count',
+            model=self._model,
+            arguments={
+                'take': take,
+                'skip': skip,
+                'where': where,
+                'cursor': cursor,
+            },
+            root_selection=root_selection,
+        )
+
+        if select is None:
+            return cast(int, resp['data']['result']['_count']['_all'])
+        else:
+            return cast(types.SlotPreenchidoCountAggregateOutput, resp['data']['result']['_count'])
+
+    async def delete_many(
+        self,
+        where: Optional[types.SlotPreenchidoWhereInput] = None
+    ) -> int:
+        """Delete multiple SlotPreenchido records.
+
+        Parameters
+        ----------
+        where
+            Optional SlotPreenchido filter to find the records to be deleted
+
+        Returns
+        -------
+        int
+            The total number of SlotPreenchido records that were deleted
+
+        Raises
+        ------
+        prisma.errors.PrismaError
+            Catch all for every exception raised by Prisma Client Python
+
+        Example
+        -------
+        ```py
+        # delete all SlotPreenchido records
+        total = await SlotPreenchido.prisma().delete_many()
+        ```
+        """
+        resp = await self._client._execute(
+            method='delete_many',
+            model=self._model,
+            arguments={'where': where},
+            root_selection=['count'],
+        )
+        return int(resp['data']['result']['count'])
+
+    # TODO: make this easier to work with safely, currently output fields are typed as
+    #       not required, we should refactor the return type
+    # TODO: consider returning a Dict where the keys are a Tuple of the `by` selection
+    # TODO: statically type that the order argument is required when take or skip are present
+    async def group_by(
+        self,
+        by: List['types.SlotPreenchidoScalarFieldKeys'],
+        *,
+        where: Optional['types.SlotPreenchidoWhereInput'] = None,
+        take: Optional[int] = None,
+        skip: Optional[int] = None,
+        avg: Optional['types.SlotPreenchidoAvgAggregateInput'] = None,
+        sum: Optional['types.SlotPreenchidoSumAggregateInput'] = None,
+        min: Optional['types.SlotPreenchidoMinAggregateInput'] = None,
+        max: Optional['types.SlotPreenchidoMaxAggregateInput'] = None,
+        having: Optional['types.SlotPreenchidoScalarWhereWithAggregatesInput'] = None,
+        count: Optional[Union[bool, 'types.SlotPreenchidoCountAggregateInput']] = None,
+        order: Optional[Union[Mapping['types.SlotPreenchidoScalarFieldKeys', 'types.SortOrder'], List[Mapping['types.SlotPreenchidoScalarFieldKeys', 'types.SortOrder']]]] = None,
+    ) -> List['types.SlotPreenchidoGroupByOutput']:
+        """Group SlotPreenchido records by one or more field values and perform aggregations
+        each group such as finding the average.
+
+        Parameters
+        ----------
+        by
+            List of scalar SlotPreenchido fields to group records by
+        where
+            SlotPreenchido filter to select records
+        take
+            Limit the maximum number of SlotPreenchido records returned
+        skip
+            Ignore the first N records
+        avg
+            Adds the average of all values of the specified fields to the `_avg` field
+            in the returned data.
+        sum
+            Adds the sum of all values of the specified fields to the `_sum` field
+            in the returned data.
+        min
+            Adds the smallest available value for the specified fields to the `_min` field
+            in the returned data.
+        max
+            Adds the largest available value for the specified fields to the `_max` field
+            in the returned data.
+        count
+            Adds a count of non-fields to the `_count` field in the returned data.
+        having
+            Allows you to filter groups by an aggregate value - for example only return
+            groups having an average age less than 50.
+        order
+            Lets you order the returned list by any property that is also present in `by`.
+            Only **one** field is allowed at a time.
+
+        Returns
+        -------
+        List[prisma.types.SlotPreenchidoGroupByOutput]
+            A list of dictionaries representing the SlotPreenchido record,
+            this will also have additional fields present if aggregation arguments
+            are used (see the above parameters)
+
+        Raises
+        ------
+        prisma.errors.PrismaError
+            Catch all for every exception raised by Prisma Client Python
+
+        Example
+        -------
+        ```py
+        # group SlotPreenchido records by valor values
+        # and count how many records are in each group
+        results = await SlotPreenchido.prisma().group_by(
+            ['valor'],
             count=True,
         )
         ```

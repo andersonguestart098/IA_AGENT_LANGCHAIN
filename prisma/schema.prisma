@@ -44,14 +44,27 @@ model FluxoConversa {
   etapa      String
   intencao   String
   pedido     String?
+  resposta   String
   criadoEm   DateTime  @default(now())
+
+  slots      SlotPreenchido[]
 }
+
 
 model Mensagem {
   id        Int       @id @default(autoincrement())
   sessao    Sessao    @relation(fields: [sessaoId], references: [id])
   sessaoId  Int
   texto     String
-  role      String    // "user" ou "ai"
+  role      String    
   criadoEm  DateTime  @default(now())
+}
+
+model SlotPreenchido {
+  id         Int       @id @default(autoincrement())
+  fluxo      FluxoConversa @relation(fields: [fluxoId], references: [id])
+  fluxoId    Int
+  nome       String    // ex: "produto", "localidade"
+  valor      String    // ex: "piso vinílico", "São Paulo"
+  criadoEm   DateTime  @default(now())
 }

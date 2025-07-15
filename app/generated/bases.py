@@ -124,3 +124,13 @@ class BaseMensagem(_PrismaModel):
         return actions.MensagemActions[_PrismaModelT](client or get_client(), cls)
 
 
+class BaseSlotPreenchido(_PrismaModel):
+    __prisma_model__: ClassVar[Literal['SlotPreenchido']] = 'SlotPreenchido'  # pyright: ignore[reportIncompatibleVariableOverride]
+
+    @classmethod
+    def prisma(cls: Type[_PrismaModelT], client: Optional['Prisma'] = None) -> 'actions.SlotPreenchidoActions[_PrismaModelT]':
+        from .client import get_client
+
+        return actions.SlotPreenchidoActions[_PrismaModelT](client or get_client(), cls)
+
+
