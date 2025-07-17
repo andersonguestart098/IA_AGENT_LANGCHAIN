@@ -170,7 +170,7 @@ class Usuario(bases.BaseUsuario):
     id: _int
     nome: Optional[_str] = None
     email: Optional[_str] = None
-    senha_hash: _str
+    senha_hash: Optional[_str] = None
     criadoEm: datetime.datetime
     sessoes: Optional[List['models.Sessao']] = None
 
@@ -912,7 +912,7 @@ _Usuario_fields: Dict['types.UsuarioKeys', PartialModelField] = OrderedDict(
         ('senha_hash', {
             'name': 'senha_hash',
             'is_list': False,
-            'optional': False,
+            'optional': True,
             'type': '_str',
             'is_relational': False,
             'documentation': None,

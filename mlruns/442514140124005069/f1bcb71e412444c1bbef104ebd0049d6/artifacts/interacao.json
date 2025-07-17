@@ -1,0 +1,13 @@
+{
+  "pergunta": "Qual o hor\u00e1rio de atendimento ai?",
+  "resposta": "O atendimento ao p\u00fablico \u00e9 realizado de segunda a sexta-feira, durante o hor\u00e1rio comercial.",
+  "documentos": [],
+  "origens": [],
+  "slots": {
+    "produto": null,
+    "volume_aproximado": null,
+    "localidade": null,
+    "prazo": null
+  },
+  "intencao": "PERGUNTA_PRODUTO"
+}

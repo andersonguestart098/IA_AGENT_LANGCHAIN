@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/IA%20-%20LANGCHAIN/mlruns/442514140124005069/a3eef95a48c1497aa36bccec5e2309e2/artifacts
+end_time: 1752771866722
+entry_point_name: ''
+experiment_id: '442514140124005069'
+lifecycle_stage: active
+run_id: a3eef95a48c1497aa36bccec5e2309e2
+run_name: capable-robin-689
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752771866596
+status: 3
+tags: []
+user_id: User

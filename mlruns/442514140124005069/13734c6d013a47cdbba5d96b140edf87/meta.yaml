@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/IA%20-%20LANGCHAIN/mlruns/442514140124005069/13734c6d013a47cdbba5d96b140edf87/artifacts
+end_time: 1752691929149
+entry_point_name: ''
+experiment_id: '442514140124005069'
+lifecycle_stage: active
+run_id: 13734c6d013a47cdbba5d96b140edf87
+run_name: masked-finch-349
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752691929019
+status: 4
+tags: []
+user_id: User

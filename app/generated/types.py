@@ -2212,13 +2212,13 @@ class UsuarioOptionalCreateInput(TypedDict, total=False):
     id: _int
     nome: Optional[_str]
     email: Optional[_str]
+    senha_hash: Optional[_str]
     criadoEm: datetime.datetime
     sessoes: 'SessaoCreateManyNestedWithoutRelationsInput'
 
 
 class UsuarioCreateInput(UsuarioOptionalCreateInput):
     """Required arguments to the Usuario create method"""
-    senha_hash: _str
 
 
 # TODO: remove this in favour of without explicit relations
@@ -2229,12 +2229,12 @@ class UsuarioOptionalCreateWithoutRelationsInput(TypedDict, total=False):
     id: _int
     nome: Optional[_str]
     email: Optional[_str]
+    senha_hash: Optional[_str]
     criadoEm: datetime.datetime
 
 
 class UsuarioCreateWithoutRelationsInput(UsuarioOptionalCreateWithoutRelationsInput):
     """Required arguments to the Usuario create method, without relations"""
-    senha_hash: _str
 
 class UsuarioConnectOrCreateWithoutRelationsInput(TypedDict):
     create: 'UsuarioCreateWithoutRelationsInput'
@@ -2278,7 +2278,7 @@ class UsuarioUpdateInput(TypedDict, total=False):
     id: Union[AtomicIntInput, _int]
     nome: Optional[_str]
     email: Optional[_str]
-    senha_hash: _str
+    senha_hash: Optional[_str]
     criadoEm: datetime.datetime
     sessoes: 'SessaoUpdateManyWithoutRelationsInput'
 
@@ -2288,7 +2288,7 @@ class UsuarioUpdateManyMutationInput(TypedDict, total=False):
     id: Union[AtomicIntInput, _int]
     nome: Optional[_str]
     email: Optional[_str]
-    senha_hash: _str
+    senha_hash: Optional[_str]
     criadoEm: datetime.datetime
 
 
@@ -3054,7 +3054,7 @@ class UsuarioWhereInput(TypedDict, total=False):
     id: Union[_int, 'types.IntFilter']
     nome: Union[None, _str, 'types.StringFilter']
     email: Union[None, _str, 'types.StringFilter']
-    senha_hash: Union[_str, 'types.StringFilter']
+    senha_hash: Union[None, _str, 'types.StringFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
     sessoes: 'SessaoListRelationFilter'
 
@@ -3070,7 +3070,7 @@ class UsuarioWhereInputRecursive1(TypedDict, total=False):
     id: Union[_int, 'types.IntFilter']
     nome: Union[None, _str, 'types.StringFilter']
     email: Union[None, _str, 'types.StringFilter']
-    senha_hash: Union[_str, 'types.StringFilter']
+    senha_hash: Union[None, _str, 'types.StringFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
     sessoes: 'SessaoListRelationFilter'
 
@@ -3086,7 +3086,7 @@ class UsuarioWhereInputRecursive2(TypedDict, total=False):
     id: Union[_int, 'types.IntFilter']
     nome: Union[None, _str, 'types.StringFilter']
     email: Union[None, _str, 'types.StringFilter']
-    senha_hash: Union[_str, 'types.StringFilter']
+    senha_hash: Union[None, _str, 'types.StringFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
     sessoes: 'SessaoListRelationFilter'
 
@@ -3102,7 +3102,7 @@ class UsuarioWhereInputRecursive3(TypedDict, total=False):
     id: Union[_int, 'types.IntFilter']
     nome: Union[None, _str, 'types.StringFilter']
     email: Union[None, _str, 'types.StringFilter']
-    senha_hash: Union[_str, 'types.StringFilter']
+    senha_hash: Union[None, _str, 'types.StringFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
     sessoes: 'SessaoListRelationFilter'
 
@@ -3118,7 +3118,7 @@ class UsuarioWhereInputRecursive4(TypedDict, total=False):
     id: Union[_int, 'types.IntFilter']
     nome: Union[None, _str, 'types.StringFilter']
     email: Union[None, _str, 'types.StringFilter']
-    senha_hash: Union[_str, 'types.StringFilter']
+    senha_hash: Union[None, _str, 'types.StringFilter']
     criadoEm: Union[datetime.datetime, 'types.DateTimeFilter']
     sessoes: 'SessaoListRelationFilter'
 

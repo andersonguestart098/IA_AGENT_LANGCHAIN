@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/IA%20-%20LANGCHAIN/mlruns/442514140124005069/3f61edc7bca04475b32b2d3d17b81a6e/artifacts
+end_time: 1752691929214
+entry_point_name: ''
+experiment_id: '442514140124005069'
+lifecycle_stage: active
+run_id: 3f61edc7bca04475b32b2d3d17b81a6e
+run_name: nimble-bird-912
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752691929166
+status: 3
+tags: []
+user_id: User

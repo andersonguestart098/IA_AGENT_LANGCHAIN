@@ -1,4 +1,5 @@
 import os
+import ast
 from langchain_community.chat_models import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser, JsonOutputParser
@@ -9,8 +10,7 @@ from app.services.embeddings import embedding_model
 from app.generated.client import Prisma
 from langchain.output_parsers import OutputFixingParser
 
-
-async def setup_rag_chain(sessao_token: str):
+async def setup_rag_chain(sessao_token: str, filtro_categoria: str = None):
     prisma = Prisma()
     await prisma.connect()
 
@@ -49,6 +49,7 @@ Classifique a frase do cliente em UMA das seguintes categorias:
 Frase: {texto}
 Categoria:
 """)
+    
     classificacao_chain = intencao_prompt | llm | StrOutputParser()
 
     # 🔹 Prompt de Slot Filling estruturado
@@ -74,20 +75,29 @@ Frase: {texto}
 JSON:
 """)
 
-    # 🔹 Cria parser com fallback para corrigir formatos
     slot_filling_chain = slot_prompt | llm | OutputFixingParser.from_llm(
         parser=JsonOutputParser(), llm=llm
     )
 
-    # 🔹 Carrega documentos com embeddings
+    # 🔹 Carrega documentos com metadados estruturados e filtro opcional
     docs_db = await prisma.knowledgebase.find_many(where={"embedding": {"not": ""}})
-    docs = [
-        Document(
+    docs = []
+
+    for doc in docs_db:
+        try:
+            metadata_extra = ast.literal_eval(doc.origem) if doc.origem.strip().startswith("{") else {}
+        except Exception:
+            metadata_extra = {}
+
+        if filtro_categoria and metadata_extra.get("categoria") != filtro_categoria:
+            continue
+
+        docs.append(Document(
             page_content=doc.conteudo,
-            metadata={"id": doc.id, "source": doc.origem}
-        )
-        for doc in docs_db
-    ]
+            metadata={"id": doc.id, **metadata_extra}
+        ))
+
+    # 🔹 Cria FAISS e retriever com chunks filtrados
     vectorstore = FAISS.from_documents(docs, embedding_model)
     retriever = vectorstore.as_retriever(search_type="similarity", k=3)
 
@@ -114,7 +124,6 @@ PERGUNTA ATUAL:
 {question}
 """)
 
-    # 🔹 Cadeia principal de resposta com histórico e documentos
     rag_chain = ConversationalRetrievalChain.from_llm(
         llm=llm,
         retriever=retriever,
@@ -124,7 +133,6 @@ PERGUNTA ATUAL:
         }
     )
 
-    # 🔹 Retorna todos os componentes para uso no fluxo principal
     return {
         "prisma": prisma,
         "llm": llm,

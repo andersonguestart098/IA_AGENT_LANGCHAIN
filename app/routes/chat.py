@@ -1,4 +1,6 @@
 import json
+import time
+import mlflow
 from fastapi import APIRouter, HTTPException, Header
 from typing import Optional
 from pydantic import BaseModel
@@ -15,9 +17,9 @@ async def chat(request: ChatRequest, authorization: Optional[str] = Header(None)
         raise HTTPException(status_code=401, detail="Token de sessão ausente.")
 
     pergunta = request.pergunta.strip()
+    inicio_execucao = time.time()
 
     try:
-        # 🔹 Carrega os componentes do RAG
         chains = await setup_rag_chain(sessao_token=authorization)
         classificacao_chain = chains["classificacao_chain"]
         slot_filling_chain = chains["slot_filling_chain"]
@@ -27,15 +29,11 @@ async def chat(request: ChatRequest, authorization: Optional[str] = Header(None)
         eh_primeira_interacao = chains["eh_primeira_interacao"]
         chat_history = chains["chat_history"]
 
-        # 🔹 Intenção do usuário
         intencao = classificacao_chain.invoke({"texto": pergunta}).strip()
         print(f"[LOG] Intenção detectada: {intencao}")
 
-        # 🔹 Slot Filling
-        print("[LOG] Executando slot filling...")
         try:
             slots_dict = slot_filling_chain.invoke({"texto": pergunta})
-    
         except Exception as e:
             print(f"[ERRO] Falha ao fazer parse do JSON de slots: {e}")
             slots_dict = {}
@@ -47,7 +45,6 @@ async def chat(request: ChatRequest, authorization: Optional[str] = Header(None)
 
         print(f"[LOG] Slots extraídos: produto={produto}, localidade={localidade}, volume={volume}, prazo={prazo}")
 
-        # 🔹 Geração da resposta via RAG
         resultado = rag_chain.invoke({
             "question": pergunta,
             "chat_history": chat_history
@@ -55,11 +52,13 @@ async def chat(request: ChatRequest, authorization: Optional[str] = Header(None)
         resposta_base = resultado.get("answer", "").strip()
         fontes = resultado.get("sources", "")
 
+        documentos_utilizados = resultado.get("documents", [])
+        origens_utilizadas = list({
+            doc.metadata.get("source", "desconhecido") for doc in documentos_utilizados
+        })
 
-        # 🔹 Regras de saudação
         saudacao = "Bom dia, tudo bem? " if eh_primeira_interacao else ""
 
-        # 🔹 Formação da resposta com lógica refinada
         if intencao == "PEDIDO_ORCAMENTO" and produto and localidade:
             resposta = "Estou transferindo seu atendimento para o vendedor responsável. Em instantes ele entra em contato para dar continuidade ao seu pedido."
         elif "consultar um especialista" in resposta_base.lower():
@@ -68,11 +67,9 @@ async def chat(request: ChatRequest, authorization: Optional[str] = Header(None)
             encaminhamento = "\nPosso encaminhar seu pedido para nosso setor comercial." if intencao == "PEDIDO_ORCAMENTO" else ""
             resposta = f"{saudacao}{resposta_base}{encaminhamento}".strip()
 
-        # 🔹 Ajusta resposta em caso de confirmação explícita
         if intencao == "CONFIRMACAO" and produto and localidade:
             resposta = f"Ótimo! Já tenho o pedido de {volume or 'volume não informado'} de {produto} para {localidade}. Estou encaminhando ao setor responsável."
 
-        # 🔹 Define a etapa do fluxo
         if intencao == "SAUDACAO" and eh_primeira_interacao:
             etapa = "INICIO"
         elif intencao == "PEDIDO_ORCAMENTO" and (produto and localidade):
@@ -86,7 +83,6 @@ async def chat(request: ChatRequest, authorization: Optional[str] = Header(None)
         else:
             etapa = "MEIO"
 
-        # 🔹 Registra o fluxo da conversa
         fluxo = await prisma.fluxoconversa.create(data={
             "sessaoId": sessao.id,
             "etapa": etapa,
@@ -95,7 +91,6 @@ async def chat(request: ChatRequest, authorization: Optional[str] = Header(None)
             "resposta": resposta
         })
 
-        # 🔹 Registra os slots extraídos (se houver)
         for nome, valor in slots_dict.items():
             if valor:
                 try:
@@ -107,6 +102,38 @@ async def chat(request: ChatRequest, authorization: Optional[str] = Header(None)
                     print(f"[LOG] Slot salvo: {nome} = {valor}")
                 except Exception as e:
                     print(f"[ERRO] Falha ao salvar slot '{nome}': {e}")
+
+        tempo_total = time.time() - inicio_execucao
+
+        # 🔹 Log com MLflow
+        mlflow.set_experiment("chat")
+        with mlflow.start_run():
+            mlflow.set_tag("sessao_id", sessao.id)
+            mlflow.set_tag("etapa", etapa)
+            mlflow.set_tag("sucesso", True)
+            mlflow.log_param("intencao", intencao)
+            mlflow.log_param("pergunta", pergunta)
+            mlflow.log_param("resposta", resposta[:300])
+
+            docs_usados = [doc.page_content for doc in resultado.get("source_documents", [])]
+            mlflow.log_dict({"documentos": docs_usados}, "rag_contexto.json")
+
+            mlflow.log_metric("tempo_execucao", tempo_total)
+
+            mlflow.log_dict({
+                "pergunta": pergunta,
+                "resposta": resposta,
+                "documentos": [doc.page_content for doc in documentos_utilizados],
+                "origens": origens_utilizadas,
+                "slots": slots_dict,
+                "intencao": intencao
+            }, artifact_file="interacao.json")
+
+            mlflow.log_dict({
+                "origens_utilizadas": origens_utilizadas,
+                "contexto": "rag"
+            }, "input_metadata.json")
+
 
         return {
             "intencao": intencao,
@@ -123,6 +150,13 @@ async def chat(request: ChatRequest, authorization: Optional[str] = Header(None)
 
     except Exception as e:
         print(f"[FATAL] Erro inesperado: {e}")
+
+        mlflow.set_experiment("chat")
+        with mlflow.start_run():
+            mlflow.set_tag("sessao_id", authorization)
+            mlflow.set_tag("erro", str(e))
+            mlflow.set_tag("sucesso", False)
+
         raise HTTPException(status_code=500, detail=f"Erro no processamento: {str(e)}")
 
     finally:

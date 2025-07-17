@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/IA%20-%20LANGCHAIN/mlruns/442514140124005069/c4c53484b83449dabf4182bcda09d21b/artifacts
+end_time: 1752771542313
+entry_point_name: ''
+experiment_id: '442514140124005069'
+lifecycle_stage: active
+run_id: c4c53484b83449dabf4182bcda09d21b
+run_name: luxuriant-shrike-360
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752771542262
+status: 3
+tags: []
+user_id: User

@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/IA%20-%20LANGCHAIN/mlruns/442514140124005069/4b332e68d9d744daa9b8ba0f77e06089/artifacts
+end_time: 1752771172127
+entry_point_name: ''
+experiment_id: '442514140124005069'
+lifecycle_stage: active
+run_id: 4b332e68d9d744daa9b8ba0f77e06089
+run_name: able-elk-169
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752771172085
+status: 3
+tags: []
+user_id: User

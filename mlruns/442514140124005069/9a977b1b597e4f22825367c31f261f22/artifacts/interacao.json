@@ -1,0 +1,13 @@
+{
+  "pergunta": "Ol\u00e1 boa tarde. tudo bem?",
+  "resposta": "Bom dia, tudo bem? Ol\u00e1, tudo bem. Como posso te ajudar?",
+  "documentos": [],
+  "origens": [],
+  "slots": {
+    "produto": null,
+    "volume_aproximado": null,
+    "localidade": null,
+    "prazo": null
+  },
+  "intencao": "SAUDACAO"
+}

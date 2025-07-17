@@ -1,0 +1,13 @@
+{
+  "pergunta": "ok, muito obrigado.",
+  "resposta": "De nada.",
+  "documentos": [],
+  "origens": [],
+  "slots": {
+    "produto": null,
+    "volume_aproximado": null,
+    "localidade": null,
+    "prazo": null
+  },
+  "intencao": "DESPEDIDA"
+}

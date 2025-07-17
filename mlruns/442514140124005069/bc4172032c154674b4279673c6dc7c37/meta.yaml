@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/IA%20-%20LANGCHAIN/mlruns/442514140124005069/bc4172032c154674b4279673c6dc7c37/artifacts
+end_time: 1752771698240
+entry_point_name: ''
+experiment_id: '442514140124005069'
+lifecycle_stage: active
+run_id: bc4172032c154674b4279673c6dc7c37
+run_name: burly-skunk-6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752771698164
+status: 3
+tags: []
+user_id: User

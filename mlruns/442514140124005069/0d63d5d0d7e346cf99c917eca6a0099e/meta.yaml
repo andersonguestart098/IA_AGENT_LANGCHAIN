@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/IA%20-%20LANGCHAIN/mlruns/442514140124005069/0d63d5d0d7e346cf99c917eca6a0099e/artifacts
+end_time: 1752771829460
+entry_point_name: ''
+experiment_id: '442514140124005069'
+lifecycle_stage: active
+run_id: 0d63d5d0d7e346cf99c917eca6a0099e
+run_name: wise-hare-295
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752771829357
+status: 3
+tags: []
+user_id: User

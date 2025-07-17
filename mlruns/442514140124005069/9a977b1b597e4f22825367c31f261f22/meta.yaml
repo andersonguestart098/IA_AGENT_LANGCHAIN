@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/IA%20-%20LANGCHAIN/mlruns/442514140124005069/9a977b1b597e4f22825367c31f261f22/artifacts
+end_time: 1752771773251
+entry_point_name: ''
+experiment_id: '442514140124005069'
+lifecycle_stage: active
+run_id: 9a977b1b597e4f22825367c31f261f22
+run_name: nimble-goat-546
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752771773135
+status: 3
+tags: []
+user_id: User

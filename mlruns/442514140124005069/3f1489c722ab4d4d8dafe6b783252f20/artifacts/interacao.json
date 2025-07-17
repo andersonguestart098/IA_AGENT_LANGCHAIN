@@ -1,0 +1,13 @@
+{
+  "pergunta": "ah blz, email teste@teste.com.br",
+  "resposta": "Preciso consultar um especialista sobre isso.",
+  "documentos": [],
+  "origens": [],
+  "slots": {
+    "produto": null,
+    "volume_aproximado": null,
+    "localidade": null,
+    "prazo": null
+  },
+  "intencao": "A frase \"ah blz, email teste@teste.com.br\" pode ser classificada como **CONTINUIDADE_FLUXO**."
+}
