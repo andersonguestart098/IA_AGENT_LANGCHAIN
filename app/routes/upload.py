@@ -31,7 +31,7 @@ async def upload_conhecimento(file: UploadFile = File(...)):
                 continue
 
             metadados = item.copy()
-            metadados.pop("conteudo", None)  # Remover o conteúdo do metadado para não duplicar
+            metadados.pop("Conteudo", None)  # Remover o conteúdo do metadado para não duplicar
 
             documentos = splitter.create_documents([conteudo], metadatas=[metadados])
             total_chunks += len(documentos)
