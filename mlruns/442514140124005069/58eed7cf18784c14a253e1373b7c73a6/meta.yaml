@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/IA%20-%20LANGCHAIN/mlruns/442514140124005069/58eed7cf18784c14a253e1373b7c73a6/artifacts
+end_time: 1752782985145
+entry_point_name: ''
+experiment_id: '442514140124005069'
+lifecycle_stage: active
+run_id: 58eed7cf18784c14a253e1373b7c73a6
+run_name: lyrical-ox-892
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752782985075
+status: 3
+tags: []
+user_id: User

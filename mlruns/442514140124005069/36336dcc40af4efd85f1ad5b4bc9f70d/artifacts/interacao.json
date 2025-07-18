@@ -1,0 +1,13 @@
+{
+  "pergunta": "voces trabalham com gesso?",
+  "resposta": "Preciso consultar um especialista sobre isso.",
+  "documentos": [],
+  "origens": [],
+  "slots": {
+    "produto": "gesso",
+    "volume_aproximado": null,
+    "localidade": null,
+    "prazo": null
+  },
+  "intencao": "PERGUNTA_PRODUTO"
+}

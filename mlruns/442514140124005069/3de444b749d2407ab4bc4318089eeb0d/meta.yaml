@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/IA%20-%20LANGCHAIN/mlruns/442514140124005069/3de444b749d2407ab4bc4318089eeb0d/artifacts
+end_time: 1752837398560
+entry_point_name: ''
+experiment_id: '442514140124005069'
+lifecycle_stage: active
+run_id: 3de444b749d2407ab4bc4318089eeb0d
+run_name: upset-swan-469
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752837398410
+status: 3
+tags: []
+user_id: User

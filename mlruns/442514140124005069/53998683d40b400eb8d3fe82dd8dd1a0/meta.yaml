@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/IA%20-%20LANGCHAIN/mlruns/442514140124005069/53998683d40b400eb8d3fe82dd8dd1a0/artifacts
+end_time: 1752781899485
+entry_point_name: ''
+experiment_id: '442514140124005069'
+lifecycle_stage: active
+run_id: 53998683d40b400eb8d3fe82dd8dd1a0
+run_name: bouncy-crow-203
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752781899380
+status: 3
+tags: []
+user_id: User

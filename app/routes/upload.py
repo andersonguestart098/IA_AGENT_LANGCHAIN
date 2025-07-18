@@ -1,19 +1,24 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_core.documents import Document
 from app.services.embeddings import embedding_model
-import numpy as np
+from qdrant_client import QdrantClient
+from qdrant_client.models import VectorParams, Distance
+from langchain_community.vectorstores.qdrant import Qdrant as LangchainQdrant
+
 import json
-from app.generated.client import Prisma
+import os
 
 router = APIRouter()
+
+QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
+QDRANT_COLLECTION = "cemear_knowledge_base"
 
 @router.post("/upload-conhecimento")
 async def upload_conhecimento(file: UploadFile = File(...)):
     try:
-        prisma = Prisma()
-        await prisma.connect()
-
         content = await file.read()
+
         try:
             dados = json.loads(content.decode("utf-8"))
         except Exception as e:
@@ -24,27 +29,57 @@ async def upload_conhecimento(file: UploadFile = File(...)):
 
         splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
         total_chunks = 0
+        documentos = []
 
         for item in dados:
             conteudo = item.get("conteudo")
             if not conteudo:
                 continue
 
-            metadados = item.copy()
-            metadados.pop("Conteudo", None)  # Remover o conteúdo do metadado para não duplicar
+            # 🔹 Filtra apenas metadados simples (str, int, float, bool)
+            metadados = {
+                k: v for k, v in item.items()
+                if k != "conteudo" and isinstance(v, (str, int, float, bool))
+            }
 
-            documentos = splitter.create_documents([conteudo], metadatas=[metadados])
-            total_chunks += len(documentos)
+            # 🔸 Garante que 'categoria' esteja presente e normalizada
+            categoria = metadados.get("categoria", "geral")
+            if isinstance(categoria, str):
+                categoria = categoria.strip().lower()
+            else:
+                categoria = "geral"
+            metadados["categoria"] = categoria
 
-            for doc in documentos:
-                embedding = embedding_model.embed_documents([doc.page_content])[0]
-                embedding_json = json.dumps(np.array(embedding).tolist())
+            # 🔹 Divide o conteúdo em chunks e aplica os metadados no nível raiz
+            chunks = splitter.create_documents([conteudo], metadatas=[metadados])
+            documentos.extend(chunks)
+            total_chunks += len(chunks)
 
-                await prisma.knowledgebase.create(data={
-                    "origem": json.dumps(doc.metadata, ensure_ascii=False),
-                    "conteudo": doc.page_content,
-                    "embedding": embedding_json
-                })
+        # 🔹 Cria cliente Qdrant
+        qdrant_client = QdrantClient(url=QDRANT_URL)
+
+        # 🔹 Descobre tamanho do vetor dinamicamente
+        sample_vector = embedding_model.embed_query("exemplo de texto")
+        embedding_size = len(sample_vector)
+
+        # 🔹 Recria coleção com dimensão correta
+        qdrant_client.recreate_collection(
+            collection_name=QDRANT_COLLECTION,
+            vectors_config=VectorParams(
+                size=embedding_size,
+                distance=Distance.COSINE
+            )
+        )
+
+        # 🔹 Instância da vectorstore Langchain
+        vectorstore = LangchainQdrant(
+            client=qdrant_client,
+            collection_name=QDRANT_COLLECTION,
+            embeddings=embedding_model,
+        )
+
+        # 🔹 Adiciona documentos
+        vectorstore.add_documents(documentos)
 
         return {
             "status": "sucesso",

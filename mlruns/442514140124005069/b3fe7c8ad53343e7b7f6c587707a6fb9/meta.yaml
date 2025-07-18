@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/IA%20-%20LANGCHAIN/mlruns/442514140124005069/b3fe7c8ad53343e7b7f6c587707a6fb9/artifacts
+end_time: 1752782208330
+entry_point_name: ''
+experiment_id: '442514140124005069'
+lifecycle_stage: active
+run_id: b3fe7c8ad53343e7b7f6c587707a6fb9
+run_name: legendary-roo-48
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752782208242
+status: 3
+tags: []
+user_id: User

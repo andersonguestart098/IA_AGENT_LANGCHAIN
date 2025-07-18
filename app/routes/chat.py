@@ -23,7 +23,6 @@ async def chat(request: ChatRequest, authorization: Optional[str] = Header(None)
         chains = await setup_rag_chain(sessao_token=authorization)
         classificacao_chain = chains["classificacao_chain"]
         slot_filling_chain = chains["slot_filling_chain"]
-        rag_chain = chains["rag_chain"]
         prisma = chains["prisma"]
         sessao = chains["sessao"]
         eh_primeira_interacao = chains["eh_primeira_interacao"]
@@ -45,14 +44,32 @@ async def chat(request: ChatRequest, authorization: Optional[str] = Header(None)
 
         print(f"[LOG] Slots extraídos: produto={produto}, localidade={localidade}, volume={volume}, prazo={prazo}")
 
+        # 🔹 Mapeamento da intenção para categoria
+        mapa_categoria = {
+            "PEDIDO_ORCAMENTO": "produtos_servicos",
+            "PERGUNTA_PRODUTO": "produtos_servicos",
+            "VAGA_EMPREGO": "institucional",
+            "FORA_REGIAO": "institucional"
+        }
+        filtro_categoria = mapa_categoria.get(intencao)
+        print(f"[LOG] Categoria usada no filtro RAG: {filtro_categoria}")
+
+        chains = await setup_rag_chain(sessao_token=authorization, filtro_categoria=filtro_categoria)
+        rag_chain = chains["rag_chain"]
+
         resultado = rag_chain.invoke({
             "question": pergunta,
             "chat_history": chat_history
         })
+
         resposta_base = resultado.get("answer", "").strip()
         fontes = resultado.get("sources", "")
 
-        documentos_utilizados = resultado.get("documents", [])
+        documentos_utilizados = resultado.get("source_documents", [])
+        print(f"[LOG] Documentos encontrados: {len(documentos_utilizados)}")
+        for i, doc in enumerate(documentos_utilizados):
+            print(f"[LOG] Doc {i+1}: {doc.page_content[:100]}... | Metadata: {doc.metadata}")
+
         origens_utilizadas = list({
             doc.metadata.get("source", "desconhecido") for doc in documentos_utilizados
         })
@@ -61,7 +78,7 @@ async def chat(request: ChatRequest, authorization: Optional[str] = Header(None)
 
         if intencao == "PEDIDO_ORCAMENTO" and produto and localidade:
             resposta = "Estou transferindo seu atendimento para o vendedor responsável. Em instantes ele entra em contato para dar continuidade ao seu pedido."
-        elif "consultar um especialista" in resposta_base.lower():
+        elif "consultar um especialista" in resposta_base.lower() or len(documentos_utilizados) == 0:
             resposta = "Preciso consultar um especialista sobre isso."
         else:
             encaminhamento = "\nPosso encaminhar seu pedido para nosso setor comercial." if intencao == "PEDIDO_ORCAMENTO" else ""
@@ -117,7 +134,6 @@ async def chat(request: ChatRequest, authorization: Optional[str] = Header(None)
 
             docs_usados = [doc.page_content for doc in resultado.get("source_documents", [])]
             mlflow.log_dict({"documentos": docs_usados}, "rag_contexto.json")
-
             mlflow.log_metric("tempo_execucao", tempo_total)
 
             mlflow.log_dict({
@@ -134,7 +150,6 @@ async def chat(request: ChatRequest, authorization: Optional[str] = Header(None)
                 "contexto": "rag"
             }, "input_metadata.json")
 
-
         return {
             "intencao": intencao,
             "etapa": etapa,
@@ -150,7 +165,6 @@ async def chat(request: ChatRequest, authorization: Optional[str] = Header(None)
 
     except Exception as e:
         print(f"[FATAL] Erro inesperado: {e}")
-
         mlflow.set_experiment("chat")
         with mlflow.start_run():
             mlflow.set_tag("sessao_id", authorization)

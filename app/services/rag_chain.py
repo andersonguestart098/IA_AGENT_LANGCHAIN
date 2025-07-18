@@ -1,38 +1,38 @@
 import os
-import ast
 from langchain_community.chat_models import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser, JsonOutputParser
-from langchain_community.vectorstores import FAISS
+from langchain.output_parsers import OutputFixingParser
 from langchain.chains import ConversationalRetrievalChain
-from langchain_core.documents import Document
+from langchain_community.vectorstores.qdrant import Qdrant as LangchainQdrant
+from qdrant_client import QdrantClient
 from app.services.embeddings import embedding_model
 from app.generated.client import Prisma
-from langchain.output_parsers import OutputFixingParser
+
+QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
+QDRANT_COLLECTION = "cemear_knowledge_base"
 
 async def setup_rag_chain(sessao_token: str, filtro_categoria: str = None):
     prisma = Prisma()
     await prisma.connect()
 
-    # 🔹 Recupera a sessão e histórico recente da conversa
+    # 🔹 Sessão e histórico
     sessao = await prisma.sessao.find_unique(where={"token": sessao_token})
     historico = await prisma.fluxoconversa.find_many(
-        where={"sessaoId": sessao.id},
-        order={"id": "asc"},
-        take=5
+        where={"sessaoId": sessao.id}, order={"id": "asc"}, take=5
     )
     eh_primeira_interacao = len(historico) == 0
     chat_history = [(h.pedido, h.resposta) for h in historico if h.resposta]
 
-    # 🔹 Instancia LLM (Mistral via OpenAI compatível)
+    # 🔹 LLM
     llm = ChatOpenAI(
         model="mistral-large-latest",
         openai_api_key=os.getenv("MISTRAL_API_KEY"),
         base_url="https://api.mistral.ai/v1",
-        temperature=0.3
+        temperature=0.3,
     )
 
-    # 🔹 Cadeia de classificação de intenção
+    # 🔹 Intenção
     intencao_prompt = PromptTemplate.from_template("""
 Você é um classificador de intenção para uma assistente virtual da Cemear (pisos, divisórias e soluções acústicas).
 Classifique a frase do cliente em UMA das seguintes categorias:
@@ -49,10 +49,9 @@ Classifique a frase do cliente em UMA das seguintes categorias:
 Frase: {texto}
 Categoria:
 """)
-    
     classificacao_chain = intencao_prompt | llm | StrOutputParser()
 
-    # 🔹 Prompt de Slot Filling estruturado
+    # 🔹 Slot filling
     slot_prompt = PromptTemplate.from_template("""
 Dada a frase de um cliente, extraia as seguintes informações de forma estruturada:
 
@@ -74,34 +73,41 @@ Responda APENAS com um JSON válido, exatamente neste formato:
 Frase: {texto}
 JSON:
 """)
-
     slot_filling_chain = slot_prompt | llm | OutputFixingParser.from_llm(
         parser=JsonOutputParser(), llm=llm
     )
 
-    # 🔹 Carrega documentos com metadados estruturados e filtro opcional
-    docs_db = await prisma.knowledgebase.find_many(where={"embedding": {"not": ""}})
-    docs = []
+    # 🔹 Qdrant
+    qdrant_client = QdrantClient(url=QDRANT_URL)
+    vectorstore = LangchainQdrant(
+        client=qdrant_client,
+        collection_name=QDRANT_COLLECTION,
+        embeddings=embedding_model,
+    )
 
-    for doc in docs_db:
-        try:
-            metadata_extra = ast.literal_eval(doc.origem) if doc.origem.strip().startswith("{") else {}
-        except Exception:
-            metadata_extra = {}
+    # 🔹 Ajuste do filtro
+    search_kwargs = {"k": 3}
+    if filtro_categoria:
+        filtro = {
+            "must": [
+                {
+                    "key": "categoria",
+                    "match": {"value": filtro_categoria}
+                }
+            ]
+        }
 
-        if filtro_categoria and metadata_extra.get("categoria") != filtro_categoria:
-            continue
+        print(f"[LOG] Aplicando filtro de categoria no retriever: {filtro}")
+        search_kwargs["filter"] = filtro
+    else:
+        print("[LOG] Nenhum filtro de categoria aplicado")
 
-        docs.append(Document(
-            page_content=doc.conteudo,
-            metadata={"id": doc.id, **metadata_extra}
-        ))
+    retriever = vectorstore.as_retriever(
+        search_type="similarity",
+        search_kwargs=search_kwargs
+    )
 
-    # 🔹 Cria FAISS e retriever com chunks filtrados
-    vectorstore = FAISS.from_documents(docs, embedding_model)
-    retriever = vectorstore.as_retriever(search_type="similarity", k=3)
-
-    # 🔹 Prompt do RAG com regras contextuais
+    # 🔹 Prompt final RAG
     resposta_prompt = PromptTemplate.from_template("""
 Você é o atendente virtual da Cemear, especializada em pisos, divisórias, brises e soluções acústicas.
 
@@ -128,10 +134,20 @@ PERGUNTA ATUAL:
         llm=llm,
         retriever=retriever,
         return_source_documents=True,
-        combine_docs_chain_kwargs={
-            "prompt": resposta_prompt
-        }
+        combine_docs_chain_kwargs={"prompt": resposta_prompt}
     )
+
+    # 🔹 Teste opcional: loga documentos recuperados se quiser validar manualmente
+    try:
+        from langchain_core.runnables import Runnable
+        if isinstance(rag_chain, Runnable):
+            docs = retriever.get_relevant_documents("gesso")
+            print(f"[DEBUG] Documentos exemplo para 'gesso':")
+            for d in docs:
+                print(f"- Conteúdo: {d.page_content[:60]}...")
+                print(f"  Metadados: {d.metadata}")
+    except Exception as e:
+        print(f"[WARN] Falha ao testar exemplo de busca: {e}")
 
     return {
         "prisma": prisma,
@@ -141,5 +157,5 @@ PERGUNTA ATUAL:
         "rag_chain": rag_chain,
         "sessao": sessao,
         "eh_primeira_interacao": eh_primeira_interacao,
-        "chat_history": chat_history
+        "chat_history": chat_history,
     }

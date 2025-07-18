@@ -1,0 +1,13 @@
+{
+  "pergunta": "voces trablaham com gesso?",
+  "resposta": "N\u00e3o, a Cemear n\u00e3o trabalha com gesso.",
+  "documentos": [],
+  "origens": [],
+  "slots": {
+    "produto": "gesso",
+    "volume_aproximado": null,
+    "localidade": null,
+    "prazo": null
+  },
+  "intencao": "PERGUNTA_PRODUTO"
+}

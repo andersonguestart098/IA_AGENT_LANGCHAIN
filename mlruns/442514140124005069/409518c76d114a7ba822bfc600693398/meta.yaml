@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/IA%20-%20LANGCHAIN/mlruns/442514140124005069/409518c76d114a7ba822bfc600693398/artifacts
+end_time: 1752837782057
+entry_point_name: ''
+experiment_id: '442514140124005069'
+lifecycle_stage: active
+run_id: 409518c76d114a7ba822bfc600693398
+run_name: big-stork-101
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752837781930
+status: 3
+tags: []
+user_id: User
